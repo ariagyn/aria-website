@@ -159,6 +159,7 @@
                 <form id="notifyForm" class="notify-form">
                     <input 
                         type="email" 
+                        name="subscriber_email"
                         id="emailInput" 
                         placeholder="Enter your email address" 
                         required
@@ -279,35 +280,46 @@
             
             const emailInput = document.getElementById('emailInput');
             const formMessage = document.getElementById('formMessage');
+            const submitButton = this.querySelector('.notify-button');
             
-            // Simple email validation
-            const email = emailInput.value;
+            // Get email value
+            const email = emailInput.value.trim();
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             
-            if (emailRegex.test(email)) {
-                // Create mailto link to send subscriber info to Dr. Bina
-                const subject = encodeURIComponent('New Subscriber - Aria Gynecology Opening Notification');
-                const body = encodeURIComponent('New subscriber requesting opening notification:\n\nEmail: ' + email + '\n\nDate submitted: ' + new Date().toLocaleString());
-                const mailtoLink = 'mailto:dr.simabina@ariagyn.com?subject=' + subject + '&body=' + body;
-                
-                // Open email client
-                window.location.href = mailtoLink;
-                
-                // Display success message
-                formMessage.innerHTML = '<p style="color: #2C5F4F; font-weight: 600;">✓ Thank you! We\'ll notify you when we open.</p>';
-                formMessage.style.display = 'block';
-                
-                // Clear the input
-                emailInput.value = '';
-                
-                // Hide message after 5 seconds
-                setTimeout(function() {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            } else {
+            // Validate email
+            if (!emailRegex.test(email)) {
                 formMessage.innerHTML = '<p style="color: #B47A70;">Please enter a valid email address.</p>';
                 formMessage.style.display = 'block';
+                return;
             }
+            
+            // Create mailto link with subscriber information
+            const subject = encodeURIComponent('New Subscriber - Aria Gynecology Opening Notification');
+            const body = encodeURIComponent(
+                'NEW SUBSCRIBER REQUEST\n' +
+                '======================\n\n' +
+                'Email Address: ' + email + '\n' +
+                'Date Submitted: ' + new Date().toLocaleString() + '\n' +
+                'Requested: Opening notification for January 2026\n\n' +
+                'Please add this email to the notification list.'
+            );
+            
+            const mailtoLink = 'mailto:dr.simabina@ariagyn.com?subject=' + subject + '&body=' + body;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            formMessage.innerHTML = '<p style="color: #2C5F4F; font-weight: 600;">✓ Your email client is opening. Please send the email to complete your subscription.</p>';
+            formMessage.style.display = 'block';
+            
+            // Clear the input
+            emailInput.value = '';
+            
+            // Hide message after 8 seconds
+            setTimeout(function() {
+                formMessage.style.display = 'none';
+            }, 8000);
         });
     </script>
     

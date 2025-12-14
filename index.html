@@ -32,6 +32,41 @@
     
     <!-- Link to external CSS -->
     <link rel="stylesheet" href="coming-soon-styles.css">
+    
+    <!-- Custom styles for header logo -->
+    <style>
+        .header-with-logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        
+        .header-logo {
+            flex-shrink: 0;
+        }
+        
+        .header-logo img {
+            max-width: 80px;
+            height: auto;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .header-with-logo {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-logo img {
+                max-width: 70px;
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Background Pattern -->
@@ -40,20 +75,22 @@
     <!-- Main Container -->
     <div class="container">
         
-        <!-- Logo Section -->
-        <div class="logo-section">
-            <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery - MIGS Specialist Manassas VA" class="logo">
-        </div>
-        
         <!-- Main Content -->
         <main class="content">
             
             <!-- Coming Soon Badge -->
             <div class="badge">Opening Soon</div>
             
-            <!-- Main Heading -->
-            <h1>Aria Gynecology & Surgery</h1>
-            <h2>Comprehensive Women's Health Care in Manassas, VA</h2>
+            <!-- Main Heading with Logo -->
+            <div class="header-with-logo">
+                <div class="header-logo">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery - MIGS Specialist Manassas VA">
+                </div>
+                <div class="header-text">
+                    <h1>Aria Gynecology & Surgery</h1>
+                    <h2>Comprehensive Women's Health Care in Manassas, VA</h2>
+                </div>
+            </div>
             
             <!-- Opening Date -->
             <div class="opening-info">
@@ -129,7 +166,7 @@
                     </svg>
                     <div>
                         <h3>Phone</h3>
-                        <p><a href="tel:+15712818884" class="phone-link">(571) 281-8884</a></p>
+                        <p><a href="tel:+17038648244" class="phone-link">(703) 864-8244</a></p>
                         <p class="note">Call to schedule your appointment</p>
                     </div>
                 </div>

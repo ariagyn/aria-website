@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Office Procedures in Manassas, VA | Aria Gynecology & Surgery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d2988e">
+                <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: rgb(235, 225, 217); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Header - matches main page exactly */
+        header { 
+            background-color: #ffffff; 
+            border-bottom: 4px solid rgb(219, 196, 176); 
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+        
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .practice-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .practice-name { 
+            font-weight: bold; 
+            font-size: 27px; 
+            border-bottom: 1px solid rgb(219, 196, 176);
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        
+        .practice-name .ampersand {
+            font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            font-style: italic;
+            font-weight: 900;
+        }
+        
+        .tagline { 
+            font-size: 15px; 
+            color: rgb(210, 152, 142); 
+            letter-spacing: 0.5px;
+        }
+        
+        .tagline span {
+            margin: 0 4px;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 18px; 
+            font-size: 14px; 
+        }
+        
+        .nav-links a { 
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { 
+            color: rgb(210, 152, 142); 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(to right, rgb(235, 225, 217), rgb(219, 196, 176)); 
+            padding: 60px 20px; 
+        }
+        
+        .section-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        /* Typography - matches main page */
+        h1 { 
+            font-size: 32px; 
+            color: rgb(150, 100, 90); 
+            margin-bottom: 12px; 
+            line-height: 1.3; 
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: rgb(150, 100, 90);
+            margin: 30px 0 10px 0;
+        }
+        
+        h3 { 
+            color: rgb(210, 152, 142); 
+            font-size: 20px; 
+            margin: 25px 0 12px 0; 
+        }
+        
+        h4 { 
+            color: rgb(210, 152, 142); 
+            font-size: 18px; 
+            margin: 20px 0 10px 0; 
+        }
+        
+        /* Content Section */
+        .content { 
+            background: #ffffff; 
+            padding: 60px 20px; 
+        }
+        
+        .content-inner { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        .content p { 
+            margin-bottom: 15px; 
+            line-height: 1.8; 
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content p strong {
+            color: rgb(150, 100, 90);
+        }
+        
+        .content ul { 
+            margin: 15px 0 15px 25px; 
+        }
+        
+        .content li { 
+            margin-bottom: 8px; 
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Back to Services Link */
+        .back-link {
+            color: rgb(150, 100, 90);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: rgb(210, 152, 142);
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%);
+            border-radius: 12px;
+            border: 3px solid rgb(210, 152, 142);
+            text-align: center;
+        }
+        
+        .cta-box p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(150, 100, 90);
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p:nth-child(2) {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Buttons */
+        button, .btn { 
+            background-color: rgb(210, 152, 142); 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: 14px; 
+            font-weight: normal;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        
+        button:hover, .btn:hover { 
+            background-color: rgb(190, 132, 122); 
+            transform: translateY(-2px);
+        }
+        
+        /* Footer - matches main page exactly */
+        footer { 
+            background-color: #ffffff; 
+            border-top: 1px solid rgb(219, 196, 176);
+            padding: 15px 20px; 
+            font-size: 12px;
+        }
+        
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #777;
+        }
+        
+        footer p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Medical Illustrations */
+        .medical-illustration {
+            float: right;
+            width: 350px;
+            margin: 0 0 20px 30px;
+            padding: 0;
+        }
+        
+        .medical-illustration img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Custom heights for each illustration to match text length */
+        .illustration-hysteroscopy img {
+            max-height: 360px;
+            object-fit: contain;
+        }
+        
+        .illustration-endometrial img {
+            max-height: 360px;
+            object-fit: contain;
+        }
+        
+        .illustration-leep img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .illustration-iud img {
+            max-height: 380px;
+            object-fit: contain;
+        }
+        
+        .condition-section {
+            overflow: auto;
+            margin-bottom: 40px;
+        }
+        
+        /* Back to Top Button */
+        #backToTop { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            z-index: 999; 
+            font-size: 20px; 
+            display: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 26px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .practice-name { font-size: 22px; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 40px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            
+            /* Stack images on mobile */
+            .medical-illustration {
+                float: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            
+            /* Reset custom heights on mobile */
+            .illustration-hysteroscopy img,
+            .illustration-endometrial img,
+            .illustration-leep img,
+            .illustration-iud img {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+            <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery" width="400" height="400" loading="eager">
+                </div>
+                <div class="practice-info">
+                    <div class="practice-name">Aria Gynecology <span class="ampersand">&</span> Surgery</div>
+                    <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="section-inner">
+            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 14px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
+            <h1>Office Procedures in Manassas, VA</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-inner">
+            <p><strong>High-Quality Treatment Without Hospital Admission</strong></p>
+                
+                <p style="font-style: italic; color: rgb(150, 100, 90); margin-bottom: 15px;">Looking for office-based hysteroscopy in Manassas — No hospital visit required?</p>
+                
+                <p>Many gynecologic conditions can now be evaluated and treated safely, comfortably, and effectively right in the office—without the need for hospital admission or general anesthesia. Advances in imaging, hysteroscopy, and minimally invasive technology allow women to receive fast diagnosis, targeted treatment, and same-day recovery.</p>
+                
+                <p>According to the American College of Obstetricians and Gynecologists (ACOG), office-based gynecologic procedures are now considered a safe and effective standard of care for many common uterine and cervical conditions—offering faster recovery, lower cost, less anesthesia exposure, reduced infection risk, and minimal disruption to daily life.</p>
+                
+                <p>For many women, this means answers and treatment on the same day, with the comfort of going home shortly after.</p>
+                
+                <div class="condition-section">
+                    <h3>Hysteroscopy</h3>
+                    <div class="medical-illustration illustration-hysteroscopy">
+                        <img src="hysteroscopy-aria-gynecology-manassas-va-dr-sima-bina-sharp.png" alt="Hysteroscopy Procedure - Medical illustration showing minimally invasive in-office hysteroscopy with camera visualization of uterine cavity, no incisions required" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> A minimally invasive procedure that uses a tiny camera to look directly inside the uterus through the cervix—without any incisions.</p>
+                    <p><strong>Why it matters:</strong> According to ACOG, hysteroscopy is the gold standard for evaluating abnormal uterine bleeding, uterine polyps, submucosal fibroids, and suspected scarring (Asherman's syndrome). It allows providers to see the uterine cavity in real time, diagnose and often treat problems in one visit, and avoid unnecessary major surgery.</p>
+                    <p><strong>When neglected:</strong> Without hysteroscopy, many women with persistent bleeding undergo repeated imaging or even unnecessary hysterectomy without ever directly identifying the true cause.</p>
+                </div>
+                
+                <div class="condition-section">
+                    <h3>Endometrial Biopsy</h3>
+                    <div class="medical-illustration illustration-endometrial">
+                        <img src="endometrial-biopsy-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Endometrial Biopsy - Medical illustration showing minimally invasive pipelle device collecting uterine lining sample to diagnose abnormal bleeding and screen for endometrial cancer" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> A quick in-office procedure that samples the lining of the uterus to evaluate abnormal bleeding or cancer risk.</p>
+                    <p><strong>Why it matters:</strong> According to the CDC and ACOG, endometrial cancer is the most common gynecologic cancer in the U.S., and abnormal uterine bleeding is the most common early warning sign. Endometrial biopsy detects precancer and cancer early, helps guide hormonal vs. surgical treatment, and can often prevent advanced disease.</p>
+                    <p><strong>When neglected:</strong> Delayed biopsy can result in later-stage cancer diagnosis, when treatment becomes more complex and survival rates decrease.</p>
+                </div>
+                
+                <h3>Colposcopy</h3>
+                <p><strong>What it is:</strong> A magnified examination of the cervix following an abnormal Pap or positive HPV test.</p>
+                <p><strong>Why it matters:</strong> According to the CDC, high-risk HPV causes nearly all cervical cancers. Colposcopy allows early identification of precancerous changes, targeted biopsies, and timely treatment before cancer develops.</p>
+                <p><strong>When neglected:</strong> Without colposcopy, abnormal cervical cells may remain undetected for years—until invasive cancer develops.</p>
+                
+                <div class="condition-section">
+                    <h3>LEEP Procedures (Loop Electrosurgical Excision Procedure)</h3>
+                    <div class="medical-illustration illustration-leep">
+                        <img src="leep-aria-gynecology-manassas-va-dr-sima-bina.png" alt="LEEP Procedure - Medical illustration showing loop electrosurgical excision procedure to remove abnormal cervical tissue, treat dysplasia, and screen for cervical cancer" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> A minimally invasive in-office treatment that removes abnormal cervical cells using a small electrical wire loop.</p>
+                    <p><strong>Why it matters:</strong> According to ACOG and the CDC, LEEP is one of the most effective treatments for high-grade cervical dysplasia and prevents progression to cervical cancer in the majority of cases. LEEP is usually completed in minutes, preserves fertility in most women, and allows same-day return home.</p>
+                    <p><strong>When neglected:</strong> Untreated high-grade cervical dysplasia significantly increases the risk of invasive cervical cancer.</p>
+                </div>
+                
+                <div class="condition-section">
+                    <h3>IUD & Implant Procedures</h3>
+                    <div class="medical-illustration illustration-iud">
+                        <img src="iud-implant_procedures-aria-gynecology-manassas-va-dr-sima-bina.png" alt="IUD & Implant Procedures - Medical illustration showing long-term contraception including copper IUD, hormonal IUD, and contraceptive implant placement" loading="lazy">
+                    </div>
+                    <p><strong>What they include:</strong> IUD insertion and removal, and Nexplanon implant placement and removal.</p>
+                    <p><strong>Why they matter:</strong> According to the CDC, long-acting reversible contraception (LARC) methods like IUDs and implants are over 99% effective and have the lowest failure rates of all birth control methods. They also reduce heavy bleeding and anemia, treat painful periods and endometriosis, and provide 3–10 years of protection.</p>
+                    <p><strong>When neglected:</strong> Women relying on daily pills or irregular methods have significantly higher real-world pregnancy rates due to missed doses.</p>
+                </div>
+                
+                <h3>Fibroid Evaluation & Mapping</h3>
+                <p><strong>What it is:</strong> Advanced imaging—often with ultrasound—to identify the number, size, and location of fibroids, distinguish which fibroids cause symptoms, and guide proper treatment (medical, office-based, or surgical).</p>
+                <p><strong>Why it matters:</strong> According to the NIH, up to 70–80% of women develop fibroids by age 50, and fibroids are the leading cause of hysterectomy in the U.S. Accurate fibroid mapping prevents unnecessary surgery, determines candidacy for office-based treatments, and preserves fertility when desired.</p>
+                <p><strong>When neglected:</strong> Without proper mapping, treatment may miss the true cause of bleeding or pain—leading to persistent symptoms and repeat procedures.</p>
+                
+                <h3>Ultrasound-Guided Procedures</h3>
+                <p><strong>What it is:</strong> Use of real-time ultrasound during procedures to improve accuracy, safety, and treatment precision.</p>
+                <p><strong>Why it matters:</strong> According to ACOG, ultrasound guidance reduces procedure complications, incomplete treatments, and risk of uterine injury. It enhances safety for IUD placement, hysteroscopy, biopsy procedures, and fibroid assessment.</p>
+                <p><strong>When neglected:</strong> Blind procedures increase the risk of incorrect placement, incomplete treatment, and unnecessary repeat visits.</p>
+                
+                <h3>Cervical & Uterine Treatments</h3>
+                <p><strong>What this includes:</strong> Targeted, office-based treatments for cervical dysplasia, polyps, chronic bleeding, hormonal lining disorders, and precancerous changes.</p>
+                <p><strong>Why they matter:</strong> According to the CDC and ACOG, most cervical and early uterine abnormalities are highly treatable when caught early. Office-based treatments reduce the need for hospital surgery and general anesthesia.</p>
+                <p><strong>When neglected:</strong> Untreated cervical and uterine abnormalities can progress to invasive disease requiring more aggressive surgery, radiation, or chemotherapy.</p>
+                
+                <p style="margin-top: 25px; font-style: italic; color: rgb(210, 152, 142);">Office-based procedures represent a major advancement in women's healthcare—combining safety, convenience, and effectiveness without the need for hospital admission.</p>
+                
+                <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); text-align: center;">
+                    
+                    <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your office procedures needs</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
+                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
+        </div>
+    </section>
+
+            <footer>
+        <div class="footer-inner">
+            <p>&copy; 2024-2026 Aria Gynecology & Surgery. All rights reserved.</p>
+            <p>Dr. Sima Bina, MD, FACOG | Board-Certified OB/GYN | MIGS Specialist</p>
+            <p>7900 Sudley Rd, Suite 424, Manassas, VA 20109 | (703) 864-8244</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+    window.onscroll = function() {
+        var btn = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post-Surgical & Long-Term Care in Manassas, VA | Aria Gynecology & Surgery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d2988e">
+                <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: rgb(235, 225, 217); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Header - matches main page exactly */
+        header { 
+            background-color: #ffffff; 
+            border-bottom: 4px solid rgb(219, 196, 176); 
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+        
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .practice-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .practice-name { 
+            font-weight: bold; 
+            font-size: 27px; 
+            border-bottom: 1px solid rgb(219, 196, 176);
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        
+        .practice-name .ampersand {
+            font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            font-style: italic;
+            font-weight: 900;
+        }
+        
+        .tagline { 
+            font-size: 15px; 
+            color: rgb(210, 152, 142); 
+            letter-spacing: 0.5px;
+        }
+        
+        .tagline span {
+            margin: 0 4px;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 18px; 
+            font-size: 14px; 
+        }
+        
+        .nav-links a { 
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { 
+            color: rgb(210, 152, 142); 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(to right, rgb(235, 225, 217), rgb(219, 196, 176)); 
+            padding: 60px 20px; 
+        }
+        
+        .section-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        /* Typography - matches main page */
+        h1 { 
+            font-size: 32px; 
+            color: rgb(150, 100, 90); 
+            margin-bottom: 12px; 
+            line-height: 1.3; 
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: rgb(150, 100, 90);
+            margin: 30px 0 10px 0;
+        }
+        
+        h3 { 
+            color: rgb(210, 152, 142); 
+            font-size: 20px; 
+            margin: 25px 0 12px 0; 
+        }
+        
+        h4 { 
+            color: rgb(210, 152, 142); 
+            font-size: 18px; 
+            margin: 20px 0 10px 0; 
+        }
+        
+        /* Content Section */
+        .content { 
+            background: #ffffff; 
+            padding: 60px 20px; 
+        }
+        
+        .content-inner { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        .content p { 
+            margin-bottom: 15px; 
+            line-height: 1.8; 
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content p strong {
+            color: rgb(150, 100, 90);
+        }
+        
+        .content ul { 
+            margin: 15px 0 15px 25px; 
+        }
+        
+        .content li { 
+            margin-bottom: 8px; 
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Back to Services Link */
+        .back-link {
+            color: rgb(150, 100, 90);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: rgb(210, 152, 142);
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%);
+            border-radius: 12px;
+            border: 3px solid rgb(210, 152, 142);
+            text-align: center;
+        }
+        
+        .cta-box p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(150, 100, 90);
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p:nth-child(2) {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Buttons */
+        button, .btn { 
+            background-color: rgb(210, 152, 142); 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: 14px; 
+            font-weight: normal;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        
+        button:hover, .btn:hover { 
+            background-color: rgb(190, 132, 122); 
+            transform: translateY(-2px);
+        }
+        
+        /* Footer - matches main page exactly */
+        footer { 
+            background-color: #ffffff; 
+            border-top: 1px solid rgb(219, 196, 176);
+            padding: 15px 20px; 
+            font-size: 12px;
+        }
+        
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #777;
+        }
+        
+        footer p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Medical Illustrations */
+        .medical-illustration {
+            float: right;
+            width: 350px;
+            margin: 0 0 20px 30px;
+            padding: 0;
+        }
+        
+        .medical-illustration img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Custom heights for each illustration to match text length */
+        .illustration-postop img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .illustration-chronic img {
+            max-height: 420px;
+            object-fit: contain;
+        }
+        
+        .condition-section {
+            overflow: auto;
+            margin-bottom: 40px;
+        }
+        
+        /* Back to Top Button */
+        #backToTop { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            z-index: 999; 
+            font-size: 20px; 
+            display: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 26px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .practice-name { font-size: 22px; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 40px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            
+            /* Stack images on mobile */
+            .medical-illustration {
+                float: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            
+            /* Reset custom heights on mobile */
+            .illustration-postop img,
+            .illustration-chronic img {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+            <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery" width="400" height="400" loading="eager">
+                </div>
+                <div class="practice-info">
+                    <div class="practice-name">Aria Gynecology <span class="ampersand">&</span> Surgery</div>
+                    <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="section-inner">
+            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 14px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
+            <h1>Post-Surgical & Long-Term Care in Manassas, VA</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-inner">
+            <p><strong>Continuity Before, During, and After Treatment</strong></p>
+                
+                <p>Surgery and medical treatment are not isolated events—they are part of a longer healing journey. True high-quality care does not end when the procedure is over. It continues through recovery, monitoring, prevention of complications, and long-term wellness.</p>
+                
+                <p>According to the Centers for Disease Control and Prevention (CDC) and the National Institutes of Health (NIH), a significant portion of post-surgical complications occur after hospital discharge. Long-term outcomes improve dramatically when patients receive structured pre-operative education, close post-operative follow-up, and ongoing chronic condition management.</p>
+                
+                <p>Post-surgical and long-term care focus on safe recovery, pain control, return to daily function, prevention of future complications, and protection of long-term health and quality of life. This is where excellent outcomes become lasting outcomes.</p>
+                
+                <h3>Pre-Operative Counseling</h3>
+                <p><strong>What it is:</strong> A structured medical and educational visit before any planned procedure designed to prepare you physically, emotionally, and medically for surgery.</p>
+                <p><strong>Why it matters:</strong> According to ACOG and the CDC, patients who receive structured pre-operative counseling experience fewer complications, less anxiety, faster recovery, and better pain control. Proper preparation reduces surgical site infections, medication errors, blood clot risk, and post-operative nausea and delays in recovery. Pre-op counseling includes review of imaging and diagnosis, surgical options and alternatives, fertility considerations, medication adjustments, anesthesia expectations, and recovery timeline and work restrictions.</p>
+                <p><strong>When neglected:</strong> Without proper preparation, patients face higher anxiety, avoidable medication complications, delayed healing, and unexpected limitations after surgery.</p>
+                
+                <div class="condition-section">
+                    <h3>Post-Operative Follow-Up</h3>
+                    <div class="medical-illustration illustration-postop">
+                        <img src="post-operative-follow-up-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Post-Operative Follow-Up - Medical illustration showing post-surgical care including incision check, pain and symptoms monitoring, recovery progress assessment with medications, scheduling, and follow-up notes" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Scheduled, structured medical visits after surgery to assess healing, manage symptoms, and prevent complications.</p>
+                    <p><strong>Why it matters:</strong> According to the CDC, many post-surgical infections, blood clots, and wound complications develop after discharge. Early detection through follow-up reduces hospital readmissions, emergency room visits, and long-term surgical complications. Post-op care includes incision evaluation, pain and medication management, bladder and bowel recovery, activity and lifting guidance, infection and clot prevention, and emotional well-being support.</p>
+                    <p><strong>When neglected:</strong> Lack of follow-up increases risk of silent infections, unrecognized blood clots, poor wound healing, chronic post-surgical pain, and delayed return to work and normal life.</p>
+                </div>
+                
+                <h3>Long-Term Surgical Outcome Monitoring</h3>
+                <p><strong>What it is:</strong> Ongoing assessment of surgical success months to years after treatment.</p>
+                <p><strong>Why it matters:</strong> According to the NIH and World Health Organization (WHO), some gynecologic conditions—such as endometriosis, fibroids, and pelvic adhesions—have recurrence risks over time. Long-term monitoring improves symptom control, re-intervention timing, fertility outcomes, and overall patient satisfaction. This monitoring includes symptom checks, imaging when indicated, hormone evaluations, menstrual and pain tracking, and fertility outcome review.</p>
+                <p><strong>When neglected:</strong> Without long-term follow-up, recurrence may go unrecognized until symptoms become severe again—often requiring more complex surgery.</p>
+                
+                <div class="condition-section">
+                    <h3>Chronic Condition Management</h3>
+                    <div class="medical-illustration illustration-chronic">
+                        <img src="chronic-condition-management-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Chronic Condition Management - Medical illustration showing ongoing care for chronic gynecologic conditions with health monitoring, medication updates, lifestyle guidance including tracking devices, medications, nutrition, and test results" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Ongoing medical care for long-term gynecologic conditions such as endometriosis, PCOS, chronic pelvic pain, recurrent ovarian cysts, menstrual disorders, and hormonal imbalances.</p>
+                    <p><strong>Why it matters:</strong> According to the NIH, chronic gynecologic conditions affect millions of women across their lifespan. Long-term management—not one-time treatment—is required for pain control, fertility preservation, metabolic health, and emotional well-being. Care may include hormonal therapy, non-hormonal medical treatment, imaging surveillance, lifestyle and nutrition support, and medication adjustments over time.</p>
+                    <p><strong>When neglected:</strong> Without consistent management, women experience disease progression, recurrent emergency visits, worsening fertility outcomes, chronic pain syndromes, and increased mental health burden.</p>
+                </div>
+                
+                <h3>Ongoing Wellness Tracking</h3>
+                <p><strong>What it is:</strong> Long-term monitoring of health beyond immediate surgical or medical treatment.</p>
+                <p><strong>Why it matters:</strong> According to the CDC and NIH, women's long-term outcomes improve when providers track weight and metabolism, bone health, hormonal balance, cardiovascular risk, and mental well-being. Preventive tracking reduces late disease detection, avoidable hospitalizations, and long-term disability. Wellness tracking includes routine health screenings, lifestyle optimization, menopause and midlife transition monitoring, bone density surveillance, and ongoing preventive care coordination.</p>
+                <p><strong>When neglected:</strong> Health risks often develop silently for years before symptoms appear—when prevention opportunities have already been missed.</p>
+                
+                <p style="margin-top: 25px; font-style: italic; color: rgb(210, 152, 142);">Post-surgical and long-term care are not afterthoughts—they are essential to ensuring that treatment leads to lasting health, recovery, and quality of life.</p>
+                
+                <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); text-align: center;">
+                    
+                    <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your post-surgical care needs</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
+                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
+        </div>
+    </section>
+
+            <footer>
+        <div class="footer-inner">
+            <p>&copy; 2024-2026 Aria Gynecology & Surgery. All rights reserved.</p>
+            <p>Dr. Sima Bina, MD, FACOG | Board-Certified OB/GYN | MIGS Specialist</p>
+            <p>7900 Sudley Rd, Suite 424, Manassas, VA 20109 | (703) 864-8244</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+    window.onscroll = function() {
+        var btn = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+    </script>
+</body>
+</html>

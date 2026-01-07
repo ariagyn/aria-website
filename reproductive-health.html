@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reproductive Health & Family Planning in Manassas, VA | Aria Gynecology & Surgery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d2988e">
+                <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: rgb(235, 225, 217); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Header - matches main page exactly */
+        header { 
+            background-color: #ffffff; 
+            border-bottom: 4px solid rgb(219, 196, 176); 
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+        
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .practice-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .practice-name { 
+            font-weight: bold; 
+            font-size: 27px; 
+            border-bottom: 1px solid rgb(219, 196, 176);
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        
+        .practice-name .ampersand {
+            font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            font-style: italic;
+            font-weight: 900;
+        }
+        
+        .tagline { 
+            font-size: 15px; 
+            color: rgb(210, 152, 142); 
+            letter-spacing: 0.5px;
+        }
+        
+        .tagline span {
+            margin: 0 4px;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 18px; 
+            font-size: 14px; 
+        }
+        
+        .nav-links a { 
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { 
+            color: rgb(210, 152, 142); 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(to right, rgb(235, 225, 217), rgb(219, 196, 176)); 
+            padding: 60px 20px; 
+        }
+        
+        .section-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        /* Typography - matches main page */
+        h1 { 
+            font-size: 32px; 
+            color: rgb(150, 100, 90); 
+            margin-bottom: 12px; 
+            line-height: 1.3; 
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: rgb(150, 100, 90);
+            margin: 30px 0 10px 0;
+        }
+        
+        h3 { 
+            color: rgb(210, 152, 142); 
+            font-size: 20px; 
+            margin: 25px 0 12px 0; 
+        }
+        
+        h4 { 
+            color: rgb(210, 152, 142); 
+            font-size: 18px; 
+            margin: 20px 0 10px 0; 
+        }
+        
+        /* Content Section */
+        .content { 
+            background: #ffffff; 
+            padding: 60px 20px; 
+        }
+        
+        .content-inner { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        .content p { 
+            margin-bottom: 15px; 
+            line-height: 1.8; 
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content p strong {
+            color: rgb(150, 100, 90);
+        }
+        
+        .content ul { 
+            margin: 15px 0 15px 25px; 
+        }
+        
+        .content li { 
+            margin-bottom: 8px; 
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Back to Services Link */
+        .back-link {
+            color: rgb(150, 100, 90);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: rgb(210, 152, 142);
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%);
+            border-radius: 12px;
+            border: 3px solid rgb(210, 152, 142);
+            text-align: center;
+        }
+        
+        .cta-box p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(150, 100, 90);
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p:nth-child(2) {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Buttons */
+        button, .btn { 
+            background-color: rgb(210, 152, 142); 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: 14px; 
+            font-weight: normal;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        
+        button:hover, .btn:hover { 
+            background-color: rgb(190, 132, 122); 
+            transform: translateY(-2px);
+        }
+        
+        /* Footer - matches main page exactly */
+        footer { 
+            background-color: #ffffff; 
+            border-top: 1px solid rgb(219, 196, 176);
+            padding: 15px 20px; 
+            font-size: 12px;
+        }
+        
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #777;
+        }
+        
+        footer p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Medical Illustrations */
+        .medical-illustration {
+            float: right;
+            width: 350px;
+            margin: 0 0 20px 30px;
+            padding: 0;
+        }
+        
+        .medical-illustration img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Custom heights for each illustration to match text length */
+        .illustration-contraception img {
+            max-height: 380px;
+            object-fit: contain;
+        }
+        
+        .illustration-birth-control img {
+            max-height: 420px;
+            object-fit: contain;
+        }
+        
+        .illustration-genetic img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .condition-section {
+            overflow: auto;
+            margin-bottom: 40px;
+        }
+        
+        /* Back to Top Button */
+        #backToTop { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            z-index: 999; 
+            font-size: 20px; 
+            display: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 26px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .practice-name { font-size: 22px; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 40px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            
+            /* Stack images on mobile */
+            .medical-illustration {
+                float: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            
+            /* Reset custom heights on mobile */
+            .illustration-contraception img,
+            .illustration-birth-control img,
+            .illustration-genetic img {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+            <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery" width="400" height="400" loading="eager">
+                </div>
+                <div class="practice-info">
+                    <div class="practice-name">Aria Gynecology <span class="ampersand">&</span> Surgery</div>
+                    <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="section-inner">
+            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 14px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
+            <h1>Reproductive Health & Family Planning in Manassas, VA</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-inner">
+            <p><strong>Personalized Support for Every Stage of Your Reproductive Journey</strong></p>
+                
+                <p>Reproductive health and family planning are about choice, timing, safety, and empowerment—whether you are preventing pregnancy, preparing your body for the future, actively trying to conceive, or preserving fertility for later in life.</p>
+                
+                <p>According to the Centers for Disease Control and Prevention (CDC), nearly half of all U.S. pregnancies are unplanned, often because women lacked access to timely, personalized contraceptive counseling. At the same time, the National Institutes of Health (NIH) reports that fertility declines earlier than most women realize—often beginning in the early 30s.</p>
+                
+                <p>Family planning care allows you to prevent pregnancy safely and effectively, protect your long-term fertility, optimize health before conception, reduce pregnancy complications, and make informed decisions for your future.</p>
+                
+                <div class="condition-section">
+                    <h3>Contraception Counseling</h3>
+                    <div class="medical-illustration illustration-contraception">
+                        <img src="contraception-birth-control-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Contraception (Birth Control) - Medical illustration showing birth control pill pack and IUD for effective pregnancy prevention and family planning" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> A personalized conversation about your health history, your goals (pregnancy now, later, or never), your comfort with hormones vs. non-hormonal options, and your lifestyle, cycles, and medical risks.</p>
+                    <p><strong>Why it matters:</strong> According to the CDC, nearly 65% of reproductive-aged women currently use some form of contraception. Typical-use failure rates vary widely between methods. Effective counseling dramatically reduces unplanned pregnancy, method failure, and hormone-related complications.</p>
+                    <p><strong>When neglected:</strong> Women are often placed on birth control that doesn't match their hormones, migraines, clotting risk, weight sensitivity, or fertility goals—leading to side effects, fear, and unnecessary discontinuation.</p>
+                </div>
+                
+                <div class="condition-section">
+                    <h3>Birth Control Pills, Patch & Ring</h3>
+                    <div class="medical-illustration illustration-birth-control">
+                        <img src="birth-control-pills-patch-ring-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Birth Control Pills, Patch & Ring - Medical illustration showing doctor-patient consultation about hormonal contraceptives including birth control pills, contraceptive patch, and vaginal ring for pregnancy prevention and cycle regulation" loading="lazy">
+                    </div>
+                    <p><strong>What they are:</strong> Hormonal contraceptives that prevent ovulation and regulate cycles.</p>
+                    <p><strong>Why they matter:</strong> According to the CDC and ACOG, with perfect use, these methods are over 99% effective. With typical use (real-life use), effectiveness is closer to 91%. Beyond pregnancy prevention, they help treat heavy bleeding, painful periods, acne, endometriosis, and PCOS-related irregular cycles.</p>
+                    <p><strong>When neglected:</strong> Incorrect selection or poor follow-up increases risks of breakthrough bleeding, migraines, blood clots (in select high-risk women), and unintended pregnancy.</p>
+                </div>
+                
+                <h3>IUD Placement & Removal</h3>
+                <p><strong>What it is:</strong> Intrauterine devices (hormonal and non-hormonal) that provide long-term, reversible pregnancy prevention.</p>
+                <p><strong>Why it matters:</strong> According to the CDC, IUDs are over 99% effective and are among the most effective reversible contraceptives available. Fertility returns almost immediately after removal. Hormonal IUDs also treat heavy menstrual bleeding, anemia, painful periods, and endometriosis-related symptoms.</p>
+                <p><strong>When neglected:</strong> Many women unnecessarily struggle with daily pills or heavy bleeding when IUDs could safely provide both contraception and symptom control for 3–10 years.</p>
+                
+                <h3>Nexplanon Implant Services</h3>
+                <p><strong>What it is:</strong> A small hormone-releasing implant placed under the skin of the upper arm that prevents pregnancy for up to 3 years.</p>
+                <p><strong>Why it matters:</strong> According to the CDC, Nexplanon is over 99% effective and has one of the lowest pregnancy rates of all contraceptive methods. It is especially useful for young patients, women who cannot tolerate estrogen, and those who want "set it and forget it" protection.</p>
+                <p><strong>When neglected:</strong> Without long-acting protection, women relying on short-acting methods have significantly higher failure rates due to missed doses.</p>
+                
+                <h3>Emergency Contraception</h3>
+                <p><strong>What it is:</strong> Medication used after unprotected intercourse to reduce the risk of pregnancy.</p>
+                <p><strong>Why it matters:</strong> According to the CDC and ACOG, emergency contraception can reduce pregnancy risk by up to 85% when taken promptly. It is not an abortion pill, does not affect an existing pregnancy, and is used after missed pills, condom failure, sexual assault, or unprotected intercourse.</p>
+                <p><strong>When neglected:</strong> Delays in access increase unplanned pregnancy risk and emotional distress.</p>
+                
+                <h3>Preconception Counseling</h3>
+                <p><strong>What it is:</strong> A medical evaluation before trying to conceive to optimize your health.</p>
+                <p><strong>Why it matters:</strong> According to ACOG and the CDC, preconception care reduces miscarriage risk, lowers rates of preterm birth, decreases birth defects, and identifies silent risks like diabetes, thyroid disease, anemia, high blood pressure, and vitamin deficiencies.</p>
+                <p><strong>When neglected:</strong> Many women discover chronic health conditions only after pregnancy complications occur, when risks to both mother and baby are higher.</p>
+                
+                <h3>Fertility Preservation Counseling</h3>
+                <p><strong>What it is:</strong> Education and planning for future fertility through egg freezing, embryo freezing, or fertility protection during medical treatments.</p>
+                <p><strong>Why it matters:</strong> According to the American Society for Reproductive Medicine (ASRM), female fertility begins to decline noticeably in the early 30s, and egg quality and quantity decline more rapidly after age 35. Fertility preservation allows women to delay pregnancy safely, protect fertility before cancer treatments, and preserve reproductive autonomy.</p>
+                <p><strong>When neglected:</strong> Many women only learn about fertility decline after difficulty conceiving—when options may already be limited.</p>
+                
+                <h3>Pregnancy Planning & Health Optimization</h3>
+                <p><strong>What it is:</strong> Targeted preparation for a healthy pregnancy through medication review, weight optimization, vitamin and folic acid supplementation, control of chronic conditions, and infection screening.</p>
+                <p><strong>Why it matters:</strong> According to the CDC, chronic conditions like diabetes and hypertension significantly increase risks of preeclampsia, preterm birth, stillbirth, and cesarean delivery. Health optimization before pregnancy improves implantation success, placental development, fetal growth, and labor outcomes.</p>
+                <p><strong>When neglected:</strong> Uncontrolled medical conditions at conception increase pregnancy complications that could have been prevented.</p>
+                
+                <div class="condition-section">
+                    <h3>Genetic Carrier Screening</h3>
+                    <div class="medical-illustration illustration-genetic">
+                        <img src="genetic-carrier-screening-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Genetic Carrier Screening - Medical illustration showing doctor-patient consultation about genetic testing for autosomal recessive disorders and x-linked disorders including carrier status determination for family planning" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Blood or saliva testing to identify whether you carry genes for inherited conditions—even if you are healthy.</p>
+                    <p><strong>Why it matters:</strong> According to the CDC and ACOG, about 1 in 100 couples are at increased risk of having a child with a serious inherited disorder. Many carriers have no symptoms and no known family history. Common screened conditions include cystic fibrosis, spinal muscular atrophy, sickle cell disease, and Fragile X syndrome.</p>
+                    <p><strong>When neglected:</strong> Genetic conditions are often discovered only after a child is affected, when emotional, medical, and financial burdens are far greater.</p>
+                </div>
+                
+                <p style="margin-top: 25px; font-style: italic; color: rgb(210, 152, 142);">Reproductive health and family planning empower you to make informed choices about your body, your timeline, and your future—on your terms.</p>
+                
+                <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); text-align: center;">
+                    
+                    <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your reproductive health & family planning needs</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
+                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
+        </div>
+    </section>
+
+            <footer>
+        <div class="footer-inner">
+            <p>&copy; 2024-2026 Aria Gynecology & Surgery. All rights reserved.</p>
+            <p>Dr. Sima Bina, MD, FACOG | Board-Certified OB/GYN | MIGS Specialist</p>
+            <p>7900 Sudley Rd, Suite 424, Manassas, VA 20109 | (703) 864-8244</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+    window.onscroll = function() {
+        var btn = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+    </script>
+</body>
+</html>

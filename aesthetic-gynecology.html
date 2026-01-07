@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aesthetic & Functional Gynecology (Coming Soon to Manassas, VA) | Aria Gynecology & Surgery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d2988e">
+                <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: rgb(235, 225, 217); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Header - matches main page exactly */
+        header { 
+            background-color: #ffffff; 
+            border-bottom: 4px solid rgb(219, 196, 176); 
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+        
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .practice-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .practice-name { 
+            font-weight: bold; 
+            font-size: 27px; 
+            border-bottom: 1px solid rgb(219, 196, 176);
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        
+        .practice-name .ampersand {
+            font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            font-style: italic;
+            font-weight: 900;
+        }
+        
+        .tagline { 
+            font-size: 15px; 
+            color: rgb(210, 152, 142); 
+            letter-spacing: 0.5px;
+        }
+        
+        .tagline span {
+            margin: 0 4px;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 18px; 
+            font-size: 14px; 
+        }
+        
+        .nav-links a { 
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { 
+            color: rgb(210, 152, 142); 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(to right, rgb(235, 225, 217), rgb(219, 196, 176)); 
+            padding: 60px 20px; 
+        }
+        
+        .section-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        /* Typography - matches main page */
+        h1 { 
+            font-size: 32px; 
+            color: rgb(150, 100, 90); 
+            margin-bottom: 12px; 
+            line-height: 1.3; 
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: rgb(150, 100, 90);
+            margin: 30px 0 10px 0;
+        }
+        
+        h3 { 
+            color: rgb(210, 152, 142); 
+            font-size: 20px; 
+            margin: 25px 0 12px 0; 
+        }
+        
+        h4 { 
+            color: rgb(210, 152, 142); 
+            font-size: 18px; 
+            margin: 20px 0 10px 0; 
+        }
+        
+        /* Content Section */
+        .content { 
+            background: #ffffff; 
+            padding: 60px 20px; 
+        }
+        
+        .content-inner { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        .content p { 
+            margin-bottom: 15px; 
+            line-height: 1.8; 
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content p strong {
+            color: rgb(150, 100, 90);
+        }
+        
+        .content ul { 
+            margin: 15px 0 15px 25px; 
+        }
+        
+        .content li { 
+            margin-bottom: 8px; 
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Back to Services Link */
+        .back-link {
+            color: rgb(150, 100, 90);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: rgb(210, 152, 142);
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%);
+            border-radius: 12px;
+            border: 3px solid rgb(210, 152, 142);
+            text-align: center;
+        }
+        
+        .cta-box p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(150, 100, 90);
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p:nth-child(2) {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Buttons */
+        button, .btn { 
+            background-color: rgb(210, 152, 142); 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: 14px; 
+            font-weight: normal;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        
+        button:hover, .btn:hover { 
+            background-color: rgb(190, 132, 122); 
+            transform: translateY(-2px);
+        }
+        
+        /* Footer - matches main page exactly */
+        footer { 
+            background-color: #ffffff; 
+            border-top: 1px solid rgb(219, 196, 176);
+            padding: 15px 20px; 
+            font-size: 12px;
+        }
+        
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #777;
+        }
+        
+        footer p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Medical Illustrations */
+        .medical-illustration {
+            float: right;
+            width: 350px;
+            margin: 0 0 20px 30px;
+            padding: 0;
+        }
+        
+        .medical-illustration img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Custom heights for each illustration to match text length */
+        .illustration-vaginal img {
+            max-height: 440px;
+            object-fit: contain;
+        }
+        
+        .illustration-hormonal img {
+            max-height: 460px;
+            object-fit: contain;
+        }
+        
+        .illustration-pelvic-urinary img {
+            max-height: 380px;
+            object-fit: contain;
+        }
+        
+        .illustration-regenerative img {
+            max-height: 340px;
+            object-fit: contain;
+        }
+        
+        .condition-section {
+            overflow: auto;
+            margin-bottom: 40px;
+        }
+        
+        /* Back to Top Button */
+        #backToTop { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            z-index: 999; 
+            font-size: 20px; 
+            display: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 26px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .practice-name { font-size: 22px; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 40px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            
+            /* Stack images on mobile */
+            .medical-illustration {
+                float: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            
+            /* Reset custom heights on mobile */
+            .illustration-vaginal img,
+            .illustration-hormonal img,
+            .illustration-pelvic-urinary img,
+            .illustration-regenerative img {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+            <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery" width="400" height="400" loading="eager">
+                </div>
+                <div class="practice-info">
+                    <div class="practice-name">Aria Gynecology <span class="ampersand">&</span> Surgery</div>
+                    <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="section-inner">
+            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 14px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
+            <h1>Aesthetic & Functional Gynecology (Coming Soon to Manassas, VA)</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-inner">
+            <p><strong>Wellness, Confidence & Comfort—Rooted in Medical Care</strong></p>
+                
+                <p>Aesthetic & Functional Gynecology focuses on how your body feels, functions, and supports your daily life and intimacy—not just how it looks. These services address the real physical changes that occur with childbirth, hormonal shifts, menopause, surgery, and aging.</p>
+                
+                <p>According to the NIH and ACOG, vaginal tissue changes, pelvic floor dysfunction, hormonal imbalance, and sexual health concerns affect millions of women across all life stages, yet many delay care due to stigma, embarrassment, or the belief that symptoms are "just part of aging."</p>
+                
+                <p>This service line is designed to restore comfort, improve function, support sexual wellness, enhance confidence, and protect long-term quality of life.</p>
+                
+                <h3>Elective Aesthetic Gynecology Procedures</h3>
+                <p><strong>Designed to support comfort, confidence, and an active lifestyle</strong></p>
+                <p>Cosmetic vaginal and vulvar surgery focuses on the appearance, contour, and symmetry of the vaginal and external genital structures, while also prioritizing comfort, movement, exercise, clothing wear, and everyday function. These procedures are elective, chosen for personal and quality-of-life reasons rather than medical necessity.</p>
+                <p>Women commonly pursue these procedures to support personal body confidence, post-childbirth anatomical changes, reduced friction with clothing and athletic wear, freedom of movement during fitness and daily life, comfort during intimacy, improved symmetry and self-image, and alignment between how they feel and how they live.</p>
+                
+                <div class="condition-section">
+                    <h3>Vaginal Rejuvenation & Tissue Health</h3>
+                    <div class="medical-illustration illustration-vaginal">
+                        <img src="vaginal-rejuvenation-tissue-health-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Vaginal Rejuvenation & Tissue Health - Medical illustration showing comprehensive treatments including local vaginal estrogen therapy, non-hormonal vaginal moisturizers, CO2 laser treatment, postpartum support, vaginal microbiome optimization, and recurrent infection prevention" loading="lazy">
+                    </div>
+                    <p><strong>What this treats:</strong> Vaginal dryness & Genitourinary Syndrome of Menopause (GSM), irritation, burning, recurrent infections, tissue thinning after childbirth or menopause, and loss of elasticity and comfort with intimacy.</p>
+                    <p><strong>Services include:</strong> Local vaginal estrogen therapy, vaginal DHEA therapy, non-hormonal vaginal moisturizers & lubricants, vaginal tissue quality & elasticity support, CO₂ laser vaginal treatment, postpartum vaginal tissue support, menopause-related vaginal symptom programs, vaginal microbiome & pH optimization, and recurrent infection prevention plans.</p>
+                    <p><strong>Why it matters:</strong> According to The Menopause Society, up to 60% of postmenopausal women experience GSM, and symptoms worsen without treatment. These changes affect comfort, intimacy, bladder health, and confidence.</p>
+                    <p><strong>When neglected:</strong> Untreated vaginal atrophy can lead to chronic pain with intercourse, urinary symptoms, recurrent infections, and loss of sexual confidence.</p>
+                </div>
+                
+                <div class="condition-section">
+                    <h3>Hormonal Optimization (Including Hormone Pellet Therapy)</h3>
+                    <div class="medical-illustration illustration-hormonal">
+                        <img src="hormone-pellet-therapy-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Hormonal Optimization - Medical illustration showing comprehensive hormone therapy including estrogen, testosterone, and DHEA therapy, hormone pellet therapy (bioidentical), energy and metabolism support, bone and joint health, cardiovascular and diabetes risk management, mood and libido support, sleep and wellness prevention plans, and menopause symptom management" loading="lazy">
+                    </div>
+                    <p><strong>What this treats:</strong> Perimenopause & menopause symptoms, fatigue, brain fog, low libido, hormonal weight changes, PCOS and cycle irregularity, and surgical menopause.</p>
+                    <p><strong>Services include:</strong> Systemic hormone therapy (HRT), local estrogen & DHEA therapies, estrogen hormone pellet therapy, testosterone hormone pellet therapy, individualized hormone dosing based on labs & symptoms, testosterone optimization, estrogen/progesterone balance for arousal & lubrication, thyroid & prolactin evaluation, PCOS-related hormonal support, insulin resistance & metabolic assessment, and weight, energy & metabolic hormone optimization.</p>
+                    <p><strong>Why it matters:</strong> According to the NIH, hormone imbalance plays a central role in fatigue, mood disorders, metabolic changes, sexual dysfunction, and sleep disruption in women.</p>
+                    <p><strong>When neglected:</strong> Untreated hormonal imbalance can quietly worsen heart health, bone density, sexual wellness, metabolism, and emotional well-being.</p>
+                </div>
+                
+                <h3>Sexual Wellness Therapies</h3>
+                <p><strong>What this treats:</strong> Pain with intercourse (dyspareunia), low desire and arousal, hormone-related intimacy concerns, pelvic floor sexual pain, and scar-related sexual discomfort.</p>
+                <p><strong>Services include:</strong> Dyspareunia treatment, GSM-related sexual pain care, vaginismus & pelvic floor sexual pain treatment, scar-related dyspareunia evaluation, low desire & arousal support, sexual health counseling, medication & hormone libido-impact review, hormone pellet therapy for hypoactive sexual desire (when indicated), PRP-based sexual wellness injections (if offered), and orgasm & sensation support therapies.</p>
+                <p><strong>Why it matters:</strong> According to the NIH, over 40% of women report sexual health concerns during their lifetime—yet most never receive formal care.</p>
+                <p><strong>When neglected:</strong> Sexual pain and low desire often lead to distress, relationship strain, avoidance of intimacy, and loss of self-confidence.</p>
+                
+                <div class="condition-section">
+                    <h3>Pelvic Floor & Urinary Function</h3>
+                    <div class="medical-illustration illustration-pelvic-urinary">
+                        <img src="pelvic-floor-urinary-function-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Pelvic Floor & Urinary Function - Medical illustration showing pelvic floor strength and coordination, urinary incontinence management, pelvic floor dysfunction treatment, pelvic organ prolapse, chronic UTI prevention, pelvic floor physical therapy, muscle exercises, and pelvic floor repair surgery" loading="lazy">
+                    </div>
+                    <p><strong>What this treats:</strong> Stress urinary incontinence, urgency & overactive bladder, pelvic floor weakness or spasm, postpartum bladder changes, and menopause-related urinary symptoms.</p>
+                    <p><strong>Services include:</strong> Pelvic floor muscle evaluation, coordination with pelvic floor physical therapy, stress urinary incontinence treatment, urge incontinence & overactive bladder support, postpartum urinary rehabilitation, pelvic floor biofeedback therapy, pelvic floor electrical stimulation, pelvic floor trigger point injections, and hypertonic pelvic floor relaxation therapy.</p>
+                    <p><strong>Why it matters:</strong> According to the CDC, 1 in 3 women experiences urinary leakage in her lifetime, which significantly affects exercise, travel, intimacy, and confidence.</p>
+                </div>
+                
+                <h3>Scar Revision</h3>
+                <p><strong>What this treats:</strong> Painful episiotomy scars, perineal tears, scar-related dyspareunia, and post-surgical vaginal scar discomfort.</p>
+                <p><strong>Services include:</strong> Perineal scar revision, episiotomy scar repair, post-childbirth introitus repair, scar-related sexual pain treatment, post-surgical vaginal scar management, and PRP for scar tissue (if offered).</p>
+                <p><strong>Why it matters:</strong> Scar tissue can restrict movement, reduce sensation, and cause chronic pain with daily activity and intimacy.</p>
+                
+                <h3>Post-Surgical Cosmetic & Functional Support</h3>
+                <p><strong>Services include:</strong> Post-hysterectomy vaginal comfort optimization, post-oophorectomy hormonal stabilization, hormone pellet therapy for surgical menopause support, sexual function recovery after gynecologic surgery, post-endometriosis & post-fibroid surgery tissue support, volume restoration for medically indicated atrophy, and body-image & intimacy recovery after surgery.</p>
+                <p><strong>Why it matters:</strong> After necessary surgery, many women experience lasting tissue, hormonal, and emotional changes that deserve structured medical support—not silence.</p>
+                
+                <div class="condition-section">
+                    <h3>Regenerative & Biologic Therapies</h3>
+                    <div class="medical-illustration illustration-regenerative">
+                        <img src="regenerative-biologic-therapies-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Regenerative & Biologic Therapies - Medical illustration showing PRP (platelet-rich plasma) treatments for vaginal and vulvar tissue, sexual function enhancement, scar and pain management, urinary support, and tissue regenerative injection therapies for cellular repair, blood flow enhancement, and nerve regeneration" loading="lazy">
+                    </div>
+                    <p><strong>Services include:</strong> PRP for vaginal & vulvar tissue, PRP for sexual function, PRP for scar & pain, PRP for urinary support, and tissue regenerative injection therapies. These therapies focus on cellular repair, blood flow enhancement, and nerve regeneration.</p>
+                </div>
+                
+                <h3>Weight, Metabolism & Body Composition Support</h3>
+                <p><strong>What this addresses:</strong> Perimenopausal weight gain, PCOS-related metabolic change, insulin resistance, fatigue-related weight shifts, and post-surgical metabolic disruption.</p>
+                <p><strong>This integrates:</strong> Hormonal evaluation, metabolic testing, nutrition strategy, lifestyle optimization, and hormone-guided body composition support.</p>
+                <p><strong>Why it matters:</strong> According to the CDC, metabolic disease, insulin resistance, and central weight gain increase sharply during midlife and directly impact heart disease, diabetes, and surgical risk.</p>
+                
+                <p style="margin-top: 25px; font-style: italic; color: rgb(210, 152, 142);">Aesthetic & Functional Gynecology is about honoring the body's changes across a lifetime—and ensuring that every woman has access to comfort, function, wellness, and confidence at every stage.</p>
+                
+                <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); text-align: center;">
+                    
+                    <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your aesthetic & functional gynecology needs</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
+                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
+        </div>
+    </section>
+
+            <footer>
+        <div class="footer-inner">
+            <p>&copy; 2024-2026 Aria Gynecology & Surgery. All rights reserved.</p>
+            <p>Dr. Sima Bina, MD, FACOG | Board-Certified OB/GYN | MIGS Specialist</p>
+            <p>7900 Sudley Rd, Suite 424, Manassas, VA 20109 | (703) 864-8244</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+    window.onscroll = function() {
+        var btn = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+    </script>
+</body>
+</html>

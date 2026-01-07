@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menopause Management & Hormone Therapy in Manassas, VA | Aria Gynecology & Surgery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d2988e">
+                <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: rgb(235, 225, 217); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Header - matches main page exactly */
+        header { 
+            background-color: #ffffff; 
+            border-bottom: 4px solid rgb(219, 196, 176); 
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+        
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .practice-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .practice-name { 
+            font-weight: bold; 
+            font-size: 27px; 
+            border-bottom: 1px solid rgb(219, 196, 176);
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        
+        .practice-name .ampersand {
+            font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            font-style: italic;
+            font-weight: 900;
+        }
+        
+        .tagline { 
+            font-size: 15px; 
+            color: rgb(210, 152, 142); 
+            letter-spacing: 0.5px;
+        }
+        
+        .tagline span {
+            margin: 0 4px;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 18px; 
+            font-size: 14px; 
+        }
+        
+        .nav-links a { 
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { 
+            color: rgb(210, 152, 142); 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(to right, rgb(235, 225, 217), rgb(219, 196, 176)); 
+            padding: 60px 20px; 
+        }
+        
+        .section-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        /* Typography - matches main page */
+        h1 { 
+            font-size: 32px; 
+            color: rgb(150, 100, 90); 
+            margin-bottom: 12px; 
+            line-height: 1.3; 
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: rgb(150, 100, 90);
+            margin: 30px 0 10px 0;
+        }
+        
+        h3 { 
+            color: rgb(210, 152, 142); 
+            font-size: 20px; 
+            margin: 25px 0 12px 0; 
+        }
+        
+        h4 { 
+            color: rgb(210, 152, 142); 
+            font-size: 18px; 
+            margin: 20px 0 10px 0; 
+        }
+        
+        /* Content Section */
+        .content { 
+            background: #ffffff; 
+            padding: 60px 20px; 
+        }
+        
+        .content-inner { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        .content p { 
+            margin-bottom: 15px; 
+            line-height: 1.8; 
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content p strong {
+            color: rgb(150, 100, 90);
+        }
+        
+        .content ul { 
+            margin: 15px 0 15px 25px; 
+        }
+        
+        .content li { 
+            margin-bottom: 8px; 
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Back to Services Link */
+        .back-link {
+            color: rgb(150, 100, 90);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: rgb(210, 152, 142);
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%);
+            border-radius: 12px;
+            border: 3px solid rgb(210, 152, 142);
+            text-align: center;
+        }
+        
+        .cta-box p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(150, 100, 90);
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p:nth-child(2) {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Buttons */
+        button, .btn { 
+            background-color: rgb(210, 152, 142); 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: 14px; 
+            font-weight: normal;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        
+        button:hover, .btn:hover { 
+            background-color: rgb(190, 132, 122); 
+            transform: translateY(-2px);
+        }
+        
+        /* Footer - matches main page exactly */
+        footer { 
+            background-color: #ffffff; 
+            border-top: 1px solid rgb(219, 196, 176);
+            padding: 15px 20px; 
+            font-size: 12px;
+        }
+        
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #777;
+        }
+        
+        footer p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Medical Illustrations */
+        .medical-illustration {
+            float: right;
+            width: 350px;
+            margin: 0 0 20px 30px;
+            padding: 0;
+        }
+        
+        .medical-illustration img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Custom heights for each illustration to match text length */
+        .illustration-perimenopause img {
+            max-height: 360px;
+            object-fit: contain;
+        }
+        
+        .illustration-hrt img {
+            max-height: 380px;
+            object-fit: contain;
+        }
+        
+        .illustration-bone img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .illustration-sexual img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .condition-section {
+            overflow: auto;
+            margin-bottom: 40px;
+        }
+        
+        /* Back to Top Button */
+        #backToTop { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            z-index: 999; 
+            font-size: 20px; 
+            display: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 26px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .practice-name { font-size: 22px; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 40px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            
+            /* Stack images on mobile */
+            .medical-illustration {
+                float: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            
+            /* Reset custom heights on mobile */
+            .illustration-perimenopause img,
+            .illustration-hrt img,
+            .illustration-bone img,
+            .illustration-sexual img {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+            <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery" width="400" height="400" loading="eager">
+                </div>
+                <div class="practice-info">
+                    <div class="practice-name">Aria Gynecology <span class="ampersand">&</span> Surgery</div>
+                    <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="section-inner">
+            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 14px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
+            <h1>Menopause Management & Hormone Therapy in Manassas, VA</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-inner">
+            <p><strong>Supporting the Hormonal Transition with Confidence</strong></p>
+                
+                <p style="font-style: italic; color: rgb(150, 100, 90); margin-bottom: 15px;">Seeking a menopause specialist in Northern Virginia / Manassas area?</p>
+                
+                <p>Menopause is not a sudden event—it is a multi-year hormonal transition that affects the body, brain, metabolism, bones, heart, skin, mood, and intimate health. For many women, these changes begin in their late 30s or 40s and continue well into their 50s and beyond.</p>
+                
+                <p>According to the National Institutes of Health (NIH), the average age of menopause in the U.S. is 51, and women now spend over one-third of their lives in the postmenopausal years. Yet the CDC and The Menopause Society report that a large percentage of women are under-treated, are told symptoms are "just stress," or believe they must simply "live with it."</p>
+                
+                <p>You do not. Midlife care is about restoring balance, protecting long-term health, and helping you feel like yourself again.</p>
+                
+                <div class="condition-section">
+                    <h3>Perimenopause & Menopause Management</h3>
+                    <div class="medical-illustration illustration-perimenopause">
+                        <img src="perimenopause-menopause-management-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Perimenopause & Menopause Management - Medical illustration showing symptoms including irregular periods, hot flashes, night sweats, and vaginal dryness, with lifestyle changes and non-hormonal treatment options" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Personalized evaluation and treatment of hormone fluctuations before and after the final menstrual period. Common symptoms include hot flashes & night sweats, sleep disruption, anxiety or mood changes, brain fog & memory issues, irregular or heavy bleeding, and fatigue and joint pain.</p>
+                    <p><strong>Why it matters:</strong> According to the NIH, up to 80% of women experience disruptive menopausal symptoms, and perimenopause can last 7–10 years before menopause.</p>
+                    <p><strong>When neglected:</strong> Untreated hormone fluctuations increase risk of chronic insomnia, depression and anxiety, cardiovascular disease, bone loss, workplace burnout, and reduced quality of life.</p>
+                </div>
+                
+                <div class="condition-section">
+                    <h3>Hormone Therapy (HRT)</h3>
+                    <div class="medical-illustration illustration-hrt">
+                        <img src="hormone-therapy-hrt-menopause-treatment-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Hormone Therapy (HRT) for Menopause - Medical illustration showing symptoms including hot flashes, night sweats, and vaginal dryness, with treatment options including estrogen, progestin, combination therapy, and topical creams" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Carefully prescribed estrogen and/or progesterone to replace hormones the ovaries are no longer producing.</p>
+                    <p><strong>Why it matters:</strong> According to ACOG and The Menopause Society, hormone therapy is the most effective treatment for hot flashes and night sweats. When started at the appropriate time, HRT protects bone density, improves sleep, reduces joint pain, and improves quality of life. For healthy women under 60 or within 10 years of menopause, HRT is considered safe and effective for most.</p>
+                    <p><strong>When neglected:</strong> Without treatment, severe vasomotor symptoms can persist for 7–12 years, contributing to sleep deprivation, mood disorders, metabolic decline, and cardiovascular strain.</p>
+                </div>
+                
+                <h3>Non-Hormonal Menopause Treatment</h3>
+                <p><strong>What it is:</strong> Options for women who cannot take hormones, choose not to use hormones, or need additional symptom control. This may include FDA-approved non-hormonal medications, lifestyle and nutritional interventions, and sleep and mood regulation strategies.</p>
+                <p><strong>Why it matters:</strong> According to the NIH and CDC, up to 30–40% of women cannot or choose not to use hormone therapy. Non-hormonal therapies can still significantly reduce hot flashes, anxiety, and sleep disruption.</p>
+                <p><strong>When neglected:</strong> Women often feel trapped between severe symptoms and lack of treatment options—leading to unnecessary suffering.</p>
+                
+                <div class="condition-section">
+                    <h3>Bone Density & Osteoporosis Prevention</h3>
+                    <div class="medical-illustration illustration-bone">
+                        <img src="bone-density-osteoporosis-prevention-menopause-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Bone Density & Osteoporosis Prevention - Medical illustration showing healthy bone versus osteoporotic bone comparison, DXA bone density scan, lifestyle changes, and medications including calcium and vitamin D" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Evaluation and protection of bone health during and after menopause.</p>
+                    <p><strong>Why it matters:</strong> According to the CDC and NIH, 1 in 2 women over age 50 will break a bone due to osteoporosis, and women lose up to 20% of their bone density in the first 5–7 years after menopause. Hip fractures are associated with loss of independence, increased long-term disability, and higher mortality rates. Bone protection includes DEXA scans when appropriate, calcium and vitamin D planning, weight-bearing exercise guidance, and medication when necessary.</p>
+                    <p><strong>When neglected:</strong> Osteoporosis is often silent until a fracture occurs, when recovery may be incomplete.</p>
+                </div>
+                
+                <h3>Vaginal Health & Genitourinary Syndrome of Menopause (GSM)</h3>
+                <p><strong>What it is:</strong> Estrogen decline causes physical changes in the vagina and urinary tract known as genitourinary syndrome of menopause. Symptoms include vaginal dryness and burning, pain with intercourse, recurrent urinary tract infections, and urinary urgency or leakage.</p>
+                <p><strong>Why it matters:</strong> According to The Menopause Society, up to 60% of postmenopausal women experience GSM. Unlike hot flashes, GSM worsens over time without treatment.</p>
+                <p><strong>When neglected:</strong> Untreated GSM can lead to chronic pain with intimacy, avoidance of relationships, recurrent infections, and reduced quality of life.</p>
+                
+                <div class="condition-section">
+                    <h3>Sexual Wellness in Midlife</h3>
+                    <div class="medical-illustration illustration-sexual">
+                        <img src="sexual-wellness-midlife-menopause-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Sexual Wellness in Midlife - Medical illustration showing symptoms including low libido, painful sex, vaginal dryness, and relationship challenges, with treatable causes and hormonal therapy options" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Support for changes in desire, arousal, comfort, and body confidence.</p>
+                    <p><strong>Why it matters:</strong> According to the NIH, over 40% of women in midlife report sexual concerns. Hormonal shifts affect blood flow, nerve sensitivity, lubrication, and emotional connection. Sexual wellness care may address hormonal changes, vaginal health, relationship dynamics, pain disorders, and medications affecting libido.</p>
+                    <p><strong>When neglected:</strong> Sexual health concerns can lead to emotional distress, relationship strain, and loss of self-esteem.</p>
+                </div>
+                
+                <h3>Weight, Energy & Metabolism Support</h3>
+                <p><strong>What it is:</strong> Targeted support for body changes that occur with midlife hormone shifts.</p>
+                <p><strong>Why it matters:</strong> According to the CDC and NIH, menopause is associated with increased abdominal fat, insulin resistance, and slower metabolism. These changes increase risk for type 2 diabetes, heart disease, and fatty liver disease. Support focuses on nutrition strategy, strength training, metabolic health, sleep optimization, and sustainable energy restoration.</p>
+                <p><strong>When neglected:</strong> Many women experience unexplained weight gain, exhaustion, and worsening cardiometabolic health despite unchanged habits.</p>
+                
+                <p style="margin-top: 25px; font-style: italic; color: rgb(210, 152, 142);">Menopause is not an ending—it is a transition that deserves expert care, personalized treatment, and the confidence that comes from feeling well in your own body.</p>
+                
+                <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); text-align: center;">
+                    
+                    <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your menopause management & hormone therapy needs</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
+                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
+        </div>
+    </section>
+
+            <footer>
+        <div class="footer-inner">
+            <p>&copy; 2024-2026 Aria Gynecology & Surgery. All rights reserved.</p>
+            <p>Dr. Sima Bina, MD, FACOG | Board-Certified OB/GYN | MIGS Specialist</p>
+            <p>7900 Sudley Rd, Suite 424, Manassas, VA 20109 | (703) 864-8244</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+    window.onscroll = function() {
+        var btn = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+    </script>
+</body>
+</html>

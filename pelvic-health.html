@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pelvic Health & Intimacy Care in Manassas, VA | Aria Gynecology & Surgery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d2988e">
+                <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: rgb(235, 225, 217); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Header - matches main page exactly */
+        header { 
+            background-color: #ffffff; 
+            border-bottom: 4px solid rgb(219, 196, 176); 
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+        
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .practice-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .practice-name { 
+            font-weight: bold; 
+            font-size: 27px; 
+            border-bottom: 1px solid rgb(219, 196, 176);
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        
+        .practice-name .ampersand {
+            font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            font-style: italic;
+            font-weight: 900;
+        }
+        
+        .tagline { 
+            font-size: 15px; 
+            color: rgb(210, 152, 142); 
+            letter-spacing: 0.5px;
+        }
+        
+        .tagline span {
+            margin: 0 4px;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 18px; 
+            font-size: 14px; 
+        }
+        
+        .nav-links a { 
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { 
+            color: rgb(210, 152, 142); 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(to right, rgb(235, 225, 217), rgb(219, 196, 176)); 
+            padding: 60px 20px; 
+        }
+        
+        .section-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        /* Typography - matches main page */
+        h1 { 
+            font-size: 32px; 
+            color: rgb(150, 100, 90); 
+            margin-bottom: 12px; 
+            line-height: 1.3; 
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: rgb(150, 100, 90);
+            margin: 30px 0 10px 0;
+        }
+        
+        h3 { 
+            color: rgb(210, 152, 142); 
+            font-size: 20px; 
+            margin: 25px 0 12px 0; 
+        }
+        
+        h4 { 
+            color: rgb(210, 152, 142); 
+            font-size: 18px; 
+            margin: 20px 0 10px 0; 
+        }
+        
+        /* Content Section */
+        .content { 
+            background: #ffffff; 
+            padding: 60px 20px; 
+        }
+        
+        .content-inner { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        .content p { 
+            margin-bottom: 15px; 
+            line-height: 1.8; 
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content p strong {
+            color: rgb(150, 100, 90);
+        }
+        
+        .content ul { 
+            margin: 15px 0 15px 25px; 
+        }
+        
+        .content li { 
+            margin-bottom: 8px; 
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Back to Services Link */
+        .back-link {
+            color: rgb(150, 100, 90);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: rgb(210, 152, 142);
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%);
+            border-radius: 12px;
+            border: 3px solid rgb(210, 152, 142);
+            text-align: center;
+        }
+        
+        .cta-box p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(150, 100, 90);
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p:nth-child(2) {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Buttons */
+        button, .btn { 
+            background-color: rgb(210, 152, 142); 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: 14px; 
+            font-weight: normal;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        
+        button:hover, .btn:hover { 
+            background-color: rgb(190, 132, 122); 
+            transform: translateY(-2px);
+        }
+        
+        /* Footer - matches main page exactly */
+        footer { 
+            background-color: #ffffff; 
+            border-top: 1px solid rgb(219, 196, 176);
+            padding: 15px 20px; 
+            font-size: 12px;
+        }
+        
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #777;
+        }
+        
+        footer p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Medical Illustrations */
+        .medical-illustration {
+            float: right;
+            width: 350px;
+            margin: 0 0 20px 30px;
+            padding: 0;
+        }
+        
+        .medical-illustration img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Custom heights for each illustration to match text length */
+        .illustration-vaginal img {
+            max-height: 360px;
+            object-fit: contain;
+        }
+        
+        .illustration-pelvic-floor img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .illustration-sexual img {
+            max-height: 380px;
+            object-fit: contain;
+        }
+        
+        .illustration-postpartum img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .condition-section {
+            overflow: auto;
+            margin-bottom: 40px;
+        }
+        
+        /* Back to Top Button */
+        #backToTop { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            z-index: 999; 
+            font-size: 20px; 
+            display: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 26px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .practice-name { font-size: 22px; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 40px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            
+            /* Stack images on mobile */
+            .medical-illustration {
+                float: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            
+            /* Reset custom heights on mobile */
+            .illustration-vaginal img,
+            .illustration-pelvic-floor img,
+            .illustration-sexual img,
+            .illustration-postpartum img {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+            <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery" width="400" height="400" loading="eager">
+                </div>
+                <div class="practice-info">
+                    <div class="practice-name">Aria Gynecology <span class="ampersand">&</span> Surgery</div>
+                    <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="section-inner">
+            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 14px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
+            <h1>Pelvic Health & Intimacy Care in Manassas, VA</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-inner">
+            <p><strong>Restoring Comfort, Confidence, and Quality of Life</strong></p>
+                
+                <p>Pelvic health and intimacy concerns are extremely common—but rarely discussed openly. Pain with sex, vaginal dryness, bladder leakage, and pelvic floor weakness affect millions of women across all ages—from postpartum recovery to menopause and beyond.</p>
+                
+                <p>According to the National Institutes of Health (NIH) and Centers for Disease Control and Prevention (CDC), 1 in 3 women will experience a pelvic floor disorder in her lifetime, and over 40% of midlife women report sexual health concerns. Yet many women wait years before seeking help due to embarrassment, normalization, or fear they will be dismissed.</p>
+                
+                <p>Pelvic and sexual health are not luxuries—they are essential to physical comfort, emotional well-being, relationship health, self-confidence, and long-term independence. You deserve support that is medical, compassionate, and personalized.</p>
+                
+                <div class="condition-section">
+                    <h3>Vaginal Dryness Treatment</h3>
+                    <div class="medical-illustration illustration-vaginal">
+                        <img src="vaginal-dryness-treatment-manassas-va-aria-gynecology-dr-sima-bina.png" alt="Vaginal Dryness Treatment - Medical illustration showing symptoms of discomfort and dryness with treatment options including over-the-counter moisturizers and hormonal treatments" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Treatment for vaginal dryness caused by estrogen decline (menopause, breastfeeding, postpartum), hormonal medications, cancer treatments, or certain birth control methods.</p>
+                    <p><strong>Why it matters:</strong> According to The Menopause Society, up to 60% of postmenopausal women experience vaginal dryness. Vaginal dryness also affects many younger women after childbirth and during breastfeeding. Dryness can cause burning, itching, pain with intimacy, recurrent urinary tract infections, and microtears and bleeding.</p>
+                    <p><strong>When neglected:</strong> Untreated dryness often worsens over time and leads to chronic discomfort, avoidance of intimacy, recurrent infections, and reduced quality of life.</p>
+                </div>
+                
+                <h3>Pain with Intercourse (Dyspareunia)</h3>
+                <p><strong>What it is:</strong> Persistent or recurring pain during or after sexual activity.</p>
+                <p><strong>Why it matters:</strong> According to the NIH, 10–20% of women experience dyspareunia at some point in their lives. It may be caused by vaginal dryness, endometriosis, pelvic floor muscle spasm, prior trauma or surgery, scar tissue, or hormonal changes.</p>
+                <p><strong>When neglected:</strong> Ongoing pain with intimacy can lead to anxiety and fear around sex, relationship strain, depression, and loss of sexual confidence.</p>
+                
+                <div class="condition-section">
+                    <h3>Pelvic Floor Disorders</h3>
+                    <div class="medical-illustration illustration-pelvic-floor">
+                        <img src="pelvic-floor-disorders-treatment-manassas-va-aria-gynecology-dr-sima-bina.png" alt="Pelvic Floor Disorders - Medical illustration showing bladder and uterine prolapse symptoms including urinary incontinence, pelvic organ prolapse, and chronic pelvic pain with treatment options" loading="lazy">
+                    </div>
+                    <p><strong>What they are:</strong> Conditions caused by weakening, tightening, or injury to the pelvic floor muscles and connective tissue. Common disorders include pelvic organ prolapse, pelvic floor tension disorders, muscle weakness, rectocele and cystocele.</p>
+                    <p><strong>Why they matter:</strong> According to the CDC and NIH, up to 50% of women who have delivered vaginally develop some degree of pelvic floor dysfunction. Aging, childbirth, obesity, and prior surgery increase risk. Pelvic floor disorders can cause pelvic pressure or bulge, difficulty with bowel or bladder control, pain with intercourse, and chronic pelvic discomfort.</p>
+                    <p><strong>When neglected:</strong> Pelvic floor dysfunction tends to progress over time, leading to worsening prolapse, bladder issues, and sexual dysfunction.</p>
+                </div>
+                
+                <h3>Urinary Symptoms & Leakage</h3>
+                <p><strong>What it includes:</strong> Stress incontinence (leakage with cough, laugh, exercise), urge incontinence (sudden uncontrollable need to urinate), frequent urination, and nighttime urination.</p>
+                <p><strong>Why it matters:</strong> According to the CDC and NIH, 1 in 3 adult women experience some form of urinary incontinence. Urinary leakage is one of the top reasons women reduce physical activity and social engagement. Urinary symptoms often worsen with menopause, childbirth, chronic coughing, and pelvic floor weakness.</p>
+                <p><strong>When neglected:</strong> Women often restrict travel, exercise, and intimacy due to fear of leakage—significantly impacting independence and mental health.</p>
+                
+                <div class="condition-section">
+                    <h3>Sexual Health Counseling</h3>
+                    <div class="medical-illustration illustration-sexual">
+                        <img src="sexual-health-counseling-midlife-menopause-manassas-va-aria-gynecology-dr-sima-bina.png" alt="Sexual Health Counseling - Medical illustration showing consultation for sexual health concerns including low libido, painful sex, vaginal dryness, and relationship challenges with treatable causes and treatment options" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Support for the physical, emotional, and relational aspects of intimacy.</p>
+                    <p><strong>Why it matters:</strong> According to the NIH, sexual concerns affect over 40% of women during their lifetime. Common concerns include low desire, difficulty with arousal, orgasm changes, body image shifts, and pain disorders. Sexual health is influenced by hormones, medications, stress and mood, relationships, and prior trauma.</p>
+                    <p><strong>When neglected:</strong> Unaddressed sexual health concerns may lead to emotional distance, anxiety, loss of self-identity, and relationship breakdown.</p>
+                </div>
+                
+                <div class="condition-section">
+                    <h3>Post-Childbirth Recovery Care</h3>
+                    <div class="medical-illustration illustration-postpartum">
+                        <img src="postpartum-recovery-care-manassas-va-aria-gynecology-dr-sima-bina.png" alt="Post-Childbirth Recovery Care - Medical illustration showing postpartum recovery concerns including vaginal soreness, pelvic pain, and incontinence with recovery solutions including perineal care, pelvic floor therapy, and medications" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Specialized pelvic and intimate health care after vaginal or cesarean delivery.</p>
+                    <p><strong>Why it matters:</strong> According to ACOG and the CDC, up to 35% of women report urinary leakage after delivery. Pelvic floor weakness, vaginal pain, and muscle injury are common after childbirth. Many symptoms persist well beyond the standard 6-week postpartum visit. Postpartum recovery care addresses pelvic floor healing, scar pain, pain with intercourse, bladder control, and abdominal muscle separation.</p>
+                    <p><strong>When neglected:</strong> Many women live with postpartum pelvic symptoms for years, believing they are "normal after childbirth" when effective treatment is available.</p>
+                </div>
+                
+                <p style="margin-top: 25px; font-style: italic; color: rgb(210, 152, 142);">Pelvic health and intimacy are fundamental to quality of life. You deserve care that listens, supports, and treats you with dignity and expertise.</p>
+                
+                <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); text-align: center;">
+                    
+                    <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your pelvic health & intimacy care needs</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
+                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
+        </div>
+    </section>
+
+            <footer>
+        <div class="footer-inner">
+            <p>&copy; 2024-2026 Aria Gynecology & Surgery. All rights reserved.</p>
+            <p>Dr. Sima Bina, MD, FACOG | Board-Certified OB/GYN | MIGS Specialist</p>
+            <p>7900 Sudley Rd, Suite 424, Manassas, VA 20109 | (703) 864-8244</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+    window.onscroll = function() {
+        var btn = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+    </script>
+</body>
+</html>

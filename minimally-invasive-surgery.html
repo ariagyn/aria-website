@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimally Invasive Gynecologic Surgery (MIGS) in Manassas, VA | Aria Gynecology & Surgery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d2988e">
+                <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: rgb(235, 225, 217); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Header - matches main page exactly */
+        header { 
+            background-color: #ffffff; 
+            border-bottom: 4px solid rgb(219, 196, 176); 
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+        
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .practice-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .practice-name { 
+            font-weight: bold; 
+            font-size: 27px; 
+            border-bottom: 1px solid rgb(219, 196, 176);
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        
+        .practice-name .ampersand {
+            font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            font-style: italic;
+            font-weight: 900;
+        }
+        
+        .tagline { 
+            font-size: 15px; 
+            color: rgb(210, 152, 142); 
+            letter-spacing: 0.5px;
+        }
+        
+        .tagline span {
+            margin: 0 4px;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 18px; 
+            font-size: 14px; 
+        }
+        
+        .nav-links a { 
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { 
+            color: rgb(210, 152, 142); 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(to right, rgb(235, 225, 217), rgb(219, 196, 176)); 
+            padding: 60px 20px; 
+        }
+        
+        .section-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        /* Typography - matches main page */
+        h1 { 
+            font-size: 32px; 
+            color: rgb(150, 100, 90); 
+            margin-bottom: 12px; 
+            line-height: 1.3; 
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: rgb(150, 100, 90);
+            margin: 30px 0 10px 0;
+        }
+        
+        h3 { 
+            color: rgb(210, 152, 142); 
+            font-size: 20px; 
+            margin: 25px 0 12px 0; 
+        }
+        
+        h4 { 
+            color: rgb(210, 152, 142); 
+            font-size: 18px; 
+            margin: 20px 0 10px 0; 
+        }
+        
+        /* Content Section */
+        .content { 
+            background: #ffffff; 
+            padding: 60px 20px; 
+        }
+        
+        .content-inner { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        .content p { 
+            margin-bottom: 15px; 
+            line-height: 1.8; 
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content p strong {
+            color: rgb(150, 100, 90);
+        }
+        
+        .content ul { 
+            margin: 15px 0 15px 25px; 
+        }
+        
+        .content li { 
+            margin-bottom: 8px; 
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Back to Services Link */
+        .back-link {
+            color: rgb(150, 100, 90);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: rgb(210, 152, 142);
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%);
+            border-radius: 12px;
+            border: 3px solid rgb(210, 152, 142);
+            text-align: center;
+        }
+        
+        .cta-box p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(150, 100, 90);
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p:nth-child(2) {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Buttons */
+        button, .btn { 
+            background-color: rgb(210, 152, 142); 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: 14px; 
+            font-weight: normal;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        
+        button:hover, .btn:hover { 
+            background-color: rgb(190, 132, 122); 
+            transform: translateY(-2px);
+        }
+        
+        /* Footer - matches main page exactly */
+        footer { 
+            background-color: #ffffff; 
+            border-top: 1px solid rgb(219, 196, 176);
+            padding: 15px 20px; 
+            font-size: 12px;
+        }
+        
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #777;
+        }
+        
+        footer p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Medical Illustrations */
+        .medical-illustration {
+            float: right;
+            width: 350px;
+            margin: 0 0 20px 30px;
+            padding: 0;
+        }
+        
+        .medical-illustration img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Custom heights for each illustration to match text length */
+        .illustration-laparoscopic img {
+            max-height: 380px;
+            object-fit: contain;
+        }
+        
+        .illustration-robotic img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .condition-section {
+            overflow: auto;
+            margin-bottom: 40px;
+        }
+        
+        /* Back to Top Button */
+        #backToTop { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            z-index: 999; 
+            font-size: 20px; 
+            display: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 26px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .practice-name { font-size: 22px; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 40px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            
+            /* Stack images on mobile */
+            .medical-illustration {
+                float: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            
+            /* Reset custom heights on mobile */
+            .illustration-laparoscopic img,
+            .illustration-robotic img {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+            <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery" width="400" height="400" loading="eager">
+                </div>
+                <div class="practice-info">
+                    <div class="practice-name">Aria Gynecology <span class="ampersand">&</span> Surgery</div>
+                    <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="section-inner">
+            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 14px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
+            <h1>Minimally Invasive Gynecologic Surgery (MIGS) in Manassas, VA</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-inner">
+            <p><strong>Advanced Surgical Care with Faster Recovery and Better Outcomes</strong></p>
+                
+                <p>Minimally Invasive Gynecologic Surgery (MIGS) allows complex gynecologic conditions to be treated through tiny incisions using advanced laparoscopic and robotic technology. Compared to traditional open surgery, MIGS offers less pain, faster healing, lower infection risk, and quicker return to normal life.</p>
+                
+                <p>According to the American College of Obstetricians and Gynecologists (ACOG) and the National Institutes of Health (NIH), minimally invasive approaches are now considered the preferred standard of care for many gynecologic surgeries whenever medically appropriate.</p>
+                
+                <p>For many women, MIGS means smaller scars, shorter hospital stays, less blood loss, lower complication rates, and faster return to work and family life.</p>
+                
+                <div class="condition-section">
+                    <h3>Laparoscopic Surgery</h3>
+                    <div class="medical-illustration illustration-laparoscopic">
+                        <img src="laparoscopic-surgery-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Laparoscopic Surgery - Medical illustration showing minimally invasive techniques including laparoscopic hysterectomy, ovarian cyst removal, fibroid surgery, endometriosis surgery, tubal ligation, pelvic adhesion removal, and ectopic/tubal pregnancy surgery for faster recovery" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> A surgical technique using pencil-sized instruments, a small camera (laparoscope), and tiny incisions in the abdomen. This allows surgeons to diagnose and treat pelvic conditions with precision.</p>
+                    <p><strong>Why it matters:</strong> According to ACOG and SAGES (Society of American Gastrointestinal and Endoscopic Surgeons), laparoscopic surgery is associated with significantly less post-operative pain, and patients experience shorter hospital stays and quicker recovery than with open surgery. Common conditions treated laparoscopically include endometriosis, ovarian cysts, fibroids, adhesions, and ectopic pregnancy.</p>
+                    <p><strong>When open surgery is avoided:</strong> Avoiding large incisions reduces risks of infection, hernias, and long-term scar pain.</p>
+                </div>
+                
+                <div class="condition-section">
+                    <h3>Robotic-Assisted Surgery</h3>
+                    <div class="medical-illustration illustration-robotic">
+                        <img src="robotic-assisted-surgery-aria-gynecology-manassas-va-dr-sima-bina.png" alt="Robotic-Assisted Surgery - Medical illustration showing advanced robotic surgical procedures including hysterectomy, myomectomy, ovarian surgery, endometriosis surgery, pelvic organ prolapse repair, minimally invasive cancer surgery, and ectopic/tubal pregnancy surgery with enhanced precision, 3D visualization, and faster recovery" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Robotic surgery uses computer-enhanced instruments that allow greater precision, improved depth perception, tremor-free movements, and enhanced access to complex anatomy.</p>
+                    <p><strong>Why it matters:</strong> According to ACOG and NIH, robotic surgery allows surgeons to perform complex procedures with the same small incisions as laparoscopy. It has expanded minimally invasive access for very large fibroids, severe endometriosis, dense scar tissue, and complex hysterectomies.</p>
+                    <p><strong>When neglected:</strong> Without minimally invasive options, many women are still offered unnecessary open surgery, which leads to longer recovery and higher complication rates.</p>
+                </div>
+                
+                <h3>Minimally Invasive Hysterectomy</h3>
+                <p style="font-style: italic; color: rgb(150, 100, 90); margin-bottom: 12px;">Looking for minimally invasive hysterectomy near Manassas and Gainesville?</p>
+                <p><strong>What it is:</strong> Removal of the uterus using laparoscopic or robotic techniques rather than a large abdominal incision.</p>
+                <p><strong>Why it matters:</strong> According to the CDC and ACOG, over 600,000 hysterectomies are performed in the U.S. each year. Minimally invasive hysterectomy results in fewer complications, less bleeding, shorter hospital stays, and faster return to normal activity. Common reasons include fibroids, heavy bleeding, endometriosis, adenomyosis, and chronic pelvic pain.</p>
+                <p><strong>When neglected:</strong> Women who undergo open hysterectomy often experience longer recovery (6–8 weeks vs. 1–3 weeks with MIGS), increased pain medication needs, and higher risk of infection and blood clots.</p>
+                
+                <h3>Endometriosis Excision</h3>
+                <p style="font-style: italic; color: rgb(150, 100, 90); margin-bottom: 12px;">Seeking advanced endometriosis excision surgery near Manassas?</p>
+                <p><strong>What it is:</strong> Precise surgical removal of endometriosis lesions while preserving healthy tissue.</p>
+                <p><strong>Why it matters:</strong> According to the CDC and NIH, endometriosis affects about 1 in 10 women and is found in up to 50% of women with infertility. Diagnosis is delayed an average of 7–10 years. Excision surgery provides the highest long-term pain relief, can improve fertility outcomes, and removes disease at its root, not just surface burning.</p>
+                <p><strong>When neglected:</strong> Untreated endometriosis can cause progressive pain, organ scarring, bowel and bladder involvement, and fertility impairment.</p>
+                
+                <h3>Fibroid Removal (Myomectomy)</h3>
+                <p><strong>What it is:</strong> Surgical removal of fibroids while preserving the uterus.</p>
+                <p><strong>Why it matters:</strong> According to the NIH, up to 70–80% of women will develop fibroids by age 50, and fibroids are the leading cause of hysterectomy in the U.S. Symptoms treated with myomectomy include heavy bleeding, anemia, pelvic pressure, pain, and infertility. Minimally invasive myomectomy allows fertility preservation, less scarring, and faster recovery.</p>
+                <p><strong>When neglected:</strong> Chronic bleeding from fibroids is one of the most common causes of severe iron-deficiency anemia in women.</p>
+                
+                <h3>Ovarian Cyst Surgery</h3>
+                <p><strong>What it is:</strong> Minimally invasive removal of ovarian cysts while preserving healthy ovarian tissue whenever possible.</p>
+                <p><strong>Why it matters:</strong> According to ACOG, most women develop at least one ovarian cyst in their lifetime. While many are benign, some cause severe pain, twist the ovary (torsion), rupture, or interfere with fertility.</p>
+                <p><strong>When neglected:</strong> Ovarian torsion is a surgical emergency that can lead to loss of the ovary if not treated quickly.</p>
+                
+                <h3>Tubal Surgery</h3>
+                <p><strong>What it is:</strong> Minimally invasive surgery on the fallopian tubes for blockages, hydrosalpinx, prior tubal ligation reversal, or ectopic pregnancy management.</p>
+                <p><strong>Why it matters:</strong> According to the CDC and ASRM, tubal disease is responsible for up to 35% of female infertility. Surgical correction may restore natural fertility in select patients.</p>
+                <p><strong>When neglected:</strong> Untreated tubal disease increases risk of ectopic pregnancy, chronic infection, and infertility.</p>
+                
+                <h3>Pelvic Adhesion Removal</h3>
+                <p><strong>What it is:</strong> Surgical removal of scar tissue that forms inside the pelvis after prior surgery, infection, or endometriosis.</p>
+                <p><strong>Why it matters:</strong> According to the NIH, up to 90% of women develop adhesions after major pelvic surgery. Adhesions can cause chronic pelvic pain, infertility, pain with intercourse, and bowel obstruction.</p>
+                <p><strong>When neglected:</strong> Adhesions can worsen over time and cause escalating pain and organ dysfunction.</p>
+                
+                <h3>Hysteroscopy</h3>
+                <p><strong>What it is:</strong> A minimally invasive procedure using a thin camera to visualize and treat conditions inside the uterus, including polyps, fibroids, uterine septum, and abnormal bleeding sources.</p>
+                <p><strong>Why it matters:</strong> According to ACOG, hysteroscopy allows direct visualization and treatment of intrauterine pathology without external incisions. It can be performed in the office or operating room depending on complexity. Hysteroscopy is essential for diagnosing unexplained bleeding, recurrent miscarriage, infertility evaluation, and removing intrauterine lesions.</p>
+                <p><strong>When neglected:</strong> Undiagnosed uterine pathology can lead to continued bleeding, anemia, failed fertility treatments, and unnecessary hysterectomy.</p>
+                
+                <h3>Endometrial Biopsy</h3>
+                <p><strong>What it is:</strong> A minimally invasive procedure to sample the uterine lining for microscopic evaluation, typically performed to evaluate abnormal bleeding, assess cancer risk, or monitor hormonal treatment.</p>
+                <p><strong>Why it matters:</strong> According to the CDC and ACOG, endometrial cancer is the most common gynecologic cancer in the United States, with over 65,000 new cases annually. Early detection through biopsy significantly improves treatment outcomes. Biopsy is also critical for evaluating postmenopausal bleeding, irregular perimenopausal bleeding, and unexplained spotting.</p>
+                <p><strong>When neglected:</strong> Delayed evaluation of abnormal bleeding can result in late-stage cancer diagnosis, progression of precancerous conditions, and missed opportunities for curative treatment.</p>
+                
+                <h3>LEEP Procedures (Loop Electrosurgical Excision Procedure)</h3>
+                <p><strong>What it is:</strong> A minimally invasive outpatient procedure to remove abnormal cervical tissue identified on Pap smear or colposcopy, preventing progression to cervical cancer.</p>
+                <p><strong>Why it matters:</strong> According to the American Cancer Society and CDC, cervical cancer screening and treatment of precancerous lesions have reduced cervical cancer deaths by over 70% since the 1950s. LEEP is one of the most effective treatments for high-grade cervical dysplasia (CIN 2/3), with cure rates exceeding 90%. The procedure is performed in the office with local anesthesia and takes only 10–15 minutes.</p>
+                <p><strong>When neglected:</strong> Untreated high-grade cervical dysplasia progresses to invasive cervical cancer in 30–50% of cases, requiring chemotherapy, radiation, and potentially radical surgery.</p>
+                
+                <p style="margin-top: 25px; font-style: italic; color: rgb(210, 152, 142);">Minimally invasive surgery represents a significant advancement in women's surgical care—offering precision, safety, and faster recovery while preserving quality of life.</p>
+                
+                <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); text-align: center;">
+                    
+                    <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your minimally invasive gynecologic surgery (MIGS) needs</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
+                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
+        </div>
+    </section>
+
+            <footer>
+        <div class="footer-inner">
+            <p>&copy; 2024-2026 Aria Gynecology & Surgery. All rights reserved.</p>
+            <p>Dr. Sima Bina, MD, FACOG | Board-Certified OB/GYN | MIGS Specialist</p>
+            <p>7900 Sudley Rd, Suite 424, Manassas, VA 20109 | (703) 864-8244</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+    window.onscroll = function() {
+        var btn = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+    </script>
+</body>
+</html>

@@ -706,20 +706,43 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
-    border: 2px solid var(--secondary-color);
     border-radius: 50%;
-    color: var(--primary-color);
+    color: white;
     transition: var(--transition);
     box-shadow: var(--shadow-sm);
+    border: none;
 }
 
 .social-link:hover {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Facebook Brand Color */
+.social-link:nth-child(1) {
+    background: #1877F2;
+}
+
+.social-link:nth-child(1):hover {
+    background: #0d5dce;
+}
+
+/* Instagram Brand Gradient */
+.social-link:nth-child(2) {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-link:nth-child(2):hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 40%, #d6249f 55%, #285AEB 85%);
+}
+
+/* LinkedIn Brand Color */
+.social-link:nth-child(3) {
+    background: #0A66C2;
+}
+
+.social-link:nth-child(3):hover {
+    background: #004182;
 }
 
 .social-link svg {

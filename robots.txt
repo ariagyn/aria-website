@@ -1,0 +1,16 @@
+# Robots.txt for Aria Gynecology & Surgery
+# Updated: December 9, 2024
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.yourdomain.com/sitemap.xml
+
+# Disallow crawling of placeholder or temporary files (if any)
+# Disallow: /temp/
+# Disallow: /private/
+
+# Crawl-delay (optional, uncomment if needed)
+# Crawl-delay: 1

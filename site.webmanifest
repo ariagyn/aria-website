@@ -1,0 +1,24 @@
+{
+    "name": "Aria Gynecology & Surgery",
+    "short_name": "Aria Gyn",
+    "description": "Aria Gynecology & Surgery - Comprehensive women's health care in Manassas, VA",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#d2988e",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

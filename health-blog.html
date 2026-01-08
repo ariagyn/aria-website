@@ -12,7 +12,10 @@
             font-family: Arial, Helvetica, sans-serif; 
             background-color: rgb(235, 225, 217); 
             color: #333; 
-            line-height: 1.6; 
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
         
         a { text-decoration: none; color: inherit; }
@@ -53,16 +56,34 @@
             object-fit: cover;
         }
         
+        .practice-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
         .practice-name { 
-            font-size: 24px; 
             font-weight: bold; 
-            color: rgb(150, 100, 90); 
+            font-size: 27px; 
+            border-bottom: 1px solid rgb(219, 196, 176);
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        
+        .practice-name .ampersand {
+            font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            font-style: italic;
+            font-weight: 900;
         }
         
         .tagline { 
-            font-size: 12px; 
-            color: #777; 
-            font-style: italic; 
+            font-size: 15px; 
+            color: rgb(210, 152, 142); 
+            letter-spacing: 0.5px;
+        }
+        
+        .tagline span {
+            margin: 0 4px;
         }
         
         .nav-links { 
@@ -228,18 +249,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 { font-size: 26px; }
-            .nav-container { flex-direction: column; text-align: center; }
-            .practice-name { font-size: 22px; }
-            .hero { padding: 40px 20px; }
-            .content { padding: 40px 20px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; }
-            .blog-post { padding: 25px;     flex-wrap: nowrap;
-            white-space: nowrap;
-        }
-        }
 
         /* Mobile Menu Toggle Button */
         .mobile-menu-toggle {
@@ -255,6 +264,11 @@
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             /* Header adjustments */
+            header {
+                padding: 15px 10px;
+                position: relative;
+            }
+
             .nav-container {
                 flex-direction: column;
                 align-items: center;
@@ -345,6 +359,51 @@
                 gap: 10px;
             }
 
+            /* Blog specific mobile styles */
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .content {
+                padding: 40px 15px;
+            }
+
+            .blog-post {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+
+            .blog-post h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .blog-post h3 {
+                font-size: 18px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+            .blog-post p {
+                font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .blog-post ul, .blog-post ol {
+                padding-left: 20px;
+                margin-bottom: 15px;
+            }
+
+            .back-link {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
             /* Back to top button */
             #backToTop {
                 width: 45px;
@@ -372,10 +431,12 @@
         <div class="nav-container">
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">☰</button>
             <div class="logo-area">
-                <img src="aria-gynecology-surgery-manassas-va-logo.png" alt="Aria Gynecology & Surgery Logo" class="logo-placeholder">
-                <div>
-                    <div class="practice-name">Aria Gynecology & Surgery</div>
-                    <div class="tagline">Attentive • Reliable • Innovative • Accomplished</div>
+                <div class="logo-placeholder">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery - MIGS Specialist Manassas VA" width="400" height="400" loading="eager">
+                </div>
+                <div class="practice-info">
+                    <div class="practice-name">Aria Gynecology <span class="ampersand">&</span> Surgery</div>
+                    <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
                 </div>
             </div>
             <nav class="nav-links">

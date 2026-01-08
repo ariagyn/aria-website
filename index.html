@@ -1,8 +1,4 @@
-        .modal-header h2 {
-            margin: 0;
-            font-size: 24px;
-            color: white;
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -222,8 +218,10 @@
 
         .nav-links {
             display: flex;
-            gap: 18px;
-            font-size: 14px;
+            gap: 10px;
+            font-size: 12px;
+            flex-wrap: nowrap;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -813,126 +811,162 @@
             color: #777;
         }
 
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: rgb(150, 100, 90);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            /* Header adjustments */
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
             }
 
+            .logo-area {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+
+            .logo-placeholder {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto;
+            }
+
+            .practice-name {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .tagline {
+                font-size: 11px;
+                text-align: center;
+            }
+
+            /* Show mobile menu toggle */
+            .mobile-menu-toggle {
+                display: block;
+                align-self: flex-end;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            /* Navigation - stack vertically on mobile */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex !important;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                border-bottom: 1px solid rgb(235, 225, 217);
+            }
+
+            /* Header buttons - full width on mobile */
+            .nav-container > div:last-child {
+                width: 100%;
+                align-items: center !important;
+            }
+
+            .nav-container > div:last-child a {
+                width: 90%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            /* Hero section */
             .hero-inner {
                 grid-template-columns: 1fr;
             }
 
             .hero h1 {
-                font-size: 26px;
+                font-size: 24px;
+                line-height: 1.3;
             }
 
+            .hero p {
+                font-size: 15px;
+            }
+
+            /* Service cards */
+            .services-grid,
+            .card-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px;
+            }
+
+            /* About section */
             .about-grid {
                 grid-template-columns: 1fr;
             }
 
+            /* Contact grid */
             .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            /* Sticky Mobile Call Button */
-        /* Sticky Mobile Buttons Container - COMPLETELY HIDDEN by default */
-        .mobile-buttons-container {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            height: 0 !important;
-            width: 0 !important;
-            overflow: hidden !important;
-            position: fixed;
-            bottom: -1000px !important;
-            left: -1000px !important;
-            pointer-events: none !important;
-            z-index: -1 !important;
-        }
-
-        /* Only show on small mobile phones (480px and below) */
-        @media screen and (max-width: 480px) {
-            .mobile-buttons-container {
-                display: flex !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                height: auto !important;
-                width: 100% !important;
-                bottom: 0 !important;
-                left: 0 !important;
-                right: 0 !important;
-                pointer-events: auto !important;
-                z-index: 9999 !important;
-                box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            /* Cards */
+            .card {
+                padding: 20px !important;
             }
-        }
 
-        /* Explicitly hide on tablets and desktops (481px and above) */
-        @media screen and (min-width: 481px) {
-            .mobile-buttons-container {
+            /* Section inner padding */
+            .section-inner {
+                padding: 0 15px;
+            }
+
+            /* Buttons in CTA sections */
+            section[style*="background-color: rgb(210, 152, 142)"] a {
+                width: 90%;
+                max-width: 300px;
+            }
+
+            /* Footer adjustments */
+            footer .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            /* Hide desktop-only elements */
+            .desktop-only {
                 display: none !important;
-                visibility: hidden !important;
-                opacity: 0 !important;
-                height: 0 !important;
-                width: 0 !important;
-                bottom: -1000px !important;
-                left: -1000px !important;
-                pointer-events: none !important;
             }
         }
 
-        /* Sticky Mobile Call Button */
-        .mobile-call-button {
-            flex: 1;
-            background: linear-gradient(135deg, rgb(210, 152, 142) 0%, rgb(180, 122, 112) 100%);
-            color: white;
-            text-align: center;
-            padding: 8px 12px;
-            font-size: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+        /* Tablet responsive (between mobile and desktop) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .nav-links {
+                gap: 8px;
+                font-size: 11px;
+            }
 
-        .mobile-call-button:hover {
-            background: linear-gradient(135deg, rgb(180, 122, 112) 0%, rgb(150, 92, 82) 100%);
-            transform: translateY(-2px);
-        }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
 
-        .mobile-call-button svg {
-            width: 12px;
-            height: 12px;
-            margin-right: 5px;
-            vertical-align: middle;
-        }
-
-        /* Sticky Mobile WhatsApp Button */
-        .mobile-whatsapp-button {
-            flex: 1;
-            background: #B8BD9F;
-            color: #4A4A4A;
-            text-align: center;
-            padding: 8px 12px;
-            font-size: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .mobile-whatsapp-button:hover {
-            background: #A3A88B;
-            transform: translateY(-2px);
-        }
-
-        .mobile-whatsapp-button svg {
-            width: 12px;
-            height: 12px;
-            margin-right: 5px;
-            vertical-align: middle;
+            .practice-name {
+                font-size: 22px;
+            }
         }
 
 
@@ -1202,6 +1236,7 @@
 <body>
     <header>
         <div class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">☰</button>
             <div class="logo-area">
                 <div class="logo-placeholder">
                     <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery - MIGS Specialist Manassas VA" width="400" height="400" loading="eager">
@@ -1212,22 +1247,24 @@
                 </div>
             </div>
             <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#insurance">Insurance</a>
-                <a href="#contact">Contact</a>
-                <a href="#documents">Documents</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html#documents">Documents</a>
+                <a href="health-blog.html">Health Blog</a>
+                <a href="faq.html">FAQ</a>
             </nav>
-            <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
-                <a href="mailto:dr.simabina@ariagyn.com?subject=Appointment%20Request%20-%20Aria%20Gynecology&body=APPOINTMENT%20REQUEST%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%0AName%3A%20%5BYour%20Full%20Name%5D%0A%0AEmail%3A%20%5BYour%20Email%20Address%5D%0A%0APhone%3A%20%5BYour%20Phone%20Number%5D%0A%0APreferred%20Date%2FTime%3A%20%5BYour%20Preference%5D%0A%0AReason%20for%20Visit%3A%20%5BOptional%5D%0A%0A%0APlease%20fill%20in%20your%20information%20above%20and%20send%20this%20email.%20We'll%20contact%20you%20within%2024%20hours%20to%20confirm%20your%20appointment." style="padding: 8px 20px; background-color: rgb(210, 152, 142); color: white; border: 2px solid rgb(210, 152, 142); border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; white-space: nowrap;" onmouseover="this.style.backgroundColor='rgb(190, 132, 122)'; this.style.borderColor='rgb(190, 132, 122)';" onmouseout="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.borderColor='rgb(210, 152, 142)';">Book Appointment</a>
-                <a href="tel:+17038648244" style="padding: 8px 20px; background-color: rgba(210, 152, 142, 0.1); color: rgb(150, 100, 90); border: 2px solid rgb(210, 152, 142); border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; white-space: nowrap;" onmouseover="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.color='white';" onmouseout="this.style.backgroundColor='rgba(210, 152, 142, 0.1)'; this.style.color='rgb(150, 100, 90)';">
-                    <svg style="display: inline-block; width: 14px; height: 14px; margin-right: 5px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-end;">
+                <a href="mailto:dr.simabina@ariagyn.com?subject=Appointment%20Request%20-%20Aria%20Gynecology&body=APPOINTMENT%20REQUEST%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%0AName%3A%20%5BYour%20Full%20Name%5D%0A%0AEmail%3A%20%5BYour%20Email%20Address%5D%0A%0APhone%3A%20%5BYour%20Phone%20Number%5D%0A%0APreferred%20Date%2FTime%3A%20%5BYour%20Preference%5D%0A%0AReason%20for%20Visit%3A%20%5BOptional%5D%0A%0A%0APlease%20fill%20in%20your%20information%20above%20and%20send%20this%20email.%20We'll%20contact%20you%20within%2024%20hours%20to%20confirm%20your%20appointment." style="padding: 6px 12px; background-color: rgb(210, 152, 142); color: white; border: 2px solid rgb(210, 152, 142); border-radius: 6px; font-weight: 600; font-size: 12px; text-decoration: none; transition: all 0.3s ease; white-space: nowrap;" onmouseover="this.style.backgroundColor='rgb(190, 132, 122)'; this.style.borderColor='rgb(190, 132, 122)';" onmouseout="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.borderColor='rgb(210, 152, 142)';">Book Appointment</a>
+                <a href="tel:+17038648244" style="padding: 6px 12px; background-color: rgba(210, 152, 142, 0.1); color: rgb(150, 100, 90); border: 2px solid rgb(210, 152, 142); border-radius: 6px; font-weight: 600; font-size: 12px; text-decoration: none; transition: all 0.3s ease; white-space: nowrap;" onmouseover="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.color='white';" onmouseout="this.style.backgroundColor='rgba(210, 152, 142, 0.1)'; this.style.color='rgb(150, 100, 90)';">
+                    <svg style="display: inline-block; width: 12px; height: 12px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     (703) 864-8244
                 </a>
-                <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="padding: 8px 20px; background-color: #B8BD9F; color: #4A4A4A; border: 2px solid #B8BD9F; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; white-space: nowrap;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F';" aria-label="Chat on WhatsApp">
-                    <svg style="display: inline-block; width: 14px; height: 14px; margin-right: 5px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; background-color: #B8BD9F; color: #4A4A4A; border: 2px solid #B8BD9F; border-radius: 6px; font-weight: 600; font-size: 12px; text-decoration: none; transition: all 0.3s ease; white-space: nowrap;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F';" aria-label="Chat on WhatsApp">
+                    <svg style="display: inline-block; width: 12px; height: 12px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
                     WhatsApp
@@ -1368,23 +1405,45 @@
         </div>
     </section>
 
-    <section style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
+    <section id="insurance" style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
         <div class="section-inner">
             <div style="color: white; font-size: 28px; margin-bottom: 20px; font-weight: bold;">Schedule Your Gynecology Appointment in Manassas, VA Today</div>
             <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" style="box-shadow: 0 8px 20px rgba(0,0,0,0.3); border-radius: 8px;" /></a>
             <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px; align-items: center;">
-                <a href="tel:+17038648244" style="display: inline-block; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 16px; padding: 12px 35px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='rgba(255,255,255,0.2)';">
-                    <svg style="display: inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="tel:+17038648244" style="display: inline-block; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 14px; padding: 10px 24px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='rgba(255,255,255,0.2)';">
+                    <svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     Call (703) 864-8244
                 </a>
-                <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #B8BD9F; color: #4A4A4A; border: 2px solid #B8BD9F; font-size: 16px; padding: 12px 35px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F';" aria-label="Chat on WhatsApp">
-                    <svg style="display: inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #B8BD9F; color: #4A4A4A; border: 2px solid #B8BD9F; font-size: 14px; padding: 10px 24px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F';" aria-label="Chat on WhatsApp">
+                    <svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
                     WhatsApp
                 </a>
+            </div>
+            
+            <!-- Insurance & Payment Information -->
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 2px solid rgba(255,255,255,0.3);">
+                <h3 style="color: white; font-size: 22px; margin-bottom: 15px; font-weight: bold;">Insurance & Payment Options</h3>
+                <p style="color: rgba(255,255,255,0.95); font-size: 16px; line-height: 1.6; margin-bottom: 20px;">We work with most major insurance carriers and verify your coverage for you. For uninsured patients or services not covered by insurance, we offer transparent self-pay cash packages and flexible third-party financing options for every budget.</p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px;">
+                    <span style="background-color: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 6px;"><img src="anthem-blue-cross-blue-shield-insurance-logo.png" alt="Anthem Blue Cross Blue Shield" width="100" height="50" loading="lazy" style="display: block;"></span>
+                    <span style="background-color: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 6px;"><img src="aetna-health-insurance-logo.png" alt="Aetna" width="100" height="50" loading="lazy" style="display: block;"></span>
+                    <span style="background-color: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 6px;"><img src="cigna-health-insurance-logo.png" alt="Cigna" width="100" height="50" loading="lazy" style="display: block;"></span>
+                    <span style="background-color: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 6px;"><img src="unitedhealthcare-insurance-logo.png" alt="UnitedHealthcare" width="100" height="50" loading="lazy" style="display: block;"></span>
+                    <span style="background-color: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 6px;"><img src="medicare-insurance-logo-usa.png" alt="Medicare" width="100" height="50" loading="lazy" style="display: block;"></span>
+                    <span style="background-color: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 6px;"><img src="medicaid-insurance-logo-usa.png" alt="Medicaid" width="100" height="50" loading="lazy" style="display: block;"></span>
+                    <span style="background-color: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 6px;"><img src="humana-health-insurance-logo.png" alt="Humana" width="100" height="50" loading="lazy" style="display: block;"></span>
+                    <span style="background-color: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 6px; color: #666; font-weight: 600; display: flex; align-items: center;">And more</span>
+                </div>
+                
+                <div style="background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px; margin-top: 25px;">
+                    <h4 style="color: white; font-size: 18px; margin-bottom: 12px; font-weight: bold;">New Patient Information</h4>
+                    <p style="color: rgba(255,255,255,0.95); font-size: 15px; line-height: 1.6; margin: 0;">We welcome new patients! Please schedule your appointment through our secure patient portal and complete all required forms prior to your visit, including your appointment type selection. On the day of your appointment, bring your insurance card, photo ID, and a list of current medications. Please arrive 15 minutes early to complete any remaining paperwork. We look forward to caring for you.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1560,31 +1619,6 @@
         </div>
     </section>
 
-    <section id="insurance">
-        <div class="section-inner">
-            <h2>Insurance & Payment Options in Manassas</h2>
-            <p class="section-subtitle">We accept most major insurance plans</p>
-            <div class="card">
-                <h3>Accepted Insurance Providers</h3>
-                <p>We work with most major insurance carriers and verify your coverage for you. For uninsured patients or services not covered by insurance, we offer transparent self-pay cash packages and flexible third-party financing options for every budget.</p>
-                <div class="tag-row">
-                    <span class="tag"><img src="anthem-blue-cross-blue-shield-insurance-logo.png" alt="Anthem Blue Cross Blue Shield" width="120" height="60" loading="lazy"></span>
-                    <span class="tag"><img src="aetna-health-insurance-logo.png" alt="Aetna" width="120" height="60" loading="lazy"></span>
-                    <span class="tag"><img src="cigna-health-insurance-logo.png" alt="Cigna" width="120" height="60" loading="lazy"></span>
-                    <span class="tag"><img src="unitedhealthcare-insurance-logo.png" alt="UnitedHealthcare" width="120" height="60" loading="lazy"></span>
-                    <span class="tag"><img src="medicare-insurance-logo-usa.png" alt="Medicare" width="120" height="60" loading="lazy"></span>
-                    <span class="tag"><img src="medicaid-insurance-logo-usa.png" alt="Medicaid" width="120" height="60" loading="lazy"></span>
-                    <span class="tag"><img src="humana-health-insurance-logo.png" alt="Humana" width="120" height="60" loading="lazy"></span>
-                    <span class="tag">And more</span>
-                </div>
-            </div>
-            <div class="card" style="margin-top: 20px;">
-                <h3>New Patient Information</h3>
-                <p>We welcome new patients! Please schedule your appointment through our secure patient portal and complete all required forms prior to your visit, including your appointment type selection. On the day of your appointment, bring your insurance card, photo ID, and a list of current medications. Please arrive 15 minutes early to complete any remaining paperwork. We look forward to caring for you.</p>
-            </div>
-        </div>
-    </section>
-
     <section id="testimonials" style="background-color: #ffffff;">
         <div class="section-inner">
             <h2>Patient Testimonials - Real Reviews from Northern Virginia Women</h2>
@@ -1711,14 +1745,14 @@
             <div style="color: white; font-size: 28px; margin-bottom: 20px; font-weight: bold;">Book your appointment with your trusted gynecologist in Manassas, VA</div>
             <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" style="box-shadow: 0 8px 20px rgba(0,0,0,0.3); border-radius: 8px;" /></a>
             <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px; align-items: center;">
-                <a href="tel:+17038648244" style="display: inline-block; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 16px; padding: 12px 35px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='rgba(255,255,255,0.2)';">
-                    <svg style="display: inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="tel:+17038648244" style="display: inline-block; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 14px; padding: 10px 24px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='rgba(255,255,255,0.2)';">
+                    <svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     Call (703) 864-8244
                 </a>
-                <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #B8BD9F; color: #4A4A4A; border: 2px solid #B8BD9F; font-size: 16px; padding: 12px 35px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F';" aria-label="Chat on WhatsApp">
-                    <svg style="display: inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #B8BD9F; color: #4A4A4A; border: 2px solid #B8BD9F; font-size: 14px; padding: 10px 24px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F';" aria-label="Chat on WhatsApp">
+                    <svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
                     WhatsApp
@@ -1727,518 +1761,6 @@
         </div>
     </section>
 
-    <section id="blog" style="background-color: #ffffff; padding: 60px 20px;">
-        <div class="section-inner">
-            <h2 style="text-align: center; font-size: 32px; color: rgb(150, 100, 90); margin-bottom: 15px;">Women's Health Blog - Expert Gynecology Insights from Aria Gynecology</h2>
-            <p class="section-subtitle" style="text-align: center;">Evidence-based women's health information you can trust</p>
-            
-            <div class="card" style="max-width: 900px; margin: 30px auto; padding: 40px; cursor: default;">
-                <h3 style="color: rgb(210, 152, 142); font-size: 26px; margin-bottom: 20px;">Are Office Gynecology Procedures Like Hysteroscopy Painful?</h3>
-                
-                <p style="margin-bottom: 15px;">If your doctor has recommended an in-office procedure such as a <a href="#services" onclick="setTimeout(function(){ document.querySelector('.service-link:nth-of-type(4)').click(); }, 500); return false;" style="color: rgb(210, 152, 142); font-weight: bold; text-decoration: underline;">hysteroscopy</a>, polyp removal, or biopsy, it's completely normal to wonder:</p>
-                
-                <blockquote style="padding-left: 20px; margin: 20px 0; font-style: italic; color: #666;">
-                    <strong>"Is this going to hurt?"</strong>
-                </blockquote>
-                
-                <p style="margin-bottom: 15px;"><strong>The short answer:</strong> most women tolerate office gynecologic procedures very well, and there are several proven strategies to keep you as comfortable as possible — including options like nitrous oxide ("laughing gas") in some practices.<sup>1–4</sup></p>
-                
-                <p style="margin-bottom: 20px;">This article explains:</p>
-                <ul style="margin-bottom: 25px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">What office hysteroscopy is</li>
-                    <li style="margin-bottom: 8px;">How women typically describe the pain</li>
-                    <li style="margin-bottom: 8px;">Evidence-based pain management strategies</li>
-                    <li style="margin-bottom: 8px;">What research shows about nitrous oxide for gynecologic procedures</li>
-                </ul>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">What Is Office Hysteroscopy?</h4>
-                
-                <p style="margin-bottom: 15px;">A <a href="#services" onclick="setTimeout(function(){ document.querySelector('.service-link:nth-of-type(4)').click(); }, 500); return false;" style="color: rgb(210, 152, 142); font-weight: bold; text-decoration: underline;">hysteroscopy</a> is a procedure where a thin camera (hysteroscope) is gently passed through the vagina and cervix into the uterus so your doctor can see the uterine lining. It helps diagnose and sometimes treat issues like:</p>
-                
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;"><a href="#services" onclick="setTimeout(function(){ document.querySelector('.service-link:nth-of-type(2)').click(); }, 500); return false;" style="color: rgb(210, 152, 142); font-weight: bold; text-decoration: underline;">Abnormal uterine bleeding</a></li>
-                    <li style="margin-bottom: 8px;">Polyps or small <a href="#services" onclick="setTimeout(function(){ document.querySelector('.service-link:nth-of-type(2)').click(); }, 500); return false;" style="color: rgb(210, 152, 142); font-weight: bold; text-decoration: underline;">fibroids</a> in the cavity</li>
-                    <li style="margin-bottom: 8px;">Possible causes of infertility or recurrent miscarriage</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">With modern, small-diameter scopes and the right techniques, <a href="#services" onclick="setTimeout(function(){ document.querySelector('.service-link:nth-of-type(4)').click(); }, 500); return false;" style="color: rgb(210, 152, 142); font-weight: bold; text-decoration: underline;">hysteroscopy</a> is often safely performed in the office instead of the operating room. This can help <strong>avoid general anesthesia</strong>, reduce costs related to hospital facility and anesthesia fees, and let you go home more quickly.<sup>1, 3, 5, 6</sup></p>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Is Office Hysteroscopy Painful?</h4>
-                
-                <p style="margin-bottom: 15px;">Pain perception is very individual. Some women report only mild cramping, while others describe moderate discomfort, especially at key moments (passing the cervix, distending the uterus with fluid).</p>
-                
-                <p style="margin-bottom: 15px;"><strong>Research and large reviews show that:</strong></p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;"><strong>Most women tolerate office hysteroscopy well</strong>, and overall procedure completion rates are above 90% in many series.<sup>1, 3, 4</sup></li>
-                    <li style="margin-bottom: 8px;">Pain tends to be <strong>brief and concentrated</strong> during the few minutes when the hysteroscope passes through the cervix and the uterus is being examined.<sup>1, 4</sup></li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">The goal of a good practice is <em>not</em> to ask you to "tough it out," but to use <strong>multiple tools to keep you as comfortable as possible</strong>.<sup>1, 2, 7</sup></p>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">How Do We Reduce Pain During Office Gynecology Procedures?</h4>
-                
-                <p style="margin-bottom: 15px;">Modern guidelines and research support a <strong>multi-layered approach</strong> to pain management for in-office uterine and cervical procedures (like <a href="#services" onclick="setTimeout(function(){ document.querySelector('.service-link:nth-of-type(4)').click(); }, 500); return false;" style="color: rgb(210, 152, 142); font-weight: bold; text-decoration: underline;">hysteroscopy</a>, endometrial biopsy, or LEEP).<sup>1, 2, 7</sup></p>
-                
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">1. Oral Pain Medication (NSAIDs)</h5>
-                
-                <p style="margin-bottom: 15px;">Studies and systematic reviews show that taking a non-steroidal anti-inflammatory drug (NSAID, such as ibuprofen or naproxen) before office hysteroscopy can:<sup>2–4, 8</sup></p>
-                
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Reduce pain during and after the procedure</li>
-                    <li style="margin-bottom: 8px;">Help with cramping related to uterine distension and manipulation</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">Guidelines from professional societies recommend <strong>oral NSAIDs about 30–60 minutes before outpatient/office hysteroscopy</strong> for women without contraindications (such as certain kidney, stomach, or bleeding conditions).<sup>2, 4, 8</sup></p>
-                
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">2. Local Anesthetic Around the Cervix</h5>
-                
-                <p style="margin-bottom: 15px;">Lidocaine (a local anesthetic) can be given:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">As a <strong>paracervical block</strong> (small injections near the cervix)</li>
-                    <li style="margin-bottom: 8px;">As <strong>intracervical or topical anesthetic</strong></li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">Randomized trials show that paracervical block and other local anesthetic techniques <strong>significantly reduce pain</strong>, especially at the time of cervical manipulation, compared with no local anesthesia.<sup>4, 7, 9, 10</sup></p>
-                
-                <p style="margin-bottom: 15px;">Local anesthetic injections can be especially helpful for:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Women who are very anxious about pain</li>
-                    <li style="margin-bottom: 8px;">Patients with a history of difficult pelvic exams</li>
-                    <li style="margin-bottom: 8px;">More complex or longer procedures</li>
-                </ul>
-                
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">3. Cervical Preparation (Cervical "Priming") for Selected Patients</h5>
-                
-                <p style="margin-bottom: 15px;">In some patients — for example, certain premenopausal women, nulliparous patients, or those undergoing more extensive operative hysteroscopy — medications like <strong>misoprostol</strong> may be given beforehand to gently soften or dilate the cervix.</p>
-                
-                <p style="margin-bottom: 15px;">Meta-analyses and randomized controlled trials show that misoprostol before hysteroscopy can:<sup>5, 6, 11–13</sup></p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Reduce the need for forceful mechanical dilation</li>
-                    <li style="margin-bottom: 8px;">Increase cervical width and ease of entry</li>
-                    <li style="margin-bottom: 8px;">Decrease certain hysteroscopy-related complications such as cervical laceration and false passage</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">However, misoprostol can cause cramping, spotting, or temporary side effects, so its use is individualized based on your age, parity, and type of procedure.</p>
-                
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">4. Gentle Technique & Modern Equipment</h5>
-                
-                <p style="margin-bottom: 15px;">A large part of pain prevention comes from <strong>how the procedure is done</strong>. Reviews and best-practice guidelines emphasize:<sup>1, 3, 4, 14</sup></p>
-                
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Using <strong>small-diameter scopes</strong> and mini instruments</li>
-                    <li style="margin-bottom: 8px;">Using the <strong>vaginoscopic approach</strong> (entering through the vagina without speculum or tenaculum when possible)</li>
-                    <li style="margin-bottom: 8px;">Minimizing or avoiding tenaculum use on the cervix</li>
-                    <li style="margin-bottom: 8px;">Maintaining good communication, pausing when needed, and using warm distension fluid</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">These technique-related strategies significantly improve comfort and patient willingness to undergo office-based hysteroscopy again in the future.<sup>1, 4</sup></p>
-                
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">5. Non-Drug Comfort Measures</h5>
-                
-                <p style="margin-bottom: 15px;">Non-pharmacologic strategies are also important and evidence-supported:<sup>1, 3, 4</sup></p>
-                
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Deep, paced breathing</li>
-                    <li style="margin-bottom: 8px;">A calm, supportive environment</li>
-                    <li style="margin-bottom: 8px;">Clear explanation of what will happen and when</li>
-                    <li style="margin-bottom: 8px;">Option to listen to music or use distraction techniques</li>
-                    <li style="margin-bottom: 8px;">Staff who check in with you continuously and respond quickly if you need a pause</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">Systematic reviews of outpatient hysteroscopy highlight that both <strong>pharmacologic and non-pharmacologic</strong> approaches matter, and the best plan is tailored to each woman.<sup>1–4</sup></p>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Where Does Nitrous Oxide ("Laughing Gas") Fit In?</h4>
-                
-                <p style="margin-bottom: 15px;">Nitrous oxide (N<sub>2</sub>O) — often delivered as a <strong>nitrous oxide/oxygen mix</strong> inhaled through a mask or mouthpiece — has been used safely for decades in dentistry, pediatrics, and labor & delivery.</p>
-                
-                <p style="margin-bottom: 15px;">For in-office gynecology, nitrous oxide can:<sup>7, 15–17</sup></p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Reduce pain intensity</li>
-                    <li style="margin-bottom: 8px;">Lower anxiety</li>
-                    <li style="margin-bottom: 8px;">Create a sense of relaxation or "taking the edge off"</li>
-                    <li style="margin-bottom: 8px;">Wear off quickly within minutes of stopping inhalation</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">Importantly, nitrous oxide for office procedures is <strong>not</strong> the same as general anesthesia:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">You are awake and able to respond</li>
-                    <li style="margin-bottom: 8px;">You breathe on your own</li>
-                    <li style="margin-bottom: 8px;">IV sedation is usually not required</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">From a safety standpoint, organizations like <strong>CDC/NIOSH</strong> have issued guidance to protect healthcare workers from long-term occupational exposure to nitrous oxide by recommending ventilation and scavenging systems in offices that use it.<sup>18–20</sup> For patients, when administered in a controlled medical setting with appropriate equipment, nitrous oxide is considered a well-established, generally safe analgesic and anxiolytic option.</p>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">What Does the Research Say About Nitrous Oxide for Office Hysteroscopy & Gyn Procedures?</h4>
-                
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">1. Nitrous Oxide vs Oral Sedation</h5>
-                
-                <p style="margin-bottom: 15px;">A randomized trial of women undergoing in-office hysteroscopic sterilization compared inhaled nitrous oxide/oxygen to standard oral sedation. Nitrous oxide:<sup>15</sup></p>
-                
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Significantly lowered pain scores</li>
-                    <li style="margin-bottom: 8px;">Reduced maximum pain ratings compared with oral sedation</li>
-                    <li style="margin-bottom: 8px;">Was rated highly acceptable by patients, with the majority saying they would choose it again</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;"><strong>Conclusion:</strong> Nitrous oxide decreased pain compared with standard oral sedation and was viewed favorably by patients.</p>
-                
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">2. Nitrous Oxide vs No Analgesia vs Lidocaine</h5>
-                
-                <p style="margin-bottom: 15px;">A 2021 randomized clinical trial compared three groups during in-office hysteroscopy:<sup>16, 17</sup></p>
-                
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Inhaled nitrous oxide/oxygen</li>
-                    <li style="margin-bottom: 8px;">1% lidocaine paracervical block</li>
-                    <li style="margin-bottom: 8px;">No analgesia</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">The results showed:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Both <strong>nitrous oxide and lidocaine</strong> significantly reduced pain compared with no analgesia</li>
-                    <li style="margin-bottom: 8px;">Pain scores were <strong>similar between nitrous oxide and lidocaine</strong></li>
-                    <li style="margin-bottom: 8px;">Nitrous oxide had <strong>fewer adverse events</strong> and was easier to administer than injections</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;"><strong>Conclusion:</strong> Nitrous oxide offered analgesia comparable to paracervical lidocaine with a favorable safety and tolerability profile.</p>
-                
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">3. Nitrous Oxide vs Pericervical Analgesia in Operative Hysteroscopy</h5>
-                
-                <p style="margin-bottom: 15px;">More recent clinical work (including randomized pilot studies) has compared nitrous oxide to pericervical anesthesia for <strong>more complex operative hysteroscopy</strong> using mini-resectoscopes.<sup>21</sup></p>
-                
-                <p style="margin-bottom: 15px;">Findings suggest that both methods:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Provide clinically useful pain control</li>
-                    <li style="margin-bottom: 8px;">Allow complex procedures to be safely performed in the office</li>
-                    <li style="margin-bottom: 8px;">Reduce the need to move patients to the operating room for many interventions</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">In some series, pericervical injections provided slightly stronger analgesia for the most complex steps, but nitrous oxide still performed well and offered a non-injection alternative.</p>
-                
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">4. Take-Home Message from Systematic Reviews</h5>
-                
-                <p style="margin-bottom: 15px;">Recent systematic reviews and guidelines on pain management in office hysteroscopy conclude that:<sup>1–4, 7</sup></p>
-                
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Multiple strategies (NSAIDs, local anesthetic, cervical preparation, nitrous oxide, and non-drug methods) are effective and generally safe.</li>
-                    <li style="margin-bottom: 8px;">Good pain control improves patient satisfaction, reduces procedure failure due to pain, and increases willingness to undergo repeat procedures if needed.</li>
-                    <li style="margin-bottom: 8px;">Nitrous oxide is an increasingly recognized, evidence-supported option within the broader pain-management toolkit for office gynecology.</li>
-                </ul>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">What Does Nitrous Oxide Feel Like?</h4>
-                
-                <p style="margin-bottom: 15px;">Patients often describe nitrous oxide as:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Feeling "lighter" or "a little floaty"</li>
-                    <li style="margin-bottom: 8px;">Less focused on the pain or more "detached" from it</li>
-                    <li style="margin-bottom: 8px;">More relaxed and less anxious</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">Common, usually mild and short-lived side effects include:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Lightheadedness</li>
-                    <li style="margin-bottom: 8px;">Nausea</li>
-                    <li style="margin-bottom: 8px;">A floating or tingling sensation</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">Because nitrous oxide <strong>wears off quickly</strong> once you stop inhaling it, most patients can walk out of the office shortly after the procedure and resume normal activities according to their doctor's instructions.<sup>15–17</sup></p>
-                
-                <p style="margin-bottom: 15px;">Nitrous oxide is not appropriate for everyone (for example, certain lung conditions, vitamin B12 deficiency, or early pregnancy may be relative contraindications). Your gynecologist will review your health history to determine whether it is a safe option for you.</p>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">So… Will My Office Hysteroscopy Be Painful?</h4>
-                
-                <p style="margin-bottom: 15px;">Every woman's body and experience are different, but research and clinical experience suggest:<sup>1–4, 7</sup></p>
-                
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Many women describe the procedure as <strong>uncomfortable but tolerable</strong>, similar to strong menstrual cramps that last a few minutes.</li>
-                    <li style="margin-bottom: 8px;">With <strong>good preparation, gentle technique, and evidence-based pain management</strong>, most patients can successfully have hysteroscopy and other minor gynecologic procedures in the office.</li>
-                    <li style="margin-bottom: 8px;">Options like <strong>NSAIDs, local anesthetics, and nitrous oxide</strong> can substantially reduce pain and anxiety and make the experience much more comfortable.</li>
-                </ul>
-                
-                <p style="margin-bottom: 15px;">The most important part is <strong>personalizing the plan</strong>: your prior experiences, anxiety level, medical history, and the complexity of the procedure all matter.</p>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">A Final Word</h4>
-                
-                <p style="margin-bottom: 15px;">Office gynecologic procedures like <a href="#services" onclick="setTimeout(function(){ document.querySelector('.service-link:nth-of-type(4)').click(); }, 500); return false;" style="color: rgb(210, 152, 142); font-weight: bold; text-decoration: underline;">hysteroscopy</a> are powerful tools for diagnosing and treating many conditions <strong>without a hospital stay or general anesthesia</strong>. In a health system where facility and anesthesia charges are a major driver of costs,<sup>22</sup> office-based care can sometimes offer a more convenient and potentially more affordable option when clinically appropriate.</p>
-                
-                <p style="margin-bottom: 15px;">With modern technology and <strong>evidence-based pain control strategies</strong> — including options like nitrous oxide — these procedures are safer, more comfortable, and more accessible than ever.</p>
-                
-                <p style="margin-bottom: 15px;">If you've been told you need an office procedure and you're worried about pain, you're not alone — and you don't have to stay in the dark. A good gynecology practice will listen, explain, and support you every step of the way.</p>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">References</h4>
-                
-                <ol style="padding-left: 25px; font-size: 13px; color: #666; line-height: 1.8;">
-                    <li style="margin-bottom: 8px;">Buzzaccarini G, et al. Pain Management During Office Hysteroscopy. <em>J Clin Med.</em> 2022.</li>
-                    <li style="margin-bottom: 8px;">De Silva PM, et al. Analgesia for Office Hysteroscopy: Systematic Review and Meta-analysis. <em>J Minim Invasive Gynecol.</em> 2020.</li>
-                    <li style="margin-bottom: 8px;">Ahmad G, et al. Pain Relief for Outpatient Hysteroscopy. <em>Cochrane Database Syst Rev.</em> 2017.</li>
-                    <li style="margin-bottom: 8px;">Readman E, Maher P. Pain Relief and Outpatient Hysteroscopy: A Literature Review. <em>J Am Assoc Gynecol Laparosc.</em> 2004.</li>
-                    <li style="margin-bottom: 8px;">El-Mazny A, et al. Vaginal Misoprostol for Cervical Priming Before Diagnostic Outpatient Hysteroscopy. <em>Fertil Steril.</em> 2011.</li>
-                    <li style="margin-bottom: 8px;">Hua Y, et al. Use of Misoprostol for Cervical Priming Prior to Hysteroscopy: A Systematic Review and Meta-analysis. <em>Drug Des Devel Ther.</em> 2016.</li>
-                    <li style="margin-bottom: 8px;">American College of Obstetricians and Gynecologists (ACOG). Pain Management for In-Office Uterine and Cervical Procedures. Clinical Consensus. 2025.</li>
-                    <li style="margin-bottom: 8px;">Law JYP, et al. Pain Relief in Hysteroscopy. <em>Hong Kong J Gynaecol Obstet Midwifery.</em> 2023.</li>
-                    <li style="margin-bottom: 8px;">Chudnoff S, et al. Paracervical Block Efficacy in Office Hysteroscopic Sterilization. <em>Obstet Gynecol.</em> 2010.</li>
-                    <li style="margin-bottom: 8px;">Barel O, et al. Addition of Lidocaine to the Distension Medium in Outpatient Hysteroscopy. <em>J Minim Invasive Gynecol.</em> 2021.</li>
-                    <li style="margin-bottom: 8px;">Abdelhakim AM, et al. Oral vs Vaginal Misoprostol for Cervical Priming Before Hysteroscopy. <em>Eur J Obstet Gynecol Reprod Biol.</em> 2019.</li>
-                    <li style="margin-bottom: 8px;">Karimzadeh A, et al. Assessing the Efficacy and Safety of Misoprostol Prior to Hysteroscopy. <em>J Clin Med.</em> 2024.</li>
-                    <li style="margin-bottom: 8px;">Salah N, et al. Misoprostol Before Hysteroscopy in Nulliparous Women: Systematic Review and Meta-analysis. <em>BMC Pregnancy Childbirth.</em> 2024.</li>
-                    <li style="margin-bottom: 8px;">De Silva N, et al. Outpatient Hysteroscopy: BJOG Guideline. <em>BJOG.</em> 2024.</li>
-                    <li style="margin-bottom: 8px;">Schneider EN, et al. Nitrous Oxide/Oxygen for Pain Management During In-Office Hysteroscopic Sterilization. <em>Contraception.</em> 2017.</li>
-                    <li style="margin-bottom: 8px;">Solano Calvo JA, et al. Nitrous Oxide vs Lidocaine vs No Analgesic for In-Office Hysteroscopy: Randomised Clinical Trial. <em>BJOG.</em> 2021.</li>
-                    <li style="margin-bottom: 8px;">Del Valle Rubido C, et al. Inhalation Analgesia With Nitrous Oxide Versus Other Methods in Office Hysteroscopy. <em>J Minim Invasive Gynecol.</em> 2015.</li>
-                    <li style="margin-bottom: 8px;">NIOSH (CDC). Nitrous Oxide. NIOSH Pocket Guide to Chemical Hazards & related advisories.</li>
-                    <li style="margin-bottom: 8px;">CDC/NIOSH. Nitrous Oxide Continues to Threaten Health Care Workers. NIOSH Update. 1994.</li>
-                    <li style="margin-bottom: 8px;">Beaucham C, et al. Evaluation of Nitrous Oxide Exposure at a Dental Center. NIOSH Health Hazard Evaluation. 2017.</li>
-                    <li style="margin-bottom: 8px;">Messina A, et al. Comparison of Efficacy Between Nitrous Oxide Analgesia and Pericervical Analgesia in Office Operative Hysteroscopy: Randomized Pilot Study. 2024.</li>
-                    <li style="margin-bottom: 8px;">Peterson–KFF Health System Tracker. How Costly Are Common Health Services in the United States? 2020.</li>
-                </ol>
-                
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-                
-                <p style="font-size: 12px; color: #777; margin-top: 25px; font-style: italic;"><strong>Medical Disclaimer:</strong> This blog is for educational purposes only and does not replace personalized medical advice, diagnosis, or treatment. Always consult your physician or qualified healthcare provider about your specific situation and the best pain-management options for you.</p>
-                
-                <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)';">
-                    <h4 style="color: rgb(210, 152, 142); font-size: 18px; margin-bottom: 10px; text-align: center;">Explore All Our Services</h4>
-                    <p style="text-align: center; margin-bottom: 15px; color: #555;">Learn more about our complete range of gynecologic care and surgical services.</p>
-                    <div style="text-align: center;">
-                        <a href="#office-procedures" style="display: inline-block; background-color: rgb(210, 152, 142); color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 3px solid rgb(210, 152, 142); transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='white'; this.style.color='rgb(210, 152, 142)';" onmouseout="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.color='white';">View Our Office Procedure Services</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECOND BLOG POST: PERIMENOPAUSE -->
-            <div class="card" style="max-width: 900px; margin: 50px auto 30px; padding: 40px; cursor: default;">
-                <h3 style="color: rgb(210, 152, 142); font-size: 26px; margin-bottom: 20px;">"Is This Perimenopause… or Something Else?"</h3>
-                <h4 style="color: rgb(150, 100, 90); font-size: 20px; margin-bottom: 25px;">The Most Common Questions Women Ask About Perimenopause—Answered by a Gynecologist</h4>
-
-                <p style="margin-bottom: 15px;">If you've found yourself wondering:</p>
-                <ul style="margin-bottom: 25px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;"><em>"Why are my periods suddenly irregular?"</em></li>
-                    <li style="margin-bottom: 8px;"><em>"Why can't I sleep anymore?"</em></li>
-                    <li style="margin-bottom: 8px;"><em>"Why do I feel anxious, moody, bloated, exhausted, and not like myself?"</em></li>
-                    <li style="margin-bottom: 8px;"><em>"Am I too young for menopause?"</em></li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">You're not alone—and you're asking exactly the <strong>right questions</strong>.</p>
-
-                <p style="margin-bottom: 15px;">For millions of women, these changes mark the beginning of a powerful and often misunderstood transition called <strong><a href="#services" onclick="setTimeout(function(){ document.querySelector('.service-link:nth-of-type(5)').click(); }, 500); return false;" style="color: rgb(210, 152, 142); font-weight: bold; text-decoration: underline;">perimenopause</a></strong>. Many women feel confused, dismissed, or told "everything is normal," when in reality, their bodies are undergoing real biologic change that deserves understanding, validation, and medical care.</p>
-
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">What <em>Is</em> Perimenopause—Scientifically?</h4>
-
-                <p style="margin-bottom: 15px;"><strong>Perimenopause</strong> is the hormonal transition phase that occurs <strong>before menopause</strong>. It commonly begins in a woman's <strong>late 30s to early 50s</strong> and can last <strong>2 to 8 years</strong> before menstrual periods fully stop.<sup>1, 2</sup></p>
-
-                <p style="margin-bottom: 15px;">The average age of menopause in the United States is <strong>51 years</strong>, but the transition leading up to it varies widely between individuals.<sup>1</sup></p>
-
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">What's happening in your body?</h5>
-
-                <p style="margin-bottom: 15px;">During this phase, the ovaries produce:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;"><strong>Unpredictable estrogen</strong></li>
-                    <li style="margin-bottom: 8px;"><strong>Fluctuating progesterone</strong></li>
-                    <li style="margin-bottom: 8px;"><strong>Inconsistent ovulation</strong></li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">These shifts affect multiple systems at once:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Brain (mood, sleep, cognition)</li>
-                    <li style="margin-bottom: 8px;">Uterus (bleeding patterns)</li>
-                    <li style="margin-bottom: 8px;">Metabolism (weight, insulin sensitivity)</li>
-                    <li style="margin-bottom: 8px;">Vagina & bladder (dryness, urinary symptoms)</li>
-                    <li style="margin-bottom: 8px;">Bones & heart (long-term disease risk)<sup>3, 4</sup></li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">This is why symptoms can feel <strong>scattered, intense, and confusing</strong>—but they are biologically real.</p>
-
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">The Top Questions Women Ask About Perimenopause</h4>
-
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">1. "Why Are My Periods So Irregular Now?"</h5>
-
-                <p style="margin-bottom: 15px;">As ovulation becomes inconsistent, progesterone drops while estrogen fluctuates. This can cause:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Heavy or flooding periods</li>
-                    <li style="margin-bottom: 8px;">Spotting between cycles</li>
-                    <li style="margin-bottom: 8px;">Shortened cycles</li>
-                    <li style="margin-bottom: 8px;">Skipped cycles</li>
-                    <li style="margin-bottom: 8px;">Prolonged or stop-start bleeding</li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">Large cohort studies show menstrual irregularity is one of the <strong>earliest and most common signs</strong> of the menopause transition.<sup>5</sup></p>
-
-                <p style="margin-bottom: 15px;">However, heavy or persistent bleeding should always be evaluated to rule out structural or hormonal pathology.</p>
-
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">2. "Why Am I Suddenly Anxious, Moody, or Depressed?"</h5>
-
-                <p style="margin-bottom: 15px;">Estrogen regulates serotonin and dopamine—neurotransmitters responsible for mood stability. When estrogen fluctuates, women commonly experience:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Anxiety</li>
-                    <li style="margin-bottom: 8px;">Mood swings</li>
-                    <li style="margin-bottom: 8px;">Depression</li>
-                    <li style="margin-bottom: 8px;">Brain fog</li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">During midlife, the risk of <strong>new-onset mood disorders increases</strong>, independent of prior psychiatric history.<sup>6</sup></p>
-
-                <p style="margin-bottom: 15px;">According to national survey data, nearly <strong>28% of U.S. women ages 18–64</strong> rate their mental health as fair or poor, with higher burdens in the perimenopausal range.<sup>7</sup></p>
-
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">3. "Why Am I So Tired Even When I Sleep?"</h5>
-
-                <p style="margin-bottom: 15px;">Sleep disruption affects <strong>40–60% of women during perimenopause</strong>.<sup>8</sup></p>
-
-                <p style="margin-bottom: 15px;">CDC data show that <strong>56% of women aged 40–59 sleep fewer than 7 hours per night</strong>, compared with only about <strong>33% of younger women</strong>.<sup>9</sup></p>
-
-                <p style="margin-bottom: 15px;">Common contributors include:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Night sweats</li>
-                    <li style="margin-bottom: 8px;">Circadian rhythm disruption</li>
-                    <li style="margin-bottom: 8px;">Anxiety and cortisol dysregulation</li>
-                    <li style="margin-bottom: 8px;">Pain and urinary symptoms</li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">Chronic sleep deprivation worsens cardiovascular risk, mood disorders, and metabolic disease.</p>
-
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">4. "Why Is My Weight Changing Even Though My Habits Haven't?"</h5>
-
-                <p style="margin-bottom: 15px;">Hormonal decline alters:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Insulin sensitivity</li>
-                    <li style="margin-bottom: 8px;">Fat distribution</li>
-                    <li style="margin-bottom: 8px;">Muscle mass</li>
-                    <li style="margin-bottom: 8px;">Basal metabolic rate</li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">Multiple population-level studies confirm that <strong>abdominal fat accumulation increases significantly during the menopause transition</strong>, even without lifestyle changes.<sup>10</sup></p>
-
-                <p style="margin-bottom: 15px;">This is a biologic shift—not a willpower failure.</p>
-
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">5. "Why Does Sex Feel Different or Uncomfortable Now?"</h5>
-
-                <p style="margin-bottom: 15px;">Estrogen maintains the thickness, elasticity, and blood flow of vaginal tissue. Its loss leads to:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Vaginal dryness</li>
-                    <li style="margin-bottom: 8px;">Burning or irritation</li>
-                    <li style="margin-bottom: 8px;">Pain with intercourse</li>
-                    <li style="margin-bottom: 8px;">Urinary urgency and infections</li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">This constellation is known as <strong>Genitourinary Syndrome of Menopause (GSM)</strong>, which affects <strong>over 50% of postmenopausal women</strong>, yet remains severely under-treated.<sup>4, 11</sup></p>
-
-                <h5 style="color: rgb(150, 100, 90); font-size: 18px; margin-top: 20px; margin-bottom: 10px;">6. "Are Hot Flashes Normal—and How Long Will They Last?"</h5>
-
-                <p style="margin-bottom: 15px;">Hot flashes and night sweats (vasomotor symptoms):</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Affect <strong>75–80% of women</strong> during the menopause transition<sup>12</sup></li>
-                    <li style="margin-bottom: 8px;">Persist for an average of <strong>7–10 years</strong> in many women<sup>13</sup></li>
-                    <li style="margin-bottom: 8px;">Yet only about <strong>25% of symptomatic women receive medical treatment</strong><sup>12</sup></li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">These symptoms significantly impair sleep, work productivity, and quality of life.</p>
-
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">How Is Perimenopause Diagnosed?</h4>
-
-                <p style="margin-bottom: 15px;">There is no single diagnostic blood test.</p>
-
-                <p style="margin-bottom: 15px;">Diagnosis is based on:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;">Symptom pattern</li>
-                    <li style="margin-bottom: 8px;">Menstrual history</li>
-                    <li style="margin-bottom: 8px;">Risk assessment</li>
-                    <li style="margin-bottom: 8px;">Targeted hormone labs (when clinically helpful)</li>
-                    <li style="margin-bottom: 8px;">Pelvic imaging for abnormal bleeding</li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">Major organizations emphasize <a href="#services" onclick="setTimeout(function(){ document.querySelector('.service-link:nth-of-type(5)').click(); }, 500); return false;" style="color: rgb(210, 152, 142); font-weight: bold; text-decoration: underline;">menopause</a> as a <strong>clinical transition</strong>, not a single laboratory threshold.<sup>1, 3</sup></p>
-
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">How Is Perimenopause Managed?</h4>
-
-                <p style="margin-bottom: 15px;">Evidence-based management may include:</p>
-                <ul style="margin-bottom: 20px; padding-left: 25px;">
-                    <li style="margin-bottom: 8px;"><strong>Hormone therapy</strong> (for appropriate candidates)</li>
-                    <li style="margin-bottom: 8px;"><strong>Non-hormonal medications</strong> for vasomotor symptoms and mood<sup>13</sup></li>
-                    <li style="margin-bottom: 8px;"><strong>Local estrogen therapy</strong> for GSM</li>
-                    <li style="margin-bottom: 8px;"><strong>Bone density screening & fracture prevention</strong></li>
-                    <li style="margin-bottom: 8px;"><strong>Cardiometabolic risk reduction</strong></li>
-                    <li style="margin-bottom: 8px;"><strong>Sleep, nutrition, and stress optimization</strong></li>
-                </ul>
-
-                <p style="margin-bottom: 15px;">Despite all of these options, a Kaiser Family Foundation analysis found that <strong>only one-third of U.S. women ages 40–64 have ever discussed menopause with a healthcare professional</strong>.<sup>14</sup></p>
-
-                <p style="margin-bottom: 15px;">In other words, suffering in silence is common—but it is not necessary.</p>
-
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">Final Thoughts</h4>
-
-                <p style="margin-bottom: 15px;">If you've been asking yourself:</p>
-
-                <p style="margin-bottom: 15px;"><strong>"Is this just stress… or am I entering a new stage of life?"</strong></p>
-
-                <p style="margin-bottom: 15px;">The answer is often <strong>both</strong>—but biology is a powerful driver. Perimenopause is real, medically significant, and treatable. With appropriate care, most women regain clarity, energy, comfort, and confidence.</p>
-
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">About Perimenopause Care at Aria Gynecology & Surgery</h4>
-
-                <p style="margin-bottom: 15px;">At <strong>Aria Gynecology & Surgery in Manassas, VA</strong>, perimenopause and menopause care are guided by a science-driven, individualized approach under the leadership of <strong>Dr. Sima Bina, MD, FACOG, MSCP</strong>, a Menopause Society–certified practitioner. Care emphasizes precise diagnosis, evidence-based hormonal and non-hormonal therapy, bone and cardiometabolic protection, and restoration of sleep, mood, sexual wellness, and overall quality of life.</p>
-
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-
-                <h4 style="color: rgb(210, 152, 142); font-size: 20px; margin-top: 25px; margin-bottom: 12px;">References</h4>
-
-                <ol style="padding-left: 25px; font-size: 13px; color: #666; line-height: 1.8;">
-                    <li style="margin-bottom: 8px;">National Institute on Aging (NIH). <em>Menopause: Causes, Symptoms & Treatments.</em></li>
-                    <li style="margin-bottom: 8px;">North American Menopause Society (NAMS). <em>Perimenopause Clinical Guidance, 2023.</em></li>
-                    <li style="margin-bottom: 8px;">World Health Organization (WHO). <em>Research on the Menopause in the 1990s.</em></li>
-                    <li style="margin-bottom: 8px;">American College of Obstetricians and Gynecologists (ACOG). <em>Genitourinary Syndrome of Menopause.</em></li>
-                    <li style="margin-bottom: 8px;">SWAN Study (Study of Women's Health Across the Nation). Menstrual cycle changes during perimenopause.</li>
-                    <li style="margin-bottom: 8px;">Freeman EW, et al. <em>Risk of Depression During the Menopause Transition.</em> JAMA Psychiatry.</li>
-                    <li style="margin-bottom: 8px;">Kaiser Family Foundation (KFF). <em>Women's Mental Health in the U.S., 2023.</em></li>
-                    <li style="margin-bottom: 8px;">National Sleep Foundation. <em>Sleep and Menopause.</em></li>
-                    <li style="margin-bottom: 8px;">Centers for Disease Control and Prevention (CDC). <em>Short Sleep Duration by Age & Sex.</em></li>
-                    <li style="margin-bottom: 8px;">Centers for Disease Control and Prevention (CDC). <em>Menopause and Weight Gain Epidemiology.</em></li>
-                    <li style="margin-bottom: 8px;">Portman DJ, Gass ML. <em>Genitourinary Syndrome of Menopause.</em> Menopause Journal.</li>
-                    <li style="margin-bottom: 8px;">North American Menopause Society (NAMS). <em>Position Statement on Vasomotor Symptoms, 2023.</em></li>
-                    <li style="margin-bottom: 8px;">NIH/NAMS. <em>Non-Hormonal Treatment Guidelines for Vasomotor Symptoms.</em></li>
-                    <li style="margin-bottom: 8px;">Kaiser Family Foundation (KFF). <em>Menopause Care Access & Awareness in U.S. Women.</em></li>
-                </ol>
-
-                <hr style="border: none; border-top: 2px solid rgb(235, 225, 217); margin: 30px 0;">
-
-                <p style="font-size: 12px; color: #777; margin-top: 25px; font-style: italic;"><strong>Medical Disclaimer:</strong> This blog is for educational purposes only and does not replace personalized medical advice, diagnosis, or treatment. Always consult your physician or qualified healthcare provider about your specific situation and perimenopause management options.</p>
-
-                <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)';">
-                    <h4 style="color: rgb(210, 152, 142); font-size: 18px; margin-bottom: 10px; text-align: center;">Learn More About Menopause Care</h4>
-                    <p style="text-align: center; margin-bottom: 15px; color: #555;">Explore our specialized menopause management services and MSCP-certified care.</p>
-                    <div style="text-align: center;">
-                        <a href="#menopause-management" style="display: inline-block; background-color: rgb(210, 152, 142); color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 3px solid rgb(210, 152, 142); transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='white'; this.style.color='rgb(210, 152, 142)';" onmouseout="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.color='white';">View Our Menopause Services</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="news" style="background-color: rgb(235, 225, 217);">
         <div class="section-inner">
@@ -2333,62 +1855,20 @@
         </div>
     </section>
 
-    <!-- Quick FAQ Section -->
-    <section style="background-color: #ffffff; padding: 60px 20px;">
-        <div class="section-inner">
-            <div class="faq-section">
-                <h3>Quick Answers to Common Questions</h3>
-                
-                <div class="faq-item">
-                    <div class="faq-question">Do I need a referral to schedule an appointment?</div>
-                    <div class="faq-answer">No referral is needed. You can schedule directly through our patient portal or by calling our office.</div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">How quickly can I get an appointment?</div>
-                    <div class="faq-answer">We offer same-week appointments for urgent concerns and typically schedule routine visits within 1-2 weeks.</div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">Do you accept my insurance?</div>
-                    <div class="faq-answer">We work with most major insurance carriers including Anthem, Aetna, Cigna, UnitedHealthcare, Medicare, and Medicaid. We verify your coverage for you.</div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">Where are you located?</div>
-                    <div class="faq-answer">We're at 7900 Sudley Rd, Suite 424, Manassas, VA 20109 — near Manassas Mall and Costco, with free on-site parking.</div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">What should I bring to my first appointment?</div>
-                    <div class="faq-answer">Bring your insurance card, photo ID, and a list of current medications. Complete all forms through the patient portal before your visit.</div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">Do you perform office procedures on-site?</div>
-                    <div class="faq-answer">Yes! We offer office-based hysteroscopy, IUD insertion/removal, endometrial biopsies, and LEEP procedures — no hospital visit required.</div>
-                </div>
-
-                <div style="text-align: center; margin-top: 25px;">
-                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
         <div class="section-inner">
             <div style="color: white; font-size: 28px; margin-bottom: 20px; font-weight: bold;">Ready to schedule? Book your gynecology visit in Manassas today.</div>
             <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" style="box-shadow: 0 8px 20px rgba(0,0,0,0.3); border-radius: 8px;" /></a>
             <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px; align-items: center;">
-                <a href="tel:+17038648244" style="display: inline-block; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 16px; padding: 12px 35px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='rgba(255,255,255,0.2)';">
-                    <svg style="display: inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="tel:+17038648244" style="display: inline-block; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 14px; padding: 10px 24px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='rgba(255,255,255,0.2)';">
+                    <svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     Call (703) 864-8244
                 </a>
-                <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #B8BD9F; color: #4A4A4A; border: 2px solid #B8BD9F; font-size: 16px; padding: 12px 35px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F';" aria-label="Chat on WhatsApp">
-                    <svg style="display: inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #B8BD9F; color: #4A4A4A; border: 2px solid #B8BD9F; font-size: 14px; padding: 10px 24px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F';" aria-label="Chat on WhatsApp">
+                    <svg style="display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
                     WhatsApp
@@ -3892,25 +3372,46 @@
                 }, 8000);
             });
         }
+
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            } else {
+                navLinks.classList.add('active');
+                menuToggle.innerHTML = '✕';
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navContainer = document.querySelector('.nav-container');
+            
+            if (!navContainer.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.querySelector('.nav-links');
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    menuToggle.innerHTML = '☰';
+                }
+            });
+        });
     </script>
-
-
-    <!-- Sticky Mobile Buttons (visible only on mobile) -->
-    <div class="mobile-buttons-container">
-        <a href="tel:+17038648244" class="mobile-call-button" aria-label="Call Aria Gynecology">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            Call Now
-        </a>
-        <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" class="mobile-whatsapp-button" aria-label="Chat on WhatsApp">
-            <svg fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            WhatsApp
-        </a>
-    </div>
 
 </body>
 </html>
-            

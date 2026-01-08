@@ -81,7 +81,7 @@
         }
         
         .tagline { 
-            font-size: 15px; 
+            font-size: 12px; 
             color: rgb(210, 152, 142); 
             letter-spacing: 0.5px;
         }
@@ -92,8 +92,8 @@
         
         .nav-links { 
             display: flex; 
-            gap: 18px; 
-            font-size: 14px; 
+            gap: 10px; 
+            font-size: 12px; 
         }
         
         .nav-links a { 
@@ -157,7 +157,7 @@
             margin-bottom: 15px; 
             line-height: 1.8; 
             color: #333;
-            font-size: 15px;
+            font-size: 12px;
         }
         
         .content p strong {
@@ -171,14 +171,14 @@
         .content li { 
             margin-bottom: 8px; 
             color: #333;
-            font-size: 14px;
+            font-size: 12px;
         }
         
         /* Back to Services Link */
         .back-link {
             color: rgb(150, 100, 90);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
             display: inline-block;
             margin-bottom: 20px;
             transition: color 0.3s ease;
@@ -206,7 +206,7 @@
         }
         
         .cta-box p:nth-child(2) {
-            font-size: 14px;
+            font-size: 12px;
             color: #666;
             margin-bottom: 20px;
         }
@@ -218,7 +218,7 @@
             padding: 10px 20px; 
             border: none; 
             border-radius: 25px; 
-            font-size: 14px; 
+            font-size: 12px; 
             font-weight: normal;
             cursor: pointer; 
             transition: all 0.3s ease; 
@@ -337,11 +337,137 @@
                 max-height: none;
             }
         }
+
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: rgb(150, 100, 90);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            /* Header adjustments */
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .logo-area {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+
+            .logo-placeholder {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto;
+            }
+
+            .practice-name {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .tagline {
+                font-size: 11px;
+                text-align: center;
+            }
+
+            /* Show mobile menu toggle */
+            .mobile-menu-toggle {
+                display: block;
+                align-self: flex-end;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            /* Navigation - stack vertically on mobile */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex !important;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                border-bottom: 1px solid rgb(235, 225, 217);
+            }
+
+            /* Hero section */
+            .hero h1 {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            /* Content section */
+            .content-inner {
+                padding: 0 15px;
+            }
+
+            /* Medical illustrations - stack on mobile */
+            .medical-illustration {
+                float: none !important;
+                width: 100% !important;
+                margin: 20px 0 !important;
+            }
+
+            .medical-illustration img {
+                max-height: 300px !important;
+            }
+
+            /* Condition sections */
+            .condition-section {
+                margin-bottom: 30px;
+            }
+
+            /* Footer adjustments */
+            footer .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            /* Back to top button */
+            #backToTop {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Tablet responsive (between mobile and desktop) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .nav-links {
+                gap: 8px;
+                font-size: 11px;
+            }
+
+            .practice-name {
+                font-size: 22px;
+            }
+        }
     </style>
 </head>
 <body>
             <header>
         <div class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">☰</button>
             <div class="logo-area">
                 <div class="logo-placeholder">
                     <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery" width="400" height="400" loading="eager">
@@ -352,18 +478,20 @@
                 </div>
             </div>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
                 <a href="index.html#about">About</a>
                 <a href="index.html#services">Services</a>
                 <a href="index.html#insurance">Insurance</a>
                 <a href="index.html#contact">Contact</a>
+                <a href="index.html#documents">Documents</a>
+                <a href="health-blog.html">Health Blog</a>
+                <a href="faq.html">FAQ</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="section-inner">
-            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 14px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
+            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 12px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
             <h1>General Gynecology in Manassas, VA</h1>
         </div>
     </section>
@@ -455,7 +583,7 @@
                 <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); text-align: center;">
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your general gynecology needs</p>
-                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
+                    <p style="font-size: 12px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
                     <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
         </div>
     </section>
@@ -478,6 +606,47 @@
             btn.style.display = "none";
         }
     };
+    </script>
+
+    <script>
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            } else {
+                navLinks.classList.add('active');
+                menuToggle.innerHTML = '✕';
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navContainer = document.querySelector('.nav-container');
+            
+            if (!navContainer.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.querySelector('.nav-links');
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    menuToggle.innerHTML = '☰';
+                }
+            });
+        });
     </script>
 </body>
 </html>

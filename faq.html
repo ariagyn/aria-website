@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frequently Asked Questions | Aria Gynecology & Surgery Manassas, VA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d2988e">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: rgb(235, 225, 217); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Header - matches main page exactly */
+        header { 
+            background-color: #ffffff; 
+            border-bottom: 4px solid rgb(219, 196, 176); 
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+        
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .practice-name { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: rgb(150, 100, 90); 
+        }
+        
+        .tagline { 
+            font-size: 12px; 
+            color: #777; 
+            font-style: italic; 
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 10px; 
+            flex-wrap: wrap; 
+            font-size: 12px; 
+            font-weight: 600; 
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+        
+        .nav-links a:hover { 
+            color: rgb(210, 152, 142); 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background-color: rgb(210, 152, 142); 
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center; 
+        }
+        
+        .section-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        h1 { 
+            font-size: 32px; 
+            margin-bottom: 15px; 
+            color: white; 
+        }
+        
+        /* Content Section */
+        .content { 
+            background-color: #ffffff; 
+            padding: 60px 20px; 
+        }
+        
+        .content-inner { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        /* FAQ Styles */
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-section h3 {
+            font-size: 28px;
+            color: rgb(150, 100, 90);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .faq-item {
+            background-color: rgb(245, 240, 235);
+            border-left: 4px solid rgb(210, 152, 142);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(150, 100, 90);
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* Footer - matches main page exactly */
+        footer { 
+            background-color: #ffffff; 
+            border-top: 1px solid rgb(219, 196, 176);
+            padding: 15px 20px; 
+            font-size: 12px;
+        }
+        
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #777;
+        }
+        
+        footer p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Back to Top Button */
+        #backToTop { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            z-index: 999; 
+            font-size: 20px; 
+            display: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 26px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .practice-name { font-size: 22px; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 40px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .faq-item { padding: 15px;     flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+            .faq-question { font-size: 16px; }
+        }
+
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: rgb(150, 100, 90);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            /* Header adjustments */
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .logo-area {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+
+            .logo-placeholder {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto;
+            }
+
+            .practice-name {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .tagline {
+                font-size: 11px;
+                text-align: center;
+            }
+
+            /* Show mobile menu toggle */
+            .mobile-menu-toggle {
+                display: block;
+                align-self: flex-end;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            /* Navigation - stack vertically on mobile */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex !important;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                border-bottom: 1px solid rgb(235, 225, 217);
+            }
+
+            /* Hero section */
+            .hero h1 {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            /* Content section */
+            .content-inner {
+                padding: 0 15px;
+            }
+
+            /* Medical illustrations - stack on mobile */
+            .medical-illustration {
+                float: none !important;
+                width: 100% !important;
+                margin: 20px 0 !important;
+            }
+
+            .medical-illustration img {
+                max-height: 300px !important;
+            }
+
+            /* Condition sections */
+            .condition-section {
+                margin-bottom: 30px;
+            }
+
+            /* Footer adjustments */
+            footer .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            /* Back to top button */
+            #backToTop {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Tablet responsive (between mobile and desktop) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .nav-links {
+                gap: 8px;
+                font-size: 11px;
+            }
+
+            .practice-name {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">☰</button>
+            <div class="logo-area">
+                <img src="aria-gynecology-surgery-manassas-va-logo.png" alt="Aria Gynecology & Surgery Logo" class="logo-placeholder">
+                <div>
+                    <div class="practice-name">Aria Gynecology & Surgery</div>
+                    <div class="tagline">Attentive • Reliable • Innovative • Accomplished</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html#documents">Documents</a>
+                <a href="health-blog.html">Health Blog</a>
+                <a href="faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="section-inner">
+            <a href="index.html" style="color: white; font-size: 14px; display: inline-block; margin-bottom: 20px; text-decoration: underline;">← Back to Home</a>
+            <h1>Frequently Asked Questions</h1>
+            <p style="font-size: 16px; margin-top: 10px;">Quick answers to common questions about Aria Gynecology & Surgery</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-inner">
+            <div class="faq-section">
+                <h3>Quick Answers to Common Questions</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do I need a referral to schedule an appointment?</div>
+                    <div class="faq-answer">No referral is needed. You can schedule directly through our patient portal or by calling our office.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How quickly can I get an appointment?</div>
+                    <div class="faq-answer">We offer same-week appointments for urgent concerns and typically schedule routine visits within 1-2 weeks.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you accept my insurance?</div>
+                    <div class="faq-answer">We work with most major insurance carriers including Anthem, Aetna, Cigna, UnitedHealthcare, Medicare, and Medicaid. We verify your coverage for you.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Where are you located?</div>
+                    <div class="faq-answer">We're at 7900 Sudley Rd, Suite 424, Manassas, VA 20109 — near Manassas Mall and Costco, with free on-site parking.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What should I bring to my first appointment?</div>
+                    <div class="faq-answer">Bring your insurance card, photo ID, and a list of current medications. Complete all forms through the patient portal before your visit.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you perform office procedures on-site?</div>
+                    <div class="faq-answer">Yes! We offer office-based hysteroscopy, IUD insertion/removal, endometrial biopsies, and LEEP procedures — no hospital visit required.</div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <h4 style="color: rgb(150, 100, 90); font-size: 22px; margin-bottom: 15px;">Ready to Schedule Your Appointment?</h4>
+                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <p>&copy; 2025 Aria Gynecology & Surgery | 7900 Sudley Rd, Suite 424, Manassas, VA 20109 | (703) 864-8244</p>
+            <p>Board-Certified Gynecologist | MIGS Specialist | Menopause Society Certified Practitioner (MSCP)</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="display: none; background-color: rgb(210, 152, 142); color: white; border: none; cursor: pointer;">↑</button>
+
+    <script>
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+        };
+    </script>
+
+    <script>
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            } else {
+                navLinks.classList.add('active');
+                menuToggle.innerHTML = '✕';
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navContainer = document.querySelector('.nav-container');
+            
+            if (!navContainer.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.querySelector('.nav-links');
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    menuToggle.innerHTML = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

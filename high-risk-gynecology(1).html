@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>High-Risk & Complex Gynecology in Manassas, VA | Aria Gynecology & Surgery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d2988e">
+                <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: rgb(235, 225, 217); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        /* Header - matches main page exactly */
+        header { 
+            background-color: #ffffff; 
+            border-bottom: 4px solid rgb(219, 196, 176); 
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+        
+        .nav-container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .practice-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .practice-name { 
+            font-weight: bold; 
+            font-size: 27px; 
+            border-bottom: 1px solid rgb(219, 196, 176);
+            padding-bottom: 3px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+        
+        .practice-name .ampersand {
+            font-family: 'Baskerville', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            font-style: italic;
+            font-weight: 900;
+        }
+        
+        .tagline { 
+            font-size: 12px; 
+            color: rgb(210, 152, 142); 
+            letter-spacing: 0.5px;
+        }
+        
+        .tagline span {
+            margin: 0 4px;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 10px; 
+            font-size: 12px; 
+        }
+        
+        .nav-links a { 
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover { 
+            color: rgb(210, 152, 142); 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(to right, rgb(235, 225, 217), rgb(219, 196, 176)); 
+            padding: 60px 20px; 
+        }
+        
+        .section-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+        }
+        
+        /* Typography - matches main page */
+        h1 { 
+            font-size: 32px; 
+            color: rgb(150, 100, 90); 
+            margin-bottom: 12px; 
+            line-height: 1.3; 
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: rgb(150, 100, 90);
+            margin: 30px 0 10px 0;
+        }
+        
+        h3 { 
+            color: rgb(210, 152, 142); 
+            font-size: 20px; 
+            margin: 25px 0 12px 0; 
+        }
+        
+        h4 { 
+            color: rgb(210, 152, 142); 
+            font-size: 18px; 
+            margin: 20px 0 10px 0; 
+        }
+        
+        /* Content Section */
+        .content { 
+            background: #ffffff; 
+            padding: 60px 20px; 
+        }
+        
+        .content-inner { 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+        
+        .content p { 
+            margin-bottom: 15px; 
+            line-height: 1.8; 
+            color: #333;
+            font-size: 12px;
+        }
+        
+        .content p strong {
+            color: rgb(150, 100, 90);
+        }
+        
+        .content ul { 
+            margin: 15px 0 15px 25px; 
+        }
+        
+        .content li { 
+            margin-bottom: 8px; 
+            color: #333;
+            font-size: 12px;
+        }
+        
+        /* Back to Services Link */
+        .back-link {
+            color: rgb(150, 100, 90);
+            text-decoration: none;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: rgb(210, 152, 142);
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            margin-top: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%);
+            border-radius: 12px;
+            border: 3px solid rgb(210, 152, 142);
+            text-align: center;
+        }
+        
+        .cta-box p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(150, 100, 90);
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p:nth-child(2) {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Buttons */
+        button, .btn { 
+            background-color: rgb(210, 152, 142); 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: 12px; 
+            font-weight: normal;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        
+        button:hover, .btn:hover { 
+            background-color: rgb(190, 132, 122); 
+            transform: translateY(-2px);
+        }
+        
+        /* Footer - matches main page exactly */
+        footer { 
+            background-color: #ffffff; 
+            border-top: 1px solid rgb(219, 196, 176);
+            padding: 15px 20px; 
+            font-size: 12px;
+        }
+        
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #777;
+        }
+        
+        footer p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Medical Illustrations */
+        .medical-illustration {
+            float: right;
+            width: 350px;
+            margin: 0 0 20px 30px;
+            padding: 0;
+        }
+        
+        .medical-illustration img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Custom heights for each illustration to match text length */
+        .illustration-endometriosis img {
+            max-height: 380px;
+            object-fit: contain;
+        }
+        
+        .illustration-fibroids img {
+            max-height: 360px;
+            object-fit: contain;
+        }
+        
+        .illustration-pregnancy-loss img {
+            max-height: 420px;
+            object-fit: contain;
+        }
+        
+        .illustration-colposcopy img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .illustration-surgical img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+        
+        .condition-section {
+            overflow: auto;
+            margin-bottom: 40px;
+        }
+        
+        /* Back to Top Button */
+        #backToTop { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            z-index: 999; 
+            font-size: 20px; 
+            display: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 26px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .practice-name { font-size: 22px; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 40px 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            
+            /* Stack images on mobile */
+            .medical-illustration {
+                float: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            
+            /* Reset custom heights on mobile */
+            .illustration-endometriosis img,
+            .illustration-fibroids img,
+            .illustration-pregnancy-loss img,
+            .illustration-colposcopy img,
+            .illustration-surgical img {
+                max-height: none;
+            }
+        }
+
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: rgb(150, 100, 90);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            /* Header adjustments */
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .logo-area {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+
+            .logo-placeholder {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto;
+            }
+
+            .practice-name {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .tagline {
+                font-size: 11px;
+                text-align: center;
+            }
+
+            /* Show mobile menu toggle */
+            .mobile-menu-toggle {
+                display: block;
+                align-self: flex-end;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            /* Navigation - stack vertically on mobile */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex !important;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                border-bottom: 1px solid rgb(235, 225, 217);
+            }
+
+            /* Hero section */
+            .hero h1 {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            /* Content section */
+            .content-inner {
+                padding: 0 15px;
+            }
+
+            /* Medical illustrations - stack on mobile */
+            .medical-illustration {
+                float: none !important;
+                width: 100% !important;
+                margin: 20px 0 !important;
+            }
+
+            .medical-illustration img {
+                max-height: 300px !important;
+            }
+
+            /* Condition sections */
+            .condition-section {
+                margin-bottom: 30px;
+            }
+
+            /* Footer adjustments */
+            footer .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            /* Back to top button */
+            #backToTop {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Tablet responsive (between mobile and desktop) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .nav-links {
+                gap: 8px;
+                font-size: 11px;
+            }
+
+            .practice-name {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+            <header>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">☰</button>
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <img src="aria-gynecology-surgery-logo-manassas-va.jpg" alt="Aria Gynecology & Surgery" width="400" height="400" loading="eager">
+                </div>
+                <div class="practice-info">
+                    <div class="practice-name">Aria Gynecology <span class="ampersand">&</span> Surgery</div>
+                    <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#insurance">Insurance</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html#documents">Documents</a>
+                <a href="health-blog.html">Health Blog</a>
+                <a href="faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="section-inner">
+            <a href="index.html#services" style="color: rgb(150, 100, 90); font-size: 12px; display: inline-block; margin-bottom: 20px; text-decoration: none;">← Back to All Services</a>
+            <h1>High-Risk & Complex Gynecology in Manassas, VA</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="content-inner">
+            <p><strong>Advanced Care for Complex Conditions</strong></p>
+                
+                <p style="font-style: italic; color: rgb(150, 100, 90); margin-bottom: 15px;">Need complex gynecology care in Northern Virginia?</p>
+                
+                <p>Some gynecologic conditions go far beyond routine care. They are severe, persistent, recurrent, or anatomically complex—often affecting fertility, daily function, emotional health, and long-term outcomes. Many women with these conditions have already seen multiple providers, tried multiple treatments, and still struggle without clear answers.</p>
+                
+                <p>According to the National Institutes of Health (NIH) and American College of Obstetricians and Gynecologists (ACOG), complex gynecologic disease is a leading cause of chronic pain, infertility, and repeat surgery in women. Delayed diagnosis and incomplete treatment significantly increase the risk of disease progression, surgical complications, and permanent organ damage.</p>
+                
+                <p>High-risk and complex gynecology requires advanced imaging and diagnostic precision, subspecialty-trained surgical strategy, multidisciplinary coordination, and a patient-centered, long-term treatment plan. This level of care is about restoring function, protecting fertility when possible, and preventing repeat surgeries.</p>
+                
+                <div class="condition-section">
+                    <h3>Severe Endometriosis</h3>
+                    <div class="medical-illustration illustration-endometriosis">
+                        <img src="severe-endometriosis-symptoms-treatment-manassas-va-aria-gynecology-dr-sima-bina.png" alt="Severe Endometriosis - Medical illustration showing advanced endometriosis with deep infiltrating disease, symptoms including severe pelvic pain and infertility, and treatment options" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Advanced endometriosis involving deep infiltrating disease, bowel, bladder, or ureter involvement, dense pelvic scarring, severe pain, or infertility.</p>
+                    <p><strong>Why it matters:</strong> According to the CDC and NIH, endometriosis affects about 1 in 10 women and is present in up to 50% of women with infertility. Average diagnosis is delayed 7–10 years after symptom onset. Severe endometriosis can cause daily, disabling pain, pain with intercourse, bowel and urinary symptoms, recurrent ovarian cysts (endometriomas), and fertility damage.</p>
+                    <p><strong>When neglected:</strong> Untreated advanced endometriosis can lead to progressive organ scarring, bowel or ureter obstruction, permanent fertility impairment, and escalating surgical complexity with each procedure.</p>
+                </div>
+                
+                <div class="condition-section">
+                    <h3>Large Fibroids</h3>
+                    <div class="medical-illustration illustration-fibroids">
+                        <img src="large-uterine-fibroids-symptoms-treatment-manassas-va-aria-gynecology-dr-sima-bina.png" alt="Large Uterine Fibroids - Medical illustration showing enlarged uterus with multiple large fibroids, symptoms including heavy bleeding and pelvic pressure, and treatment options" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Uterine fibroids that are very large in size, numerous, deeply embedded in the uterine wall, distorting the uterine cavity, or compressing the bladder, bowel, or kidneys.</p>
+                    <p><strong>Why it matters:</strong> According to the NIH, up to 70–80% of women develop fibroids by age 50, and fibroids are the leading cause of hysterectomy in the U.S. Large fibroids are a major cause of severe bleeding, iron-deficiency anemia, pelvic pressure and pain, infertility, and pregnancy complications.</p>
+                    <p><strong>When neglected:</strong> Large fibroids can lead to transfusion-level anemia, kidney obstruction, recurrent pregnancy loss, emergency surgery, and loss of fertility options.</p>
+                </div>
+                
+                <h3>Chronic Pelvic Pain</h3>
+                <p><strong>What it is:</strong> Pelvic pain lasting more than 6 months, often with multiple overlapping causes.</p>
+                <p><strong>Why it matters:</strong> According to the NIH, chronic pelvic pain affects nearly 15% of women and is one of the most common and complex pain syndromes in medicine. Causes may include endometriosis, pelvic floor dysfunction, adhesions, nerve entrapment, prior infections or surgery, and bladder or bowel disorders.</p>
+                <p><strong>When neglected:</strong> Persistent pain may result in centralized nerve pain, opioid dependence, sexual dysfunction, depression and anxiety, job loss, and disability.</p>
+                
+                <div class="condition-section">
+                    <h3>Recurrent Pregnancy Loss Evaluation</h3>
+                    <div class="medical-illustration illustration-pregnancy-loss">
+                        <img src="recurrent-pregnancy-loss-evaluation-testing-manassas-va-aria-gynecology-dr-sima-bina.png" alt="Recurrent Pregnancy Loss Evaluation - Medical illustration showing evaluation process including hormonal tests, ultrasound imaging, and genetic testing" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Advanced medical evaluation after two or more consecutive miscarriages.</p>
+                    <p><strong>Why it matters:</strong> According to the American Society for Reproductive Medicine (ASRM) and CDC, recurrent pregnancy loss affects about 1–2% of couples. Causes may include uterine structural abnormalities, fibroids or scar tissue, hormonal disorders, genetic factors, blood clotting conditions, and immune disorders. Evaluation may include advanced imaging, genetic testing, hormonal evaluation, and specialized laboratory studies.</p>
+                    <p><strong>When neglected:</strong> Without proper diagnosis, women may experience repeated unexplained losses, delayed fertility, emotional trauma and grief, and loss of confidence in future pregnancy success.</p>
+                </div>
+                
+                <div class="condition-section">
+                    <h3>Colposcopy & Abnormal Pap Smear Management</h3>
+                    <div class="medical-illustration illustration-colposcopy">
+                        <img src="colposcopy-procedure-hpv-abnormal-pap-manassas-va-aria-gynecology-dr-sima-bina.png" alt="Colposcopy Procedure - Medical illustration showing colposcopy equipment for evaluating abnormal Pap smears, HPV infection, and cervical lesions" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Specialized magnified examination of the cervix used to evaluate abnormal Pap smears, positive high-risk HPV tests, visible cervical lesions, or unexplained abnormal bleeding.</p>
+                    <p><strong>Why it matters:</strong> According to the American Cancer Society and CDC, approximately 13,000 new cases of cervical cancer are diagnosed annually in the U.S., and most are preventable with proper screening and follow-up. Colposcopy allows precise identification and biopsy of precancerous changes (dysplasia or CIN) before they progress to invasive cancer. It is essential for triaging abnormal Pap smears, confirming HPV-related changes, guiding treatment decisions, and monitoring high-risk patients.</p>
+                    <p><strong>When neglected:</strong> Delayed or inadequate follow-up of abnormal Pap smears can allow cervical dysplasia to progress to invasive cancer, requiring far more aggressive treatment and threatening fertility and long-term survival.</p>
+                </div>
+                
+                <h3>Surgical Second Opinions</h3>
+                <p><strong>What it is:</strong> Independent expert review of recommended hysterectomy, fibroid surgery, endometriosis surgery, oophorectomy, or complex repeat surgeries.</p>
+                <p><strong>Why it matters:</strong> According to the NIH and ACOG, a significant percentage of major gynecologic surgeries are later found to be unnecessary, incomplete, or unnecessarily aggressive. Second opinions help confirm whether surgery is truly needed, determine if minimally invasive options exist, preserve fertility when possible, and avoid irreversible procedures.</p>
+                <p><strong>When neglected:</strong> Women may undergo preventable hysterectomy, incomplete endometriosis excision, repeat surgeries due to missed disease, and permanent fertility loss.</p>
+                
+                <div class="condition-section">
+                    <h3>Complex Surgical Planning</h3>
+                    <div class="medical-illustration illustration-surgical">
+                        <img src="complex-surgical-planning-gynecology-migs-manassas-va-aria-gynecology-dr-sima-bina.png" alt="Complex Surgical Planning - Medical illustration showing advanced surgical planning including thorough evaluation, multidisciplinary approach, detailed 3D visualization, and advanced technology" loading="lazy">
+                    </div>
+                    <p><strong>What it is:</strong> Advanced pre-operative planning for difficult cases involving prior multiple abdominal surgeries, severe scar tissue, large fibroids, advanced endometriosis, combined bowel, bladder, or fertility surgery, and high-risk medical conditions.</p>
+                    <p><strong>Why it matters:</strong> According to ACOG and NIH, surgical complication rates rise significantly in repeat surgeries, dense adhesions, and deep pelvic disease. Proper planning dramatically reduces blood loss, organ injury, conversion to open surgery, and length of hospital stay. Complex planning often requires advanced imaging, multidisciplinary surgical coordination, fertility-preserving strategies, and robotic or advanced laparoscopic techniques.</p>
+                    <p><strong>When neglected:</strong> Without expert planning, women face higher risks of bowel or bladder injury, emergency open surgery, prolonged recovery, repeat operations, and permanent functional damage.</p>
+                </div>
+                
+                <p style="margin-top: 25px; font-style: italic; color: rgb(210, 152, 142);">Complex gynecologic care is not just about treating disease—it's about restoring quality of life, protecting your future, and getting it right the first time.</p>
+                
+                <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgb(235, 225, 217) 0%, rgb(245, 240, 235) 100%); border-radius: 12px; border: 3px solid rgb(210, 152, 142); text-align: center;">
+                    
+                    <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your high-risk & complex gynecology needs</p>
+                    <p style="font-size: 12px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
+                    <script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="display: inline-block; text-decoration: none;" id="Setmore_button_iframe" href="https://ariagynecologyandsurgery.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" alt="Book an appointment with Aria Gynecology and Surgery using Setmore" /></a>
+        </div>
+    </section>
+
+            <footer>
+        <div class="footer-inner">
+            <p>&copy; 2024-2026 Aria Gynecology & Surgery. All rights reserved.</p>
+            <p>Dr. Sima Bina, MD, FACOG | Board-Certified OB/GYN | MIGS Specialist</p>
+            <p>7900 Sudley Rd, Suite 424, Manassas, VA 20109 | (703) 864-8244</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    <script>
+    window.onscroll = function() {
+        var btn = document.getElementById("backToTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+    </script>
+
+    <script>
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            } else {
+                navLinks.classList.add('active');
+                menuToggle.innerHTML = '✕';
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navContainer = document.querySelector('.nav-container');
+            
+            if (!navContainer.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.querySelector('.nav-links');
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    menuToggle.innerHTML = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

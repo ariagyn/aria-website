@@ -3494,4 +3494,16 @@
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
-            const navLinks = doc
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!menuToggle) return;
+            
+            if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -554,8 +554,7 @@
         }
         
         .card.expanded p {
-            max-height: 2000px;
-            overflow-y: auto;
+            max-height: 100px;
         }
 
         .card ul li {
@@ -1535,7 +1534,7 @@
                 <a href="faq.html">FAQ</a>
             </nav>
             <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
-                <a class="book-now-button" href="https://patients.app.wrshealth.com/login?id=2435874" style="width: 150px; padding: 10px 20px; background-color: rgb(210, 152, 142); color: white; border: 2px solid rgb(210, 152, 142); border-radius: 8px; font-weight: 600; font-size: 12px; text-decoration: none; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(190, 132, 122)'; this.style.borderColor='rgb(190, 132, 122)';" onmouseout="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.borderColor='rgb(210, 152, 142)';">Book Now</a>
+                <a class="book-now-button" href="https://ehr.wrshealth.com/patient_v2/index.php?id=2435874" style="width: 150px; padding: 10px 20px; background-color: rgb(210, 152, 142); color: white; border: 2px solid rgb(210, 152, 142); border-radius: 8px; font-weight: 600; font-size: 12px; text-decoration: none; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(190, 132, 122)'; this.style.borderColor='rgb(190, 132, 122)';" onmouseout="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.borderColor='rgb(210, 152, 142)';">Book Now</a>
                 <a href="tel:+17038648244" style="width: 150px; padding: 10px 20px; background-color: rgba(210, 152, 142, 0.1); color: rgb(150, 100, 90); border: 2px solid rgb(210, 152, 142); border-radius: 8px; font-weight: 600; font-size: 12px; text-decoration: none; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.color='white';" onmouseout="this.style.backgroundColor='rgba(210, 152, 142, 0.1)'; this.style.color='rgb(150, 100, 90)';">
                     <svg style="display: inline-block; width: 12px; height: 12px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -1564,7 +1563,7 @@
                     Proudly serving cities of Manassas, Chantilly, Gainesville, Centreville, Ashburn, Reston, Herndon, Fairfax, & the greater Loudoun, Prince William, Fairfax Counties.
                 </p>
                 <div class="hero-buttons">
-                    <a class="book-now-button" href="https://patients.app.wrshealth.com/login?id=2435874" style="display: inline-block; padding: 10px 20px; background-color: rgb(210, 152, 142); color: white; border: 2px solid rgb(210, 152, 142); border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3);" onmouseover="this.style.backgroundColor='rgb(190, 132, 122)'; this.style.borderColor='rgb(190, 132, 122)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.borderColor='rgb(210, 152, 142)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
+                    <a class="book-now-button" href="https://ehr.wrshealth.com/patient_v2/index.php?id=2435874" style="display: inline-block; padding: 10px 20px; background-color: rgb(210, 152, 142); color: white; border: 2px solid rgb(210, 152, 142); border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3);" onmouseover="this.style.backgroundColor='rgb(190, 132, 122)'; this.style.borderColor='rgb(190, 132, 122)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(210, 152, 142)'; this.style.borderColor='rgb(210, 152, 142)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
                 </div>
             </div>
             <div class="hero-image-placeholder">
@@ -1573,86 +1572,17 @@
         </div>
     </section>
 
-    <!-- Open Now Section with Fireworks -->
-    <section style="background-color: #ffffff; padding: 60px 20px; overflow: hidden; position: relative;">
+    <!-- Countdown Section Card -->
+    <section style="background-color: #ffffff; padding: 40px 20px;">
         <div class="section-inner">
-            <div style="max-width: 900px; margin: 0 auto; position: relative; text-align: center;">
-                <!-- Left Fireworks -->
-                <div class="fireworks-left" style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); width: 150px; height: 150px;">
-                    <div class="firework" style="position: absolute; width: 100%; height: 100%;">
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(210, 152, 142); border-radius: 50%; top: 50%; left: 50%; animation: burst1 2s ease-out infinite;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(180, 122, 112); border-radius: 50%; top: 50%; left: 50%; animation: burst2 2s ease-out infinite 0.3s;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(235, 225, 217); border-radius: 50%; top: 50%; left: 50%; animation: burst3 2s ease-out infinite 0.6s;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(150, 100, 90); border-radius: 50%; top: 50%; left: 50%; animation: burst4 2s ease-out infinite 0.9s;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(210, 152, 142); border-radius: 50%; top: 50%; left: 50%; animation: burst5 2s ease-out infinite 1.2s;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(180, 122, 112); border-radius: 50%; top: 50%; left: 50%; animation: burst6 2s ease-out infinite 1.5s;"></div>
-                    </div>
-                </div>
-                
-                <!-- Open Now Sign -->
-                <div style="background: linear-gradient(135deg, rgb(210, 152, 142) 0%, rgb(180, 122, 112) 100%); padding: 50px 80px; border-radius: 24px; box-shadow: 0 12px 40px rgba(210, 152, 142, 0.4), 0 0 0 6px white, 0 0 0 8px rgb(235, 225, 217); display: inline-block; animation: pulseGlow 3s ease-in-out infinite;">
-                    <h2 style="font-size: 72px; font-weight: 900; color: white; margin: 0; text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); letter-spacing: 2px; font-family: 'Arial Black', sans-serif;">OPEN NOW</h2>
-                    <p style="font-size: 24px; color: rgba(255, 255, 255, 0.95); margin: 15px 0 0 0; font-weight: 600;">We're Ready to Serve You!</p>
-                </div>
-                
-                <!-- Right Fireworks -->
-                <div class="fireworks-right" style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); width: 150px; height: 150px;">
-                    <div class="firework" style="position: absolute; width: 100%; height: 100%;">
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(210, 152, 142); border-radius: 50%; top: 50%; left: 50%; animation: burst1 2s ease-out infinite 0.5s;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(180, 122, 112); border-radius: 50%; top: 50%; left: 50%; animation: burst2 2s ease-out infinite 0.8s;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(235, 225, 217); border-radius: 50%; top: 50%; left: 50%; animation: burst3 2s ease-out infinite 1.1s;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(150, 100, 90); border-radius: 50%; top: 50%; left: 50%; animation: burst4 2s ease-out infinite 1.4s;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(210, 152, 142); border-radius: 50%; top: 50%; left: 50%; animation: burst5 2s ease-out infinite 1.7s;"></div>
-                        <div style="position: absolute; width: 8px; height: 8px; background: rgb(180, 122, 112); border-radius: 50%; top: 50%; left: 50%; animation: burst6 2s ease-out infinite 2.0s;"></div>
-                    </div>
+            <div style="max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, rgb(248, 245, 242) 0%, rgb(255, 252, 249) 100%); padding: 40px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); border: 2px solid rgb(235, 225, 217); text-align: center;">
+                <h3 style="font-size: 28px; font-weight: 700; color: rgb(150, 100, 90); margin-bottom: 10px;">Opening January 2026</h3>
+                <p style="font-size: 16px; color: #666; margin-bottom: 25px;">We can't wait to welcome you to our practice</p>
+                <div id="countdown" style="background: white; display: inline-block; padding: 12px 30px; border-radius: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.12); font-size: 18px; font-weight: 600; color: rgb(150, 100, 90);">
+                    <span id="days">--</span>d : <span id="hours">--</span>h : <span id="minutes">--</span>m : <span id="seconds">--</span>s
                 </div>
             </div>
         </div>
-        
-        <!-- Fireworks Animation Styles -->
-        <style>
-            @keyframes pulseGlow {
-                0%, 100% {
-                    transform: scale(1);
-                    box-shadow: 0 12px 40px rgba(210, 152, 142, 0.4), 0 0 0 6px white, 0 0 0 8px rgb(235, 225, 217);
-                }
-                50% {
-                    transform: scale(1.05);
-                    box-shadow: 0 16px 50px rgba(210, 152, 142, 0.6), 0 0 0 6px white, 0 0 0 8px rgb(210, 152, 142), 0 0 30px rgba(210, 152, 142, 0.4);
-                }
-            }
-            
-            @keyframes burst1 {
-                0% { transform: translate(0, 0) scale(1); opacity: 1; }
-                100% { transform: translate(-60px, -60px) scale(0); opacity: 0; }
-            }
-            @keyframes burst2 {
-                0% { transform: translate(0, 0) scale(1); opacity: 1; }
-                100% { transform: translate(60px, -60px) scale(0); opacity: 0; }
-            }
-            @keyframes burst3 {
-                0% { transform: translate(0, 0) scale(1); opacity: 1; }
-                100% { transform: translate(-60px, 60px) scale(0); opacity: 0; }
-            }
-            @keyframes burst4 {
-                0% { transform: translate(0, 0) scale(1); opacity: 1; }
-                100% { transform: translate(60px, 60px) scale(0); opacity: 0; }
-            }
-            @keyframes burst5 {
-                0% { transform: translate(0, 0) scale(1); opacity: 1; }
-                100% { transform: translate(0, -80px) scale(0); opacity: 0; }
-            }
-            @keyframes burst6 {
-                0% { transform: translate(0, 0) scale(1); opacity: 1; }
-                100% { transform: translate(0, 80px) scale(0); opacity: 0; }
-            }
-            
-            @media (max-width: 768px) {
-                .fireworks-left, .fireworks-right {
-                    display: none;
-                }
-            }
-        </style>
     </section>
 
     <section id="about">
@@ -1756,7 +1686,7 @@
     <section id="insurance" style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
         <div class="section-inner">
             <div style="color: white; font-size: 28px; margin-bottom: 20px; font-weight: bold;">Schedule Your Gynecology Appointment in Manassas, VA Today</div>
-            <a class="book-now-button" href="https://patients.app.wrshealth.com/login?id=2435874" style="display: inline-block; width: 250px; padding: 10px 20px; background-color: white; color: rgb(210, 152, 142); border: 2px solid white; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='white'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
+            <a class="book-now-button" href="https://ehr.wrshealth.com/patient_v2/index.php?id=2435874" style="display: inline-block; width: 250px; padding: 10px 20px; background-color: white; color: rgb(210, 152, 142); border: 2px solid white; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='white'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
             <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px; align-items: center;">
                 <a href="tel:+17038648244" style="display: inline-block; width: 250px; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 14px; padding: 10px 20px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='rgba(255,255,255,0.2)';">
                     <svg style="display: inline-block; width: 14px; height: 14px; margin-right: 5px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2091,7 +2021,7 @@
     <section style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
         <div class="section-inner">
             <div style="color: white; font-size: 28px; margin-bottom: 20px; font-weight: bold;">Book your appointment with your trusted gynecologist in Manassas, VA</div>
-            <a class="book-now-button" href="https://patients.app.wrshealth.com/login?id=2435874" style="display: inline-block; width: 250px; padding: 10px 20px; background-color: white; color: rgb(210, 152, 142); border: 2px solid white; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='white'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
+            <a class="book-now-button" href="https://ehr.wrshealth.com/patient_v2/index.php?id=2435874" style="display: inline-block; width: 250px; padding: 10px 20px; background-color: white; color: rgb(210, 152, 142); border: 2px solid white; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='white'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
             <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px; align-items: center;">
                 <a href="tel:+17038648244" style="display: inline-block; width: 250px; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 14px; padding: 10px 20px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='rgba(255,255,255,0.2)';">
                     <svg style="display: inline-block; width: 14px; height: 14px; margin-right: 5px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2122,15 +2052,10 @@
                     <div style="background-color: rgb(210, 152, 142); color: white; padding: 8px 12px; border-radius: 8px; display: inline-block; font-size: 12px; font-weight: bold; margin-bottom: 12px;">
                         ANNOUNCEMENT
                     </div>
-                    <h3 style="margin-bottom: 10px; color: rgb(210, 152, 142);">A Message From Aria Gynecology & Surgery</h3>
+                    <h3 style="margin-bottom: 10px; color: rgb(210, 152, 142);">Aria Gynecology & Surgery — Now Open in Northern Virginia</h3>
                     <p style="color: #666; font-size: 13px; margin-bottom: 12px;">January 2026</p>
-                    <p style="line-height: 1.7; margin-bottom: 12px;">Welcome to Aria Gynecology & Surgery. I am excited to share that we are on schedule to open our doors and begin caring for patients in Northern Virginia this March.</p>
-                    <p style="line-height: 1.7; margin-bottom: 12px;">As we work through this busy and important time—bringing together all the elements that build a strong, compassionate, and high-quality medical practice in the Manassas area—I have been deeply moved by the kindness, encouragement, and support I have received from so many of you. I understand that my sudden departure from my previous position created concern and uncertainty for some, and I want you to know that your trust and continuity of care are of paramount importance to me.</p>
-                    <p style="line-height: 1.7; margin-bottom: 12px;">Please be assured that my ability to continue serving the women of Northern Virginia with the highest level of dedication, skill, and compassion remains unwavering. I am truly honored by your confidence and grateful for your patience during this transition.</p>
-                    <p style="line-height: 1.7; margin-bottom: 12px;">I look forward to opening my heart and my practice to you this March, and to continuing to be part of your lives and your healthcare journey for as long as you need me.</p>
-                    <p style="line-height: 1.7; margin-top: 20px; font-style: italic;">With sincere gratitude,<br>
-                    <strong style="color: rgb(210, 152, 142);">Sima Bina</strong><br>
-                    Aria Gynecology & Surgery</p>
+                    <p style="line-height: 1.7; margin-bottom: 12px;">With the support of a strong network of medical colleagues across Northern Virginia, Aria Gynecology & Surgery is pleased to open sooner than anticipated. We look forward to providing patient-centered, high-quality gynecologic care with a focus on continuity and trust.</p>
+                    <p style="line-height: 1.7; margin-top: 20px; font-style: italic;">— Sima Bina, MD</p>
                 </div>
 
                 <!-- News Item 2 - Recent Women's Health News -->
@@ -2207,7 +2132,7 @@
     <section style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
         <div class="section-inner">
             <div style="color: white; font-size: 28px; margin-bottom: 20px; font-weight: bold;">Ready to schedule? Book your gynecology visit in Manassas today.</div>
-            <a class="book-now-button" href="https://patients.app.wrshealth.com/login?id=2435874" style="display: inline-block; width: 250px; padding: 10px 20px; background-color: white; color: rgb(210, 152, 142); border: 2px solid white; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='white'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
+            <a class="book-now-button" href="https://ehr.wrshealth.com/patient_v2/index.php?id=2435874" style="display: inline-block; width: 250px; padding: 10px 20px; background-color: white; color: rgb(210, 152, 142); border: 2px solid white; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.9)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='white'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
             <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px; align-items: center;">
                 <a href="tel:+17038648244" style="display: inline-block; width: 250px; background-color: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 14px; padding: 10px 20px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 16px rgba(0,0,0,0.2); transition: all 0.3s ease; text-align: center;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)'; this.style.backgroundColor='rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.backgroundColor='rgba(255,255,255,0.2)';">
                     <svg style="display: inline-block; width: 14px; height: 14px; margin-right: 5px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2351,6 +2276,27 @@
                         </a>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Get Notified Card -->
+            <div style="max-width: 600px; margin: 40px auto; background: linear-gradient(135deg, rgb(248, 245, 242) 0%, rgb(255, 252, 249) 100%); padding: 35px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); border: 2px solid rgb(235, 225, 217);">
+                <h3 style="text-align: center; color: rgb(150, 100, 90); margin-bottom: 10px; font-size: 24px;">Get Notified When We Open</h3>
+                <p style="text-align: center; margin-bottom: 25px; color: #666;">Be the first to know when we start accepting appointments</p>
+                <form id="notifyForm" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input 
+                        type="email" 
+                        name="subscriber_email"
+                        id="emailInput" 
+                        placeholder="Enter your email address" 
+                        required
+                        style="padding: 14px 18px; border: 2px solid rgb(235, 225, 217); border-radius: 8px; font-size: 15px; width: 100%; box-sizing: border-box; transition: all 0.3s ease;"
+                        onfocus="this.style.borderColor='rgb(210, 152, 142)'; this.style.boxShadow='0 0 0 3px rgba(210, 152, 142, 0.1)';"
+                        onblur="this.style.borderColor='rgb(235, 225, 217)'; this.style.boxShadow='none';"
+                    >
+                    <button type="submit" style="padding: 10px 20px; background: linear-gradient(135deg, rgb(210, 152, 142) 0%, rgb(180, 122, 112) 100%); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.15)';">Notify Me</button>
+                </form>
+                <p style="text-align: center; font-size: 13px; color: #999; margin-top: 15px; margin-bottom: 0;">We respect your privacy. No spam, ever.</p>
+                <div id="formMessage" style="margin-top: 15px; text-align: center; display: none;"></div>
             </div>
         </div>
     </section>
@@ -3625,7 +3571,100 @@
         });
     </script>
 
+    <!-- Countdown Timer Script -->
     <script>
+        // Set the date we're counting down to: January 20th, 2026 at 12:00 AM
+        const countDownDate = new Date("January 20, 2026 00:00:00").getTime();
+        
+        // Update the countdown every 1 second
+        const countdownFunction = setInterval(function() {
+            
+            // Get today's date and time
+            const now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result in the elements with corresponding ids
+            const daysEl = document.getElementById("days");
+            const hoursEl = document.getElementById("hours");
+            const minutesEl = document.getElementById("minutes");
+            const secondsEl = document.getElementById("seconds");
+            
+            if (daysEl) daysEl.innerHTML = days;
+            if (hoursEl) hoursEl.innerHTML = hours;
+            if (minutesEl) minutesEl.innerHTML = minutes;
+            if (secondsEl) secondsEl.innerHTML = seconds;
+            
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                const countdownEl = document.getElementById("countdown");
+                if (countdownEl) {
+                    countdownEl.innerHTML = "<p style='font-size: 24px; font-weight: 600; color: rgb(150, 100, 90);'>We're Open!</p>";
+                }
+            }
+        }, 1000);
+    </script>
+    
+    <!-- Email Form Handler Script -->
+    <script>
+        const notifyForm = document.getElementById('notifyForm');
+        if (notifyForm) {
+            notifyForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const emailInput = document.getElementById('emailInput');
+                const formMessage = document.getElementById('formMessage');
+                const submitButton = this.querySelector('button[type="submit"]');
+                
+                // Get email value
+                const email = emailInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                // Validate email
+                if (!emailRegex.test(email)) {
+                    formMessage.innerHTML = '<p style="color: rgb(180, 122, 112);">Please enter a valid email address.</p>';
+                    formMessage.style.display = 'block';
+                    return;
+                }
+                
+                // Create mailto link with subscriber information
+                const subject = encodeURIComponent('New Subscriber - Aria Gynecology Opening Notification');
+                const body = encodeURIComponent(
+                    'NEW SUBSCRIBER REQUEST\n' +
+                    '======================\n\n' +
+                    'Email Address: ' + email + '\n' +
+                    'Date Submitted: ' + new Date().toLocaleString() + '\n' +
+                    'Requested: Opening notification for January 2026\n\n' +
+                    'Please add this email to the notification list.'
+                );
+                
+                const mailtoLink = 'mailto:dr.simabina@ariagyn.com?subject=' + subject + '&body=' + body;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                formMessage.innerHTML = '<p style="color: rgb(150, 100, 90); font-weight: 600;">✓ Your email client is opening. Please send the email to complete your subscription.</p>';
+                formMessage.style.display = 'block';
+                
+                // Clear the input
+                emailInput.value = '';
+                
+                // Hide message after 8 seconds
+                setTimeout(function() {
+                    formMessage.style.display = 'none';
+                }, 8000);
+            });
+        }
+
         // Mobile menu toggle function
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');

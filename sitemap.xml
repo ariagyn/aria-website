@@ -1,69 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <!-- Homepage / Main Page -->
-  <url>
-    <loc>https://www.yourdomain.com/</loc>
-    <lastmod>2024-12-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- About Section -->
-  <url>
-    <loc>https://www.yourdomain.com/#about</loc>
-    <lastmod>2024-12-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Services Section -->
-  <url>
-    <loc>https://www.yourdomain.com/#services</loc>
-    <lastmod>2024-12-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Insurance Section -->
-  <url>
-    <loc>https://www.yourdomain.com/#insurance</loc>
-    <lastmod>2024-12-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Testimonials Section -->
-  <url>
-    <loc>https://www.yourdomain.com/#testimonials</loc>
-    <lastmod>2024-12-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Practice News Section -->
-  <url>
-    <loc>https://www.yourdomain.com/#news</loc>
-    <lastmod>2024-12-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Contact Section -->
-  <url>
-    <loc>https://www.yourdomain.com/#contact</loc>
-    <lastmod>2024-12-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Patient Forms & Documents Section -->
-  <url>
-    <loc>https://www.yourdomain.com/#documents</loc>
-    <lastmod>2024-12-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- ========================================
+         HOMEPAGE - Main Page
+         Single-page website with multiple sections
+         ======================================== -->
+    <url>
+        <loc>https://www.ariagyn.com/</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        
+        <!-- Primary Images -->
+        <image:image>
+            <image:loc>https://www.ariagyn.com/aria-gynecology-surgery-logo-manassas-va.jpg</image:loc>
+            <image:title>Aria Gynecology &amp; Surgery Logo</image:title>
+            <image:caption>Board Certified Gynecologist and MIGS Specialist in Manassas, Virginia</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.ariagyn.com/dr-sima-bina-gynecologist-migs-specialist-manassas-va.jpg</image:loc>
+            <image:title>Dr. Sima Bina - Board Certified Gynecologist</image:title>
+            <image:caption>Dr. Sima Bina, MD, FACOG - MIGS Specialist in Manassas, VA</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.ariagyn.com/Woman%20of%20All%20ages%20modern%20gynecology%20and%20minimally%20invasive%20surgery%20office%20in%20Manassas%20VA.png</image:loc>
+            <image:title>Women of All Ages - Modern Gynecology</image:title>
+            <image:caption>Modern gynecology and minimally invasive surgery office serving Manassas, VA</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.ariagyn.com/aria-gynecology-Menopause-Society-Certified-Practitioner-logo-manassas-va.png</image:loc>
+            <image:title>Menopause Society Certified Practitioner</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.ariagyn.com/aria-gynecology-American-Board-of-Obstetrics-and-Gynecology-logo-manassas-va.png</image:loc>
+            <image:title>American Board of Obstetrics and Gynecology</image:title>
+        </image:image>
+    </url>
+    
+    <!-- ========================================
+         PAGE SECTIONS - Anchor Links
+         Important sections within the main page
+         ======================================== -->
+    
+    <!-- About Section -->
+    <url>
+        <loc>https://www.ariagyn.com/#about</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Services Section -->
+    <url>
+        <loc>https://www.ariagyn.com/#services</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Insurance Section -->
+    <url>
+        <loc>https://www.ariagyn.com/#insurance</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Testimonials Section -->
+    <url>
+        <loc>https://www.ariagyn.com/#testimonials</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- News Section -->
+    <url>
+        <loc>https://www.ariagyn.com/#news</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Contact Section -->
+    <url>
+        <loc>https://www.ariagyn.com/#contact</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
 </urlset>

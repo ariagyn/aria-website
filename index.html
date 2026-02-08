@@ -218,12 +218,41 @@
             justify-content: space-between;
             gap: 20px;
         }
+        
+        /* Desktop: Equal spacing on both sides */
+        @media (min-width: 1024px) {
+            .nav-container {
+                display: grid;
+                grid-template-columns: minmax(auto, 350px) 1fr minmax(auto, 350px);
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .logo-area {
+                justify-self: start;
+            }
+            
+            .nav-links {
+                justify-self: center;
+            }
+            
+            .nav-container > div:last-child {
+                justify-self: end;
+            }
+        }
 
         .logo-area {
             display: flex;
             align-items: center;
             gap: 10px;
             margin-left: 0;
+            flex: 0 0 auto;
+        }
+        
+        /* Button area to match logo area width for balanced spacing */
+        .nav-container > div:last-child {
+            flex: 0 0 auto;
+            margin: 0;
         }
 
         .logo-placeholder {
@@ -264,6 +293,7 @@
             font-size: 15px;
             color: rgb(210, 152, 142);
             letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
         .tagline span {
@@ -929,31 +959,45 @@
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             /* Header adjustments */
+            header {
+                overflow: visible;
+            }
+
             .nav-container {
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
+                padding-top: 15px;
+                padding-bottom: 15px;
             }
 
             .logo-area {
                 flex-direction: column;
                 text-align: center;
                 width: 100%;
+                gap: 8px;
             }
 
             .logo-placeholder {
-                width: 80px;
-                height: 80px;
+                width: 70px;
+                height: 70px;
                 margin: 0 auto;
             }
 
+            .logo-placeholder img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
             .practice-name {
-                font-size: 20px;
+                font-size: 18px;
                 text-align: center;
+                margin-top: 5px;
             }
 
             .tagline {
-                font-size: 11px;
+                font-size: 10px;
                 text-align: center;
             }
 
@@ -1041,7 +1085,7 @@
             /* Buttons in CTA sections */
             section[style*="background-color: rgb(210, 152, 142)"] a {
                 width: 90%;
-                max-width: 300px;
+                max-width: 316px;
             }
 
             /* Footer adjustments */
@@ -1075,6 +1119,25 @@
 
         /* Enhanced Mobile Optimization - Small Phones */
         @media (max-width: 480px) {
+            /* Header optimizations for small screens */
+            .nav-container {
+                padding-top: 10px;
+            }
+
+            .logo-placeholder {
+                width: 60px;
+                height: 60px;
+            }
+
+            .practice-name {
+                font-size: 16px;
+            }
+
+            .tagline {
+                font-size: 9px;
+                letter-spacing: 0.3px;
+            }
+
             /* Make very small buttons larger on small phones for touch */
             .nav-container > div:last-child a {
                 width: 95% !important;
@@ -1239,8 +1302,6 @@
         .hero-buttons,
         section[style*="background-color: rgb(210, 152, 142)"] > div > div {
             max-width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
         }
 
 
@@ -1251,213 +1312,20 @@
         
         /* Desktop Sizes (Default - Large Screens) */
         @media (min-width: 769px) {
-            /* Header buttons - Desktop optimized */
-            header .nav-container > div:last-child a[href*="mailto"],
-            header .nav-container > div:last-child a[href*="tel"],
-            header .nav-container > div:last-child a[href*="wa.me"] {
-                width: 96px !important;
-                font-size: 10px !important;
-                padding: 6px 10px !important;
-            }
-            
-            header .nav-container > div:last-child a#Setmore_button_iframe {
-                width: 180px !important;
-                font-size: 10px !important;
-                padding: 6px 13px !important;
-            }
-            
-            header .nav-container > div:last-child {
-                width: 384px !important;
-            }
-            
-            /* Hero section buttons - Desktop */
-            .hero-buttons a[href*="mailto"],
-            .hero-buttons a[href*="tel"],
-            .hero-buttons a[href*="wa.me"] {
-                width: 112px !important;
-                font-size: 12px !important;
-                padding: 10px 16px !important;
-            }
-            
-            .hero-buttons a#Setmore_button_iframe_hero {
-                width: 264px !important;
-                font-size: 12px !important;
-                padding: 10px 19px !important;
-            }
-            
-            .hero-buttons {
-                max-width: 480px !important;
-            }
-            
-            /* CTA and Modal buttons - Desktop */
-            section[style*="background-color: rgb(210, 152, 142)"] a[href*="mailto"],
-            section[style*="background-color: rgb(210, 152, 142)"] a[href*="tel"],
-            section[style*="background-color: rgb(210, 152, 142)"] a[href*="wa.me"],
-            .modal-content a[href*="mailto"],
-            .modal-content a[href*="tel"],
-            .modal-content a[href*="wa.me"] {
-                width: 112px !important;
-                font-size: 11px !important;
-                padding: 8px 14px !important;
-            }
-            
-            section[style*="background-color: rgb(210, 152, 142)"] a[id*="Setmore_button_iframe"],
-            .modal-content a[id*="Setmore_button_iframe"] {
-                width: 264px !important;
-                font-size: 11px !important;
-                padding: 8px 19px !important;
-            }
+            /* Responsive adjustments for desktop - inline styles handle button sizing */
         }
         
         /* Tablet Sizes (Medium Screens) */
         @media (min-width: 481px) and (max-width: 768px) {
-            /* Header buttons - Tablet */
-            header .nav-container > div:last-child a[href*="mailto"],
-            header .nav-container > div:last-child a[href*="tel"],
-            header .nav-container > div:last-child a[href*="wa.me"] {
-                width: 88px !important;
-                font-size: 10px !important;
-                padding: 6px 10px !important;
-            }
-            
-            header .nav-container > div:last-child a#Setmore_button_iframe {
-                width: 168px !important;
-                font-size: 10px !important;
-                padding: 6px 13px !important;
-            }
-            
-            header .nav-container > div:last-child {
-                width: 384px !important;
-            }
-            
-            /* Hero section - Tablet */
-            .hero-buttons a[href*="mailto"],
-            .hero-buttons a[href*="tel"],
-            .hero-buttons a[href*="wa.me"] {
-                width: 96px !important;
-                font-size: 11px !important;
-                padding: 8px 13px !important;
-            }
-            
-            .hero-buttons a#Setmore_button_iframe_hero {
-                width: 240px !important;
-                font-size: 11px !important;
-                padding: 8px 16px !important;
-            }
-            
-            .hero-buttons {
-                max-width: 416px !important;
-            }
-            
-            /* CTA and Modal buttons - Tablet */
-            section[style*="background-color: rgb(210, 152, 142)"] a[href*="mailto"],
-            section[style*="background-color: rgb(210, 152, 142)"] a[href*="tel"],
-            section[style*="background-color: rgb(210, 152, 142)"] a[href*="wa.me"],
-            .modal-content a[href*="mailto"],
-            .modal-content a[href*="tel"],
-            .modal-content a[href*="wa.me"] {
-                width: 96px !important;
-                font-size: 10px !important;
-                padding: 8px 13px !important;
-            }
-            
-            section[style*="background-color: rgb(210, 152, 142)"] a[id*="Setmore_button_iframe"],
-            .modal-content a[id*="Setmore_button_iframe"] {
-                width: 240px !important;
-                font-size: 10px !important;
-                padding: 8px 16px !important;
-            }
+            /* Responsive adjustments for tablet - inline styles handle button sizing */
         }
         
         /* Mobile Sizes (Small Screens) */
         @media (max-width: 480px) {
-            /* Header buttons - Mobile (Full Width) */
-            header .nav-container > div:last-child {
-                width: 100% !important;
-                padding: 0 10px;
-            }
-            
-            header .nav-container > div:last-child a {
-                flex: 1 1 calc(33.333% - 8px) !important;
-                min-width: 80px !important;
-                max-width: 112px !important;
-                font-size: 9px !important;
-                padding: 8px 6px !important;
-            }
-            
-            header .nav-container > div:last-child a#Setmore_button_iframe {
-                flex: 1 1 100% !important;
-                max-width: 100% !important;
-                font-size: 14px !important;
-                padding: 13px 19px !important;
-            }
-            
-            /* Hero section - Mobile */
-            .hero-buttons {
-                max-width: 100% !important;
-                padding: 0 10px;
-            }
-            
-            .hero-buttons a[href*="mailto"],
-            .hero-buttons a[href*="tel"],
-            .hero-buttons a[href*="wa.me"] {
-                flex: 1 1 calc(33.333% - 8px) !important;
-                min-width: 80px !important;
-                width: auto !important;
-                font-size: 10px !important;
-                padding: 10px 6px !important;
-            }
-            
-            .hero-buttons a#Setmore_button_iframe_hero {
-                flex: 1 1 100% !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                font-size: 14px !important;
-                padding: 14px 22px !important;
-            }
-            
-            /* CTA sections - Mobile */
-            section[style*="background-color: rgb(210, 152, 142)"] > div > div {
-                padding: 0 10px;
-            }
-            
-            section[style*="background-color: rgb(210, 152, 142)"] a[href*="mailto"],
-            section[style*="background-color: rgb(210, 152, 142)"] a[href*="tel"],
-            section[style*="background-color: rgb(210, 152, 142)"] a[href*="wa.me"] {
-                flex: 1 1 calc(33.333% - 8px) !important;
-                min-width: 80px !important;
-                width: auto !important;
-                font-size: 10px !important;
-                padding: 10px 6px !important;
-            }
-            
-            section[style*="background-color: rgb(210, 152, 142)"] a[id*="Setmore_button_iframe"] {
-                flex: 1 1 100% !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                font-size: 14px !important;
-                padding: 14px 22px !important;
-            }
-            
-            /* Modal buttons - Mobile */
-            .modal-content a[href*="mailto"],
-            .modal-content a[href*="tel"],
-            .modal-content a[href*="wa.me"] {
-                flex: 1 1 calc(33.333% - 8px) !important;
-                min-width: 80px !important;
-                width: auto !important;
-                font-size: 10px !important;
-                padding: 10px 6px !important;
-            }
-            
-            .modal-content a[id*="Setmore_button_iframe"] {
-                flex: 1 1 100% !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                font-size: 14px !important;
-                padding: 14px 22px !important;
-            }
+            /* Let inline styles handle button sizing - flex-wrap handles responsiveness */
         }
+        
+        /* End of Responsive Button Sizing */
         
         /* Extra Small Mobile (Portrait phones) */
         @media (max-width: 360px) {
@@ -1952,40 +1820,8 @@
                 <a href="health-blog.html">Health Blog</a>
                 <a href="faq.html">FAQ</a>
             </nav>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                <div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 8px;">
-                    <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
-                    <a href="tel:+17038648244" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
-                        <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        Call Us
-                    </a>
-                    <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: block; width: 100px; padding: 8px 16px; background-color: #B8BD9F; color: rgb(64, 64, 64); border: 2px solid #B8BD9F; border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" aria-label="Chat on WhatsApp">
-                        <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                        WhatsApp
-                    </a>
-                </div>
-                <a style='display: block; width: 200px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3);' id='Setmore_button_iframe' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-inner">
-            <div>
-                <h1>Gynecology & Minimally Invasive Surgery<br>Aria Gynecology Manassas, VA</h1>
-                <h2>Excellence in Gynecologic Care & Minimally Invasive Surgery</h2>
-                <p>Aria Gynecology & Surgery is a premier women's healthcare practice in Manassas, Virginia, providing advanced gynecologic care, minimally invasive surgery, menopause management, and personalized wellness services. Led by Board-Certified Gynecologist and MIGS specialist Dr. Sima Bina, we deliver compassionate, evidence-based care tailored to every stage of a woman's life in Northern Virginia.</p>
-                <p style="margin-top: 20px; font-style: italic; color: rgb(150, 100, 90); font-size: 16px;">Looking for a gynecologist in Manassas, VA?</p>
-                <p style="margin-top: 20px; font-weight: 600; color: rgb(150, 100, 90); font-size: 15px; line-height: 1.6;">
-                    <strong>Aria Gynecology & Surgery</strong><br>
-                    Proudly serving cities of Manassas, Chantilly, Gainesville, Centreville, Ashburn, Reston, Herndon, Fairfax, & the greater Loudoun, Prince William, Fairfax Counties.
-                </p>
-                <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 324px; margin: 0 auto;">
-                    <div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 8px; width: 100%;">
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px;">
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; width: 100%;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2000,7 +1836,39 @@
                             WhatsApp
                         </a>
                     </div>
-                    <a style='display: block; width: 200px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3); margin: 0 auto;' id='Setmore_button_iframe_hero' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
+                    <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3);' id='Setmore_button_iframe' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
+                </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <h1>Gynecology & Minimally Invasive Surgery<br>Aria Gynecology Manassas, VA</h1>
+                <h2>Excellence in Gynecologic Care & Minimally Invasive Surgery</h2>
+                <p>Aria Gynecology & Surgery is a premier women's healthcare practice in Manassas, Virginia, providing advanced gynecologic care, minimally invasive surgery, menopause management, and personalized wellness services. Led by Board-Certified Gynecologist and MIGS specialist Dr. Sima Bina, we deliver compassionate, evidence-based care tailored to every stage of a woman's life in Northern Virginia.</p>
+                <p style="margin-top: 20px; font-style: italic; color: rgb(150, 100, 90); font-size: 16px;">Looking for a gynecologist in Manassas, VA?</p>
+                <p style="margin-top: 20px; font-weight: 600; color: rgb(150, 100, 90); font-size: 15px; line-height: 1.6;">
+                    <strong>Aria Gynecology & Surgery</strong><br>
+                    Proudly serving cities of Manassas, Chantilly, Gainesville, Centreville, Ashburn, Reston, Herndon, Fairfax, & the greater Loudoun, Prince William, Fairfax Counties.
+                </p>
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; width: 100%;">
+                        <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
+                        <a href="tel:+17038648244" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
+                            <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            Call Us
+                        </a>
+                        <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: block; width: 100px; padding: 8px 16px; background-color: #B8BD9F; color: rgb(64, 64, 64); border: 2px solid #B8BD9F; border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" aria-label="Chat on WhatsApp">
+                            <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3); margin: 0 auto;' id='Setmore_button_iframe_hero' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
                 </div>
             </div>
             <div class="hero-image-placeholder">
@@ -2110,24 +1978,24 @@
     <section id="insurance" style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
         <div class="section-inner">
             <div style="color: white; font-size: 28px; margin-bottom: 20px; font-weight: bold;">Schedule Your Gynecology Appointment in Manassas, VA Today</div>
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 324px; margin: 0 auto;">
-                <div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 8px; width: 100%;">
-                    <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
-                    <a href="tel:+17038648244" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
-                        <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        Call Us
-                    </a>
-                    <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: block; width: 100px; padding: 8px 16px; background-color: #B8BD9F; color: rgb(64, 64, 64); border: 2px solid #B8BD9F; border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" aria-label="Chat on WhatsApp">
-                        <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                        WhatsApp
-                    </a>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; width: 100%;">
+                        <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
+                        <a href="tel:+17038648244" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
+                            <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            Call Us
+                        </a>
+                        <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: block; width: 100px; padding: 8px 16px; background-color: #B8BD9F; color: rgb(64, 64, 64); border: 2px solid #B8BD9F; border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" aria-label="Chat on WhatsApp">
+                            <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3); margin: 0 auto;' id='Setmore_button_iframe_cta1' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
                 </div>
-                <a style='display: block; width: 200px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3); margin: 0 auto;' id='Setmore_button_iframe_cta1' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
-            </div>
             
             <!-- Insurance & Payment Information -->
             <div style="margin-top: 40px; padding-top: 30px; border-top: 2px solid rgba(255,255,255,0.3);">
@@ -2542,7 +2410,7 @@
         </div>
     </section>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Star Rating System
         let selectedRating = 0;
 
@@ -2651,24 +2519,24 @@
     <section style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
         <div class="section-inner">
             <div style="color: white; font-size: 28px; margin-bottom: 20px; font-weight: bold;">Book your appointment with your trusted gynecologist in Manassas, VA</div>
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 324px; margin: 0 auto;">
-                <div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 8px; width: 100%;">
-                    <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
-                    <a href="tel:+17038648244" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
-                        <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        Call Us
-                    </a>
-                    <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: block; width: 100px; padding: 8px 16px; background-color: #B8BD9F; color: rgb(64, 64, 64); border: 2px solid #B8BD9F; border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" aria-label="Chat on WhatsApp">
-                        <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                        WhatsApp
-                    </a>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; width: 100%;">
+                        <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
+                        <a href="tel:+17038648244" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
+                            <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            Call Us
+                        </a>
+                        <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: block; width: 100px; padding: 8px 16px; background-color: #B8BD9F; color: rgb(64, 64, 64); border: 2px solid #B8BD9F; border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" aria-label="Chat on WhatsApp">
+                            <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3); margin: 0 auto;' id='Setmore_button_iframe_cta2' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
                 </div>
-                <a style='display: block; width: 200px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3); margin: 0 auto;' id='Setmore_button_iframe_cta2' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
-            </div>
         </div>
     </section>
 
@@ -2773,24 +2641,24 @@
     <section style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
         <div class="section-inner">
             <div style="color: white; font-size: 28px; margin-bottom: 20px; font-weight: bold;">Ready to schedule? Book your gynecology visit in Manassas today.</div>
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 324px; margin: 0 auto;">
-                <div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 8px; width: 100%;">
-                    <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
-                    <a href="tel:+17038648244" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
-                        <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        Call Us
-                    </a>
-                    <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: block; width: 100px; padding: 8px 16px; background-color: #B8BD9F; color: rgb(64, 64, 64); border: 2px solid #B8BD9F; border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" aria-label="Chat on WhatsApp">
-                        <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                        WhatsApp
-                    </a>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; width: 100%;">
+                        <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
+                        <a href="tel:+17038648244" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
+                            <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            Call Us
+                        </a>
+                        <a href="https://wa.me/17038648244" target="_blank" rel="noopener noreferrer" style="display: block; width: 100px; padding: 8px 16px; background-color: #B8BD9F; color: rgb(64, 64, 64); border: 2px solid #B8BD9F; border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.backgroundColor='#A3A88B'; this.style.borderColor='#A3A88B'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='#B8BD9F'; this.style.borderColor='#B8BD9F'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';" aria-label="Chat on WhatsApp">
+                            <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3); margin: 0 auto;' id='Setmore_button_iframe_cta3' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
                 </div>
-                <a style='display: block; width: 200px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3); margin: 0 auto;' id='Setmore_button_iframe_cta3' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
-            </div>
         </div>
     </section>
 
@@ -3066,7 +2934,7 @@
                 </div>
             </div>
             
-            <div>&copy; 2024 Aria Gynecology & Surgery. All rights reserved.</div>
+            <div>&copy; 2025 Aria Gynecology & Surgery. All rights reserved.</div>
         </div>
     </footer>
 
@@ -3325,7 +3193,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your preventive & wellness care needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3339,7 +3207,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal1' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal1' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -3427,7 +3295,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your minimally invasive gynecologic surgery (MIGS) needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3441,7 +3309,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal2' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal2' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -3519,7 +3387,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your general gynecology needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3533,7 +3401,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal3' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal3' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -3609,7 +3477,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your reproductive health & family planning needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3623,7 +3491,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal4' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal4' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -3696,7 +3564,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your office procedures needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3710,7 +3578,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal5' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal5' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -3778,7 +3646,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your menopause management & hormone therapy needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3792,7 +3660,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal6' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal6' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -3853,7 +3721,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your pelvic health & intimacy care needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3867,7 +3735,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal7' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal7' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -3928,7 +3796,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your advanced diagnostic testing needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3942,7 +3810,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal8' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal8' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -4005,7 +3873,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your high-risk & complex gynecology needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -4019,7 +3887,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal9' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal9' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -4075,7 +3943,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your post-surgical care needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -4089,7 +3957,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal10' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal10' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -4155,7 +4023,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your patient education & support needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -4169,7 +4037,7 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal11' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal11' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -4245,7 +4113,7 @@
                     
                     <p style="font-size: 18px; font-weight: bold; color: rgb(150, 100, 90); margin-bottom: 10px;">Book an appointment with us to discuss your aesthetic & functional gynecology needs</p>
                     <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Call us at (703) 864-8244 or schedule online</p>
-                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto;">
+                                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 316px; margin: 0 auto;">
                         <a href="mailto:dr.simabina@ariagyn.com" style="display: block; width: 100px; padding: 8px 16px; background-color: rgb(222, 203, 164); color: rgb(64, 64, 64); border: 2px solid rgb(222, 203, 164); border-radius: 8px; font-size: 11px; font-weight: 600; white-space: nowrap; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(202, 183, 144)'; this.style.borderColor='rgb(202, 183, 144)';" onmouseout="this.style.backgroundColor='rgb(222, 203, 164)'; this.style.borderColor='rgb(222, 203, 164)';" title="Email Dr. Bina"><svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email Us</a>
                         <a href="tel:+17038648244" style="display: block; width: 93px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)';">
                             <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -4259,14 +4127,14 @@
                             </svg>
                             WhatsApp
                         </a>
-                        <a style='display: block; width: 187px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal12' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
+                        <a style='display: block; width: 316px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s ease; text-align: center;' id='Setmore_button_iframe_modal12' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)';">Book Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Modal name mapping for analytics
         const modalNames = {
             'annualExamsModal': 'Annual Gynecologic Exams & Pap Smears in Manassas',
@@ -4353,29 +4221,4 @@
             // DEV MODE: Log analytics viewing instructions
             if (typeof DEV_MODE !== 'undefined' && DEV_MODE) {
                 console.log('%c📊 DEV MODE ANALYTICS ENABLED', 'color: #4CAF50; font-weight: bold; font-size: 14px;');
-                console.log('%cTo view analytics data, type: viewAnalytics()', 'color: #2196F3;');
-                console.log('%cTo clear analytics data, type: clearAnalytics()', 'color: #FF9800;');
-            }
-        });
-    
-        
-        // Mobile menu toggle function
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const menuToggle = document.querySelector('.mobile-menu-toggle');
-            
-            if (navLinks && menuToggle) {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                } else {
-                    navLinks.classList.add('active');
-                    menuToggle.classList.add('active');
-                    menuToggle.setAttribute('aria-expanded', 'true');
-                }
-            }
-        }
-    </script>
-</body>
-</html>
+                console.log('%cTo view analy

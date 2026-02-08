@@ -256,7 +256,7 @@
         @media (min-width: 1024px) {
             .nav-container {
                 display: grid;
-                grid-template-columns: minmax(auto, 300px) 1fr minmax(auto, 150px);
+                grid-template-columns: minmax(auto, 280px) 1fr minmax(auto, 280px);
                 align-items: center;
                 gap: 20px;
             }
@@ -1055,14 +1055,14 @@
                 flex-direction: column;
                 text-align: center;
                 width: 100%;
-                gap: 8px;
+                gap: 15px;
                 margin-top: 10px;
             }
 
             .logo-placeholder {
-                width: 70px;
-                height: 70px;
-                margin: 0 auto;
+                width: 85px;
+                height: 85px;
+                margin: 0 auto 5px auto;
             }
 
             .logo-placeholder img {
@@ -1074,7 +1074,7 @@
             .practice-name {
                 font-size: 18px;
                 text-align: center;
-                margin-top: 5px;
+                margin-top: 10px;
             }
 
             .tagline {
@@ -1220,15 +1220,18 @@
 
             .logo-area {
                 margin-top: 8px;
+                gap: 12px;
             }
 
             .logo-placeholder {
-                width: 60px;
-                height: 60px;
+                width: 70px;
+                height: 70px;
+                margin-bottom: 5px;
             }
 
             .practice-name {
                 font-size: 16px;
+                margin-top: 8px;
             }
 
             /* Section padding - more compact on small screens */
@@ -4366,6 +4369,11 @@
         // Mobile menu toggle function
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
+            if (!navLinks) {
+                console.error('Navigation links not found');
+                return;
+            }
+            
             navLinks.classList.toggle('active');
             
             // Track mobile menu usage
@@ -4405,6 +4413,14 @@
         
         // Track CTA button clicks
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle button
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    toggleMobileMenu();
+                });
+            }
+            
             // Track "Book Appointment" button clicks
             const ctaButtons = document.querySelectorAll('.nav-cta, .btn-primary');
             ctaButtons.forEach(button => {

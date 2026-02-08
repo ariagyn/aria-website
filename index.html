@@ -2007,6 +2007,7 @@
                 <a href="index.html#services">Services</a>
                 <a href="index.html#insurance">Insurance</a>
                 <a href="index.html#contact">Contact</a>
+                <a href="index.html#reviews">Reviews</a>
                 <a href="index.html#documents">Documents</a>
                 <a href="health-blog.html">Health Blog</a>
                 <a href="faq.html">FAQ</a>
@@ -2520,7 +2521,7 @@
     </section>
 
     <!-- Patient Review Submission Form -->
-    <section style="background-color: rgb(250, 248, 246); padding: 60px 20px;">
+    <section id="reviews" style="background-color: rgb(250, 248, 246); padding: 60px 20px;">
         <div class="section-inner" style="max-width: 900px; margin: 0 auto;">
             <h2 style="text-align: center; color: rgb(150, 100, 90); margin-bottom: 10px;">Share Your Experience</h2>
             <p class="section-subtitle" style="text-align: center; margin-bottom: 40px;">Help other women in Northern Virginia by sharing your review</p>
@@ -4338,6 +4339,19 @@
             'termsOfServiceModal': 'Terms of Service'
         };
         
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+            
+            // Track mobile menu usage
+            if (navLinks.classList.contains('active')) {
+                trackEvent('mobile_menu', 'Navigation', 'Menu Opened');
+            } else {
+                trackEvent('mobile_menu', 'Navigation', 'Menu Closed');
+            }
+        }
+        
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -4380,6 +4394,12 @@
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     trackEvent('navigation_click', 'Navigation', this.textContent.trim());
+                    
+                    // Close mobile menu when link is clicked
+                    const navLinksContainer = document.querySelector('.nav-links');
+                    if (navLinksContainer.classList.contains('active')) {
+                        navLinksContainer.classList.remove('active');
+                    }
                 });
             });
             

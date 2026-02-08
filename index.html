@@ -1094,33 +1094,29 @@
 
             /* Navigation - stack vertically on mobile */
             .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
+                display: none; /* Start hidden */
+                flex-direction: column !important;
+                width: 100% !important;
                 text-align: center;
-                gap: 0;
-                padding: 0;
-                background-color: white;
-                border-top: 2px solid rgb(235, 225, 217);
-                margin-top: 10px;
+                gap: 0 !important;
+                padding: 0 !important;
+                background-color: white !important;
+                border-top: 2px solid rgb(235, 225, 217) !important;
+                margin-top: 10px !important;
                 overflow: hidden;
                 transition: all 0.3s ease;
             }
 
-            .nav-links.active {
-                display: flex !important;
-            }
-
             .nav-links a {
-                padding: 15px 20px;
-                border-bottom: 1px solid rgb(235, 225, 217);
-                font-size: 14px;
-                display: block;
-                width: 100%;
+                padding: 15px 20px !important;
+                border-bottom: 1px solid rgb(235, 225, 217) !important;
+                font-size: 14px !important;
+                display: block !important;
+                width: 100% !important;
             }
 
             .nav-links a:last-child {
-                border-bottom: none;
+                border-bottom: none !important;
             }
 
             /* Header buttons - full width on mobile */
@@ -1370,8 +1366,9 @@
 
         /* Touch-friendly spacing */
         @media (max-width: 768px) {
-            /* Increase tap target size */
-            a, button {
+            /* Increase tap target size - but exclude nav-links children */
+            a:not(.nav-links a), 
+            button:not(.mobile-menu-toggle) {
                 min-height: 44px;
                 display: inline-flex;
                 align-items: center;
@@ -2029,7 +2026,7 @@
                     <div class="tagline">Attentive <span>•</span> Reliable <span>•</span> Innovative <span>•</span> Accomplished</div>
                 </div>
             </div>
-            <nav class="nav-links">
+            <nav class="nav-links" id="mobileNav">
                 <a href="index.html#about">About</a>
                 <a href="index.html#services">Services</a>
                 <a href="index.html#insurance">Insurance</a>
@@ -2039,6 +2036,24 @@
                 <a href="health-blog.html">Health Blog</a>
                 <a href="faq.html">FAQ</a>
             </nav>
+            
+            <script>
+            // ULTRA-SIMPLE TOGGLE - This WILL work
+            function toggleMobileMenu() {
+                var nav = document.getElementById('mobileNav');
+                if (!nav) {
+                    alert('ERROR: Nav not found!');
+                    return;
+                }
+                
+                if (nav.style.display === 'flex') {
+                    nav.style.display = 'none';
+                } else {
+                    nav.style.display = 'flex';
+                }
+            }
+            </script>
+            
             <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center;">
                 <a href="tel:+17038648244" style="display: block; width: 133px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
                     <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -4366,21 +4381,18 @@
             'termsOfServiceModal': 'Terms of Service'
         };
         
-        // Mobile menu toggle function
+        // Mobile menu toggle function (backup - uses same simple approach)
         function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            if (!navLinks) {
-                console.error('Navigation links not found');
+            var nav = document.getElementById('mobileNav');
+            if (!nav) {
+                console.error('Navigation not found');
                 return;
             }
             
-            navLinks.classList.toggle('active');
-            
-            // Track mobile menu usage
-            if (navLinks.classList.contains('active')) {
-                trackEvent('mobile_menu', 'Navigation', 'Menu Opened');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
             } else {
-                trackEvent('mobile_menu', 'Navigation', 'Menu Closed');
+                nav.style.display = 'flex';
             }
         }
         

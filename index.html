@@ -235,9 +235,6 @@
         header {
             background-color: #ffffff;
             border-bottom: 4px solid rgb(219, 196, 176);
-            position: sticky;
-            top: 0;
-            z-index: 100;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
@@ -1073,9 +1070,12 @@
 
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
-            /* Header adjustments */
+            /* Header adjustments - sticky on mobile */
             header {
                 overflow: visible;
+                position: sticky;
+                top: 0;
+                z-index: 100;
             }
 
             .nav-container {

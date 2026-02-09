@@ -2087,6 +2087,20 @@
                     nav.style.display = 'flex';
                 }
             }
+            
+            // Auto-close menu when any link is clicked
+            document.addEventListener('DOMContentLoaded', function() {
+                var nav = document.getElementById('mobileNav');
+                if (nav) {
+                    var links = nav.getElementsByTagName('a');
+                    for (var i = 0; i < links.length; i++) {
+                        links[i].addEventListener('click', function() {
+                            // Close the menu when link is clicked
+                            nav.style.display = 'none';
+                        });
+                    }
+                }
+            });
             </script>
             
             <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center;">
@@ -4430,6 +4444,19 @@
                 nav.style.display = 'flex';
             }
         }
+        
+        // Auto-close menu when any link is clicked (backup)
+        (function() {
+            var nav = document.getElementById('mobileNav');
+            if (nav) {
+                var links = nav.getElementsByTagName('a');
+                for (var i = 0; i < links.length; i++) {
+                    links[i].addEventListener('click', function() {
+                        nav.style.display = 'none';
+                    });
+                }
+            }
+        })();
         
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');

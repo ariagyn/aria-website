@@ -49,14 +49,20 @@
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//assets.setmore.com">
 
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://assets.setmore.com" crossorigin>
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="aria-gynecology-surgery-logo-manassas-va.jpg" as="image" type="image/jpeg">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Great+Vibes&display=swap" as="style">
+    
+    <!-- Load fonts with font-display swap for faster rendering -->
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet"></noscript>
     
     <!-- Sitemap Reference -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
@@ -83,8 +89,8 @@
     <meta name="twitter:image" content="https://www.ariagyn.com/dr-sima-bina-gynecologist-migs-specialist-manassas-va.jpg">
     <meta name="twitter:image:alt" content="Dr. Sima Bina - Board Certified Gynecologist in Manassas, VA">
     
-    <!-- Setmore Booking Integration -->
-    <script id='setmore_script' type='text/javascript' src='https://assets.setmore.com/integration/static/setmoreIframeLive.js'></script>
+    <!-- Setmore Booking Integration - Deferred for performance -->
+    <script id='setmore_script' type='text/javascript' src='https://assets.setmore.com/integration/static/setmoreIframeLive.js' defer></script>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -171,6 +177,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     
     <style>
+        /* ============================================
+           CRITICAL CSS - PERFORMANCE OPTIMIZED
+           ============================================ */
+        
+        /* Enable hardware acceleration for better mobile performance */
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+        
+        /* Improve font rendering on mobile */
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* Optimize repaints and reflows */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* Prevent layout shifts */
+            min-height: 100vh;
+        }
+        
+        /* Optimize image loading */
+        img {
+            content-visibility: auto;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Reduce paint areas for better performance */
+        .card, .modal-content {
+            contain: layout style paint;
+        }
+        
+        /* ============================================
+           MAIN STYLES
+           ============================================ */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -689,7 +740,27 @@
         }
         
         .card.expanded p {
-            max-height: 100px;
+            max-height: 1000px;
+        }
+        
+        .card.expanded div {
+            max-height: none;
+        }
+        
+        /* Badge divs (ANNOUNCEMENT, HEALTH NEWS, etc.) always visible */
+        .card > div[style*="background-color"] {
+            max-height: none !important;
+            overflow: visible !important;
+        }
+
+        .card h4 {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .card.expanded h4 {
+            max-height: 200px;
         }
 
         /* Office Information card - always fully visible */
@@ -1204,13 +1275,87 @@
 
             /* Section inner padding */
             .section-inner {
-                padding: 0 15px;
+                padding: 0 10px;
             }
 
-            /* Buttons in CTA sections */
-            section[style*="background-color: rgb(210, 152, 142)"] a {
-                width: 90%;
-                max-width: 316px;
+            /* ============================================
+               MOBILE BUTTON OPTIMIZATION - PREVENT TRUNCATION
+               ============================================ */
+            
+            /* ALL BUTTON GROUPS - Force stacking on very small screens */
+            div[style*="max-width: 316px"],
+            div[style*="max-width: 300px"] {
+                max-width: 100% !important;
+                padding: 0 10px !important;
+            }
+            
+            /* Small buttons in groups (Email, Call, WhatsApp) */
+            a[style*="width: 100px"] {
+                width: auto !important;
+                min-width: 85px !important;
+                flex: 1 1 30% !important;
+                padding: 10px 6px !important;
+                font-size: 10px !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Modal buttons (93px width) */
+            a[style*="width: 93px"] {
+                width: auto !important;
+                min-width: 80px !important;
+                flex: 1 1 30% !important;
+                padding: 10px 6px !important;
+                font-size: 11px !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* Make icons smaller on mobile */
+            a[style*="width: 100px"] svg,
+            a[style*="width: 93px"] svg,
+            a[href*="wa.me"] svg {
+                width: 9px !important;
+                height: 9px !important;
+                margin-right: 2px !important;
+            }
+            
+            /* Reduce gap between buttons */
+            div[style*="gap: 8px"] {
+                gap: 5px !important;
+            }
+            
+            /* WhatsApp specific - ensure no truncation */
+            a[href*="wa.me"] {
+                font-size: 9.5px !important;
+                padding: 10px 4px !important;
+            }
+            
+            /* Wide buttons (Book Now, etc.) - full width on mobile */
+            a[style*="width: 316px"],
+            a[style*="width: 187px"],
+            a[style*="width: 177px"] {
+                width: 95% !important;
+                max-width: 320px !important;
+                margin: 0 auto !important;
+                padding: 12px 16px !important;
+                font-size: 13px !important;
+            }
+            
+            /* Header buttons */
+            header div[style*="flex-direction: column"] a {
+                width: 90% !important;
+                max-width: 280px !important;
+                margin: 0 auto !important;
+            }
+            
+            /* CTA sections - ensure buttons fit */
+            section[style*="background-color: rgb(210, 152, 142)"] {
+                padding: 40px 10px !important;
+            }
+            
+            section[style*="background-color: rgb(210, 152, 142)"] div[style*="flex-direction: row"] {
+                width: 100% !important;
+                justify-content: center !important;
+                flex-wrap: wrap !important;
             }
 
             /* Footer adjustments */
@@ -1525,6 +1670,41 @@
             }
         }
 
+        /* Extra small screens - optimize buttons further */
+        @media (max-width: 400px) {
+            /* Force even smaller button text on tiny screens */
+            a[style*="width: 100px"],
+            a[href*="wa.me"] {
+                font-size: 9px !important;
+                padding: 10px 3px !important;
+            }
+            
+            /* Make icons tiny */
+            a[style*="width: 100px"] svg,
+            a[href*="wa.me"] svg {
+                width: 8px !important;
+                height: 8px !important;
+                margin-right: 1px !important;
+            }
+            
+            /* Reduce gap even more */
+            div[style*="gap: 8px"] {
+                gap: 3px !important;
+            }
+            
+            /* Stack buttons vertically if needed */
+            div[style*="flex-direction: row"][style*="width: 100%"] {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+            
+            div[style*="flex-direction: row"][style*="width: 100%"] a {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 5px !important;
+            }
+        }
+
         /* High DPI screens */
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             /* Ensure crisp text on retina displays */
@@ -1653,6 +1833,80 @@
             }
         }
 
+        /* ============================================
+           MOBILE PERFORMANCE OPTIMIZATIONS
+           ============================================ */
+        
+        @media (max-width: 768px) {
+            /* Reduce animation complexity on mobile */
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            /* Only allow smooth transitions for critical elements */
+            .card,
+            button,
+            a,
+            .modal,
+            .mobile-menu-toggle {
+                animation-duration: 0.3s !important;
+                transition-duration: 0.3s !important;
+            }
+            
+            /* Optimize scroll performance */
+            .testimonials-scroll,
+            .insurance-logos {
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: auto;
+            }
+            
+            /* Reduce GPU load */
+            .hero,
+            section {
+                will-change: auto;
+            }
+            
+            /* Optimize modal rendering */
+            .modal-content {
+                transform: translateZ(0);
+                backface-visibility: hidden;
+            }
+        }
+        
+        /* Prefers reduced motion - accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        /* ============================================
+           CRITICAL RENDERING PATH OPTIMIZATION
+           ============================================ */
+        
+        /* Above the fold content - prioritize */
+        header,
+        .hero,
+        .logo-placeholder {
+            content-visibility: auto;
+        }
+        
+        /* Below the fold - defer rendering */
+        .testimonials-grid,
+        .insurance-logos,
+        footer,
+        .modal {
+            content-visibility: auto;
+            contain-intrinsic-size: 0 500px;
+        }
+        
     </style>
     
     <!-- Enhanced JSON-LD Schema Markup for SEO -->
@@ -2104,13 +2358,13 @@
             </script>
             
             <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center;">
-                <a href="tel:+17038648244" style="display: block; width: 133px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
+                <a href="tel:+17038648244" style="display: block; width: 177px; padding: 8px 16px; background-color: rgb(128, 128, 128); color: white; border: 2px solid rgb(128, 128, 128); border-radius: 8px; font-weight: 600; font-size: 13px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align: center; white-space: nowrap;" onmouseover="this.style.backgroundColor='rgb(96, 96, 96)'; this.style.borderColor='rgb(96, 96, 96)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(128, 128, 128)'; this.style.borderColor='rgb(128, 128, 128)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">
                     <svg style="display: inline-block; width: 11px; height: 11px; margin-right: 4px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     Call Us
                 </a>
-                <a style='display: block; width: 133px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 11px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3);' id='Setmore_button_iframe' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
+                <a style='display: block; width: 177px; padding: 8px 24px; background-color: rgb(218, 189, 103); color: rgb(64, 64, 64); border: 2px solid rgb(218, 189, 103); border-radius: 8px; font-weight: 600; font-size: 13px; text-decoration: none; transition: all 0.3s ease; text-align: center; white-space: nowrap; box-shadow: 0 8px 20px rgba(0,0,0,0.3);' id='Setmore_button_iframe' href='https://ariagyn.setmore.com' onmouseover="this.style.backgroundColor='rgb(198, 169, 83)'; this.style.borderColor='rgb(198, 169, 83)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.4)';" onmouseout="this.style.backgroundColor='rgb(218, 189, 103)'; this.style.borderColor='rgb(218, 189, 103)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';">Book Now</a>
             </div>
         </div>
     </header>
@@ -2471,6 +2725,16 @@
             <h2>Patient Testimonials - Real Reviews from Northern Virginia Women</h2>
             <p class="section-subtitle">What our patients are saying</p>
             <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-scroll-content">
+                        <p style="font-style: italic; margin-bottom: 15px;">"Dr. Sima Bina is an outstanding gynecologist. She is kind, professional, and truly caring. She takes the time to listen, answers all questions patiently, and explains everything clearly. She made me feel comfortable, respected, and well cared for. I highly recommend her."</p>
+                    </div>
+                    <div class="testimonial-footer-fixed">
+                        <p style="color: rgb(210, 152, 142); font-weight: bold; margin: 0;">— Rana K.</p>
+                        <p style="font-size: 12px; color: #999; margin: 5px 0 0 0;">⭐⭐⭐⭐⭐ • February 2026</p>
+                    </div>
+                </div>
+
                 <div class="testimonial-card">
                     <div class="testimonial-scroll-content">
                         <h4 style="color: rgb(150, 100, 90); font-size: 16px; font-weight: bold; margin-bottom: 20px; text-align: center; border-bottom: 2px solid rgb(235, 225, 217); padding-bottom: 12px;">5-Star Reviews for Our MIGS Gynecologist in Manassas & Northern Virginia</h4>
@@ -2914,6 +3178,30 @@
         </div>
     </section>
 
+    <script>
+    // Make news cards collapsible
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all cards in the news section only
+        const newsSection = document.getElementById('news');
+        if (newsSection) {
+            const newsCards = newsSection.querySelectorAll('.card');
+            
+            newsCards.forEach(function(card) {
+                card.style.cursor = 'pointer';
+                
+                card.addEventListener('click', function(e) {
+                    // Don't toggle if clicking on a link
+                    if (e.target.tagName !== 'A') {
+                        e.preventDefault();
+                    }
+                    
+                    // Toggle expanded class
+                    this.classList.toggle('expanded');
+                });
+            });
+        }
+    });
+    </script>
 
     <section style="background-color: rgb(210, 152, 142); padding: 50px 20px; text-align: center;">
         <div class="section-inner">

@@ -1145,22 +1145,27 @@
 
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
-            /* Header adjustments - sticky on mobile */
+            /* Header adjustments - NO sticky on mobile to prevent clipping */
             header {
                 overflow: visible !important;
-                position: sticky;
-                top: 0;
+                position: relative !important;
+                top: auto !important;
                 z-index: 100;
-                padding: 10px 0 !important;
+                padding: 20px 0 !important;
+                min-height: 250px !important;
+                height: auto !important;
+                max-height: none !important;
             }
 
             .nav-container {
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
-                padding-top: 40px !important;
-                padding-bottom: 20px !important;
+                padding: 60px 20px !important;
                 overflow: visible !important;
+                min-height: 200px !important;
+                height: auto !important;
+                max-height: none !important;
             }
 
             .logo-area {
@@ -1168,19 +1173,24 @@
                 text-align: center;
                 width: 100%;
                 gap: 15px;
-                margin-top: 0px;
+                margin: 20px 0 !important;
                 overflow: visible !important;
-                padding: 10px 0 !important;
+                padding: 20px 0 !important;
+                min-height: auto !important;
+                height: auto !important;
+                max-height: none !important;
             }
 
             .logo-placeholder {
-                width: 80px;
-                height: 80px;
-                margin: 10px auto;
+                width: 75px;
+                height: 75px;
+                margin: 20px auto !important;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 overflow: visible !important;
+                min-height: 75px !important;
+                max-height: none !important;
             }
 
             .logo-placeholder img {
@@ -1188,6 +1198,7 @@
                 height: 100%;
                 object-fit: contain;
                 display: block;
+                overflow: visible !important;
             }
 
             .practice-name {

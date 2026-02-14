@@ -287,6 +287,7 @@
             background-color: #ffffff;
             border-bottom: 4px solid rgb(219, 196, 176);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: visible !important;
         }
 
         .nav-container {
@@ -298,6 +299,7 @@
             justify-content: space-between;
             gap: 20px;
             position: relative;
+            overflow: visible !important;
         }
         
         /* Desktop: Two-row layout - logo/buttons on top, nav below */
@@ -379,6 +381,7 @@
             gap: 10px;
             margin-left: 0;
             flex: 0 0 auto;
+            overflow: visible !important;
         }
         
         /* Button area to match logo area width for balanced spacing */
@@ -393,6 +396,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: visible !important;
         }
 
         .logo-placeholder img {
@@ -1143,18 +1147,20 @@
         @media (max-width: 768px) {
             /* Header adjustments - sticky on mobile */
             header {
-                overflow: visible;
+                overflow: visible !important;
                 position: sticky;
                 top: 0;
                 z-index: 100;
+                padding: 10px 0 !important;
             }
 
             .nav-container {
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
-                padding-top: 30px;
-                padding-bottom: 15px;
+                padding-top: 40px !important;
+                padding-bottom: 20px !important;
+                overflow: visible !important;
             }
 
             .logo-area {
@@ -1162,19 +1168,19 @@
                 text-align: center;
                 width: 100%;
                 gap: 15px;
-                margin-top: 5px;
-                overflow: visible;
-                padding: 5px 0;
+                margin-top: 0px;
+                overflow: visible !important;
+                padding: 10px 0 !important;
             }
 
             .logo-placeholder {
-                width: 90px;
-                height: 90px;
-                margin: 0 auto 5px auto;
+                width: 80px;
+                height: 80px;
+                margin: 10px auto;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                overflow: visible;
+                overflow: visible !important;
             }
 
             .logo-placeholder img {
